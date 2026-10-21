@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pal Antojo | NEX ID</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff8f2;
+      color: #4a332e;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 18px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 35px 24px 25px;
+      box-shadow: 0 12px 40px rgba(80, 45, 40, 0.12);
+      text-align: center;
+    }
+
+    .logo-placeholder {
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #fff3ed;
+      border: 2px solid #e85b87;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #e85b87;
+    }
+
+    .logo-placeholder .pal {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .logo-placeholder .antojo {
+      color: #4a332e;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 27px;
+      color: #4a332e;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #e85b87;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .whatsapp {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      background: #25D366;
+      color: white;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      transition: 0.2s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      background: #fff8f2;
+      border-radius: 18px;
+      padding: 22px 18px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      color: #e85b87;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 17px;
+      font-weight: bold;
+    }
+
+    .bank {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .label {
+      color: #8b7770;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .clabe {
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+      word-break: break-all;
+    }
+
+    .copy-button {
+      border: none;
+      width: 100%;
+      background: #e85b87;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .copy-button:active {
+      transform: scale(0.98);
+    }
+
+    .notice {
+      font-size: 11px;
+      color: #8b7770;
+      line-height: 1.5;
+      margin: 16px 5px 22px;
+    }
+
+    .powered {
+      font-size: 10px;
+      color: #aaa09c;
+      letter-spacing: 1px;
+    }
+
+    .powered strong {
+      color: #4a332e;
+    }
+
+    #copied {
+      font-size: 12px;
+      color: #e85b87;
+      font-weight: bold;
+      height: 16px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="logo-placeholder">
+      <div class="pal">Pal</div>
+      <div class="antojo">Antojo</div>
+    </div>
+
+    <h1>Pal Antojo</h1>
+    <div class="subtitle">Barra de Snacks</div>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/524448192199?text=Hola%20%F0%9F%91%8B%20Vi%20Pal%20Antojo%20desde%20su%20NEX%20ID%20y%20quisiera%20hacer%20un%20pedido."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 Hacer un pedido por WhatsApp
+    </a>
+
+    <div class="section">
+
+      <div class="section-title">
+        Datos para transferencia
+      </div>
+
+      <div class="bank">
+        Banregio
+      </div>
+
+      <div class="label">
+        CLABE
+      </div>
+
+      <div class="clabe">
+        167700000007135506
+      </div>
+
+      <button
+        class="copy-button"
+        onclick="copyCLABE()"
+      >
+        Copiar CLABE
+      </button>
+
+      <div id="copied"></div>
+
+    </div>
+
+    <div class="notice">
+      Antes de realizar tu transferencia, verifica que los datos
+      del beneficiario sean correctos.
+    </div>
+
+    <div class="powered">
+      POWERED BY <strong>NEX ID</strong>
+    </div>
+
+  </div>
+
+  <script>
+    function copyCLABE() {
+      const clabe = "167700000007135506";
+
+      navigator.clipboard.writeText(clabe).then(function() {
+        document.getElementById("copied").innerText =
+          "✓ CLABE copiada";
+
+        setTimeout(function() {
+          document.getElementById("copied").innerText = "";
+        }, 2500);
+      });
+    }
+  </script>
+
+</body>
+</html>
