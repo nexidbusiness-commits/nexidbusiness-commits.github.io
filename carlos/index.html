@@ -1,65 +1,456 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
-<title>Datos para transferencia | Carlos Israel Torres López</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b0d">
+
+<title>Carlos Torres | NEX ID</title>
+
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f4f4;color:#161616;min-height:100vh;display:grid;place-items:center;padding:22px}
-  .card{width:min(100%,430px);background:white;border-radius:24px;padding:30px 24px;box-shadow:0 12px 38px rgba(0,0,0,.10)}
-  .icon{width:58px;height:58px;border-radius:18px;background:#111;color:white;display:grid;place-items:center;font-size:28px;margin-bottom:22px}
-  h1{font-size:23px;margin:0 0 8px}
-  .sub{color:#6a6a6a;margin:0 0 28px}
-  .label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#777;margin-bottom:7px}
-  .value{font-size:17px;font-weight:650;margin-bottom:22px;overflow-wrap:anywhere}
-  .clabe{font-size:20px;letter-spacing:.035em}
-  button{width:100%;border:0;border-radius:14px;padding:16px;font-size:16px;font-weight:700;background:#111;color:#fff;cursor:pointer}
-  button:active{transform:scale(.99)}
-  .notice{font-size:13px;line-height:1.45;color:#666;margin:20px 2px 0}
-  .ok{height:22px;text-align:center;font-size:14px;font-weight:650;margin-top:12px}
-  footer{text-align:center;font-size:11px;color:#999;margin-top:20px}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(88,105,47,.18), transparent 30%),
+        linear-gradient(160deg,#050708,#0a1015 55%,#080a08);
+    color:#f5f5f2;
+    min-height:100vh;
+    padding:22px 16px 40px;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    margin:auto;
+}
+
+/* NEX ID */
+
+.nex{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+}
+
+.nex-logo{
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.nex-logo span{
+    color:#82934a;
+}
+
+.nex-tag{
+    font-size:9px;
+    letter-spacing:2px;
+    color:#89939a;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    min-height:315px;
+    overflow:hidden;
+    border-radius:28px;
+    border:1px solid rgba(255,255,255,.10);
+    background:
+        linear-gradient(to top,rgba(4,7,8,1) 5%,rgba(4,7,8,.30)),
+        linear-gradient(135deg,#0b1114,#171b12);
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    box-shadow:0 20px 55px rgba(0,0,0,.45);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    right:-70px;
+    top:-55px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(123,143,70,.22),transparent 65%);
+}
+
+.jaguar{
+    position:absolute;
+    top:28px;
+    right:22px;
+    font-size:92px;
+    opacity:.22;
+    filter:grayscale(1);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.line{
+    width:42px;
+    height:3px;
+    background:#82934a;
+    margin-bottom:14px;
+}
+
+h1{
+    font-size:29px;
+    letter-spacing:5px;
+    font-weight:500;
+    margin-bottom:9px;
+}
+
+.profession{
+    color:#c4c8c3;
+    font-size:12px;
+    letter-spacing:1px;
+    line-height:1.6;
+}
+
+.phrase{
+    margin-top:17px;
+    font-size:11px;
+    color:#82934a;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* BOTONES */
+
+.menu{
+    margin-top:18px;
+    display:grid;
+    gap:11px;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    width:100%;
+    min-height:69px;
+    border-radius:17px;
+    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(110deg,#10161a,#0b0f11);
+    padding:13px 16px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    transition:.2s;
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+.btn.primary{
+    background:linear-gradient(120deg,#43551f,#71883a);
+    border-color:#91a957;
+}
+
+.icon{
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+}
+
+.text{
+    flex:1;
+}
+
+.text strong{
+    display:block;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.text small{
+    color:#939d9f;
+    font-size:11px;
+}
+
+.primary .text small{
+    color:#e5ead9;
+}
+
+.arrow{
+    color:#83934d;
+    font-size:21px;
+}
+
+/* SECCIÓN */
+
+.section-title{
+    margin:29px 4px 13px;
+    color:#82934a;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+/* TRANSFERENCIA */
+
+.bank{
+    background:linear-gradient(145deg,#0c1318,#080b0d);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:22px;
+    padding:22px;
+}
+
+.bank-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.bank-name{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.bank-label{
+    color:#82934a;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.clabe-label{
+    font-size:10px;
+    color:#7e898e;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.clabe{
+    font-size:18px;
+    letter-spacing:1px;
+    overflow-wrap:anywhere;
+}
+
+.copy{
+    width:100%;
+    margin-top:18px;
+    border:1px solid #82934a;
+    background:linear-gradient(120deg,#3b491d,#71883a);
+    color:white;
+    border-radius:14px;
+    padding:15px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.copied{
+    height:18px;
+    margin-top:9px;
+    text-align:center;
+    color:#9cad63;
+    font-size:11px;
+}
+
+/* FRASE */
+
+.quote{
+    margin-top:25px;
+    border-radius:22px;
+    padding:30px 20px;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(111,132,55,.17),transparent 60%),
+        #080b0d;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.jaguar-mark{
+    font-size:47px;
+    opacity:.35;
+    margin-bottom:12px;
+}
+
+.quote p{
+    font-size:16px;
+    font-style:italic;
+    letter-spacing:1px;
+    line-height:1.5;
+}
+
+.quote span{
+    display:block;
+    margin-top:12px;
+    color:#82934a;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#687276;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+footer strong{
+    color:white;
+    font-size:15px;
+    letter-spacing:3px;
+}
+
+footer strong span{
+    color:#82934a;
+}
 </style>
 </head>
+
 <body>
-<main class="card">
-  <div class="icon">↗</div>
-  <h1>Datos para transferencia</h1>
-  <p class="sub">Copia la CLABE para realizar tu pago.</p>
 
-  <div class="label">Beneficiario</div>
-  <div class="value">Carlos Israel Torres López</div>
+<div class="container">
 
-  <div class="label">Institución</div>
-  <div class="value">Mercado Pago</div>
+    <div class="nex">
+        <div class="nex-logo">NE<span>X</span> ID</div>
+        <div class="nex-tag">IDENTIDAD INTELIGENTE</div>
+    </div>
 
-  <div class="label">CLABE</div>
-  <div class="value clabe" id="clabe">722969010625850785</div>
+    <section class="hero">
 
-  <button id="copyBtn" onclick="copiarClabe()">Copiar CLABE</button>
-  <div class="ok" id="status" aria-live="polite"></div>
+        <div class="jaguar">🐆</div>
 
-  <p class="notice">Antes de transferir, verifica en tu aplicación bancaria que el nombre del beneficiario coincida.</p>
-  <footer>Datos proporcionados por el beneficiario</footer>
-</main>
+        <div class="hero-content">
+            <div class="line"></div>
+
+            <h1>CARLOS TORRES</h1>
+
+            <div class="profession">
+                Empresario &nbsp;|&nbsp; Bienes raíces &nbsp;|&nbsp; Financiamiento
+            </div>
+
+            <div class="phrase">
+                Proyectos · Personas · Oportunidades
+            </div>
+        </div>
+
+    </section>
+
+    <div class="menu">
+
+        <a class="btn primary"
+           href="https://wa.me/524448592199"
+           target="_blank">
+            <div class="icon">◉</div>
+            <div class="text">
+                <strong>WhatsApp</strong>
+                <small>Hablemos de tu proyecto</small>
+            </div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" href="#">
+            <div class="icon">♙</div>
+            <div class="text">
+                <strong>Guardar contacto</strong>
+                <small>En tu celular</small>
+            </div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" href="#">
+            <div class="icon">▣</div>
+            <div class="text">
+                <strong>Mis negocios</strong>
+                <small>RENNOVA · Tu Enlace Hipotecario</small>
+            </div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="btn"
+           href="https://www.instagram.com/rennova_inmobiliaria/"
+           target="_blank">
+            <div class="icon">◎</div>
+            <div class="text">
+                <strong>Instagram</strong>
+                <small>Sígueme</small>
+            </div>
+            <div class="arrow">›</div>
+        </a>
+
+    </div>
+
+    <div class="section-title">Transferencia</div>
+
+    <section class="bank">
+
+        <div class="bank-top">
+            <div class="bank-name">Mercado Pago</div>
+            <div class="bank-label">CUENTA PERSONAL</div>
+        </div>
+
+        <div class="clabe-label">CLABE</div>
+
+        <div class="clabe" id="clabe">
+            722969010625850785
+        </div>
+
+        <button class="copy" onclick="copiarClabe()">
+            Copiar CLABE
+        </button>
+
+        <div class="copied" id="copied"></div>
+
+    </section>
+
+    <section class="quote">
+        <div class="jaguar-mark">🐆</div>
+
+        <p>“Disciplina hoy.<br>Resultados siempre.”</p>
+
+        <span>CARLOS TORRES</span>
+    </section>
+
+    <footer>
+        POWERED BY<br><br>
+        <strong>NE<span>X</span> ID</strong><br><br>
+        Conecta tu identidad. Un toque.
+    </footer>
+
+</div>
 
 <script>
-async function copiarClabe(){
-  const valor=document.getElementById("clabe").textContent.trim();
-  const status=document.getElementById("status");
-  const btn=document.getElementById("copyBtn");
-  try{
-    await navigator.clipboard.writeText(valor);
-  }catch(e){
-    const area=document.createElement("textarea");
-    area.value=valor; document.body.appendChild(area); area.select();
-    document.execCommand("copy"); area.remove();
-  }
-  status.textContent="✓ CLABE copiada";
-  btn.textContent="Copiada";
-  setTimeout(()=>{status.textContent="";btn.textContent="Copiar CLABE"},2200);
+function copiarClabe(){
+
+    const clabe = "722969010625850785";
+
+    navigator.clipboard.writeText(clabe).then(function(){
+
+        document.getElementById("copied").innerText =
+        "✓ CLABE copiada";
+
+        setTimeout(function(){
+            document.getElementById("copied").innerText = "";
+        },2500);
+
+    });
 }
 </script>
+
 </body>
 </html>
