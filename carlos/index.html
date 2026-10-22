@@ -319,10 +319,36 @@ footer strong{
 footer strong span{
     color:#82934a;
 }
+
+    .nex-watermark{
+    position: fixed;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 430px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.nex-watermark img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+}
 </style>
 </head>
 
 <body>
+
+    <div class="nex-watermark">
+    <img src="nex-symbol.png" alt="">
+</div>
 
 <div class="container">
 
