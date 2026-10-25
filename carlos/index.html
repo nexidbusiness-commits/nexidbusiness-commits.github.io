@@ -517,7 +517,7 @@ footer strong span{
                placeholder="Correo electrónico"
                required>
 
-        <button type="submit">
+       <button type="submit" id="enviar-creditos" disabled>
             Enviar mis datos
         </button>
 
@@ -602,6 +602,23 @@ function copiarClabe(){
     });
 }
 </script>
+<script>
+const formularioCreditos = document.querySelector(".creditos-form");
+const botonCreditos = document.getElementById("enviar-creditos");
+const camposCreditos = formularioCreditos.querySelectorAll("input[required]");
 
+function validarCreditos(){
+    botonCreditos.disabled = !formularioCreditos.checkValidity();
+}
+
+camposCreditos.forEach(function(campo){
+    campo.addEventListener("input", validarCreditos);
+});
+
+formularioCreditos.addEventListener("submit", function(){
+    botonCreditos.disabled = true;
+    botonCreditos.innerText = "Enviando...";
+});
+</script>
 </body>
 </html>
