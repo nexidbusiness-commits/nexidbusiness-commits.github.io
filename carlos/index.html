@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b0d">
+<meta name="theme-color" content="#0D1B2A">
 
 <title>Carlos Torres | NEX ID</title>
 
@@ -17,9 +17,9 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
     background:
-        radial-gradient(circle at 80% 10%, rgba(88,105,47,.18), transparent 30%),
-        linear-gradient(160deg,#050708,#0a1015 55%,#080a08);
-    color:#f5f5f2;
+        radial-gradient(circle at 80% 8%, rgba(61,79,107,.28), transparent 32%),
+        linear-gradient(160deg,#081522,#0D1B2A 48%,#101F33);
+    color:#f7f7f5;
     min-height:100vh;
     padding:22px 16px 40px;
 }
@@ -28,6 +28,8 @@ body{
     width:100%;
     max-width:430px;
     margin:auto;
+    position:relative;
+    z-index:1;
 }
 
 /* NEX ID */
@@ -46,13 +48,13 @@ body{
 }
 
 .nex-logo span{
-    color:#82934a;
+    color:#E6DCC6;
 }
 
 .nex-tag{
     font-size:9px;
     letter-spacing:2px;
-    color:#89939a;
+    color:#A7B1C2;
 }
 
 /* HERO */
@@ -62,29 +64,44 @@ body{
     min-height:315px;
     overflow:hidden;
     border-radius:28px;
-    border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(167,177,194,.20);
     background:
-        linear-gradient(to top,rgba(4,7,8,1) 5%,rgba(4,7,8,.30)),
-        linear-gradient(135deg,#0b1114,#171b12);
+        linear-gradient(to top,rgba(13,27,42,.98) 5%,rgba(13,27,42,.22)),
+        linear-gradient(135deg,#0D1B2A,#1B2A49);
     padding:25px;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    box-shadow:0 20px 55px rgba(0,0,0,.45);
+    box-shadow:0 20px 55px rgba(0,0,0,.38);
 }
 
 .hero::before{
     content:"";
     position:absolute;
-    width:240px;
-    height:240px;
+    width:250px;
+    height:250px;
     right:-70px;
     top:-55px;
     border-radius:50%;
-    background:radial-gradient(circle,rgba(123,143,70,.22),transparent 65%);
+    background:
+        radial-gradient(circle,rgba(100,116,139,.30),transparent 67%);
 }
 
+.nex-card-symbol{
+    position:absolute;
+    top:22px;
+    right:22px;
+    width:110px;
+    opacity:.18;
+    z-index:2;
+    pointer-events:none;
+}
 
+.nex-card-symbol img{
+    width:100%;
+    height:auto;
+    display:block;
+}
 
 .hero-content{
     position:relative;
@@ -94,7 +111,7 @@ body{
 .line{
     width:42px;
     height:3px;
-    background:#82934a;
+    background:#E6DCC6;
     margin-bottom:14px;
 }
 
@@ -106,7 +123,7 @@ h1{
 }
 
 .profession{
-    color:#c4c8c3;
+    color:#A7B1C2;
     font-size:12px;
     letter-spacing:1px;
     line-height:1.6;
@@ -115,7 +132,7 @@ h1{
 .phrase{
     margin-top:17px;
     font-size:11px;
-    color:#82934a;
+    color:#E6DCC6;
     letter-spacing:3px;
     text-transform:uppercase;
 }
@@ -134,13 +151,14 @@ h1{
     width:100%;
     min-height:69px;
     border-radius:17px;
-    border:1px solid rgba(255,255,255,.10);
-    background:linear-gradient(110deg,#10161a,#0b0f11);
+    border:1px solid rgba(167,177,194,.17);
+    background:linear-gradient(110deg,#16263B,#101F33);
     padding:13px 16px;
     display:flex;
     align-items:center;
     gap:14px;
     transition:.2s;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
 }
 
 .btn:active{
@@ -148,8 +166,8 @@ h1{
 }
 
 .btn.primary{
-    background:linear-gradient(120deg,#43551f,#71883a);
-    border-color:#91a957;
+    background:linear-gradient(120deg,#24385B,#3D4F6B);
+    border-color:#64748B;
 }
 
 .icon{
@@ -157,11 +175,12 @@ h1{
     height:42px;
     flex-shrink:0;
     border-radius:13px;
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(230,220,198,.22);
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:20px;
+    color:#E6DCC6;
 }
 
 .text{
@@ -175,16 +194,16 @@ h1{
 }
 
 .text small{
-    color:#939d9f;
+    color:#A7B1C2;
     font-size:11px;
 }
 
 .primary .text small{
-    color:#e5ead9;
+    color:#E6DCC6;
 }
 
 .arrow{
-    color:#83934d;
+    color:#E6DCC6;
     font-size:21px;
 }
 
@@ -192,7 +211,7 @@ h1{
 
 .section-title{
     margin:29px 4px 13px;
-    color:#82934a;
+    color:#E6DCC6;
     font-size:10px;
     letter-spacing:4px;
     text-transform:uppercase;
@@ -201,8 +220,8 @@ h1{
 /* TRANSFERENCIA */
 
 .bank{
-    background:linear-gradient(145deg,#0c1318,#080b0d);
-    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(145deg,#16263B,#0D1B2A);
+    border:1px solid rgba(167,177,194,.18);
     border-radius:22px;
     padding:22px;
 }
@@ -220,14 +239,14 @@ h1{
 }
 
 .bank-label{
-    color:#82934a;
+    color:#E6DCC6;
     font-size:10px;
     letter-spacing:2px;
 }
 
 .clabe-label{
     font-size:10px;
-    color:#7e898e;
+    color:#A7B1C2;
     letter-spacing:2px;
     margin-bottom:7px;
 }
@@ -241,8 +260,8 @@ h1{
 .copy{
     width:100%;
     margin-top:18px;
-    border:1px solid #82934a;
-    background:linear-gradient(120deg,#3b491d,#71883a);
+    border:1px solid #64748B;
+    background:linear-gradient(120deg,#24385B,#3D4F6B);
     color:white;
     border-radius:14px;
     padding:15px;
@@ -255,7 +274,7 @@ h1{
     height:18px;
     margin-top:9px;
     text-align:center;
-    color:#9cad63;
+    color:#E6DCC6;
     font-size:11px;
 }
 
@@ -267,9 +286,9 @@ h1{
     padding:30px 20px;
     text-align:center;
     background:
-        radial-gradient(circle at 50% 0%,rgba(111,132,55,.17),transparent 60%),
-        #080b0d;
-    border:1px solid rgba(255,255,255,.08);
+        radial-gradient(circle at 50% 0%,rgba(61,79,107,.25),transparent 60%),
+        #0D1B2A;
+    border:1px solid rgba(167,177,194,.14);
 }
 
 .nex-symbol{
@@ -294,7 +313,7 @@ h1{
 .quote span{
     display:block;
     margin-top:12px;
-    color:#82934a;
+    color:#E6DCC6;
     font-size:10px;
     letter-spacing:3px;
 }
@@ -304,7 +323,7 @@ h1{
 footer{
     text-align:center;
     margin-top:30px;
-    color:#687276;
+    color:#A7B1C2;
     font-size:9px;
     letter-spacing:2px;
 }
@@ -316,38 +335,19 @@ footer strong{
 }
 
 footer strong span{
-    color:#82934a;
+    color:#E6DCC6;
 }
 
+/* PANELES DESPLEGABLES */
 
-
-.container{
-    position: relative;
-    z-index: 1;
-}
-    .nex-card-symbol{
-    position:absolute;
-    top:22px;
-    right:22px;
-    width:110px;
-    opacity:0.20;
-    z-index:2;
-    pointer-events:none;
-}
-
-.nex-card-symbol img{
-    width:100%;
-    height:auto;
-    display:block;
-}
-    .creditos-info{
+.creditos-info{
     display:none;
     margin-top:12px;
     padding:22px;
-    border:1px solid rgba(255,255,255,0.12);
+    border:1px solid rgba(167,177,194,.17);
     border-radius:22px;
-    background:rgba(255,255,255,0.035);
-    color:#f5f5f2;
+    background:linear-gradient(145deg,rgba(27,42,73,.80),rgba(13,27,42,.92));
+    color:#f7f7f5;
 }
 
 .creditos-info:target{
@@ -361,60 +361,76 @@ footer strong span{
 
 .creditos-info p{
     margin:0 0 12px;
-    color:rgba(255,255,255,0.65);
+    color:#A7B1C2;
     line-height:1.5;
 }
 
 .creditos-info ul{
     margin:0;
     padding-left:20px;
-    color:rgba(255,255,255,0.75);
+    color:#A7B1C2;
     line-height:1.7;
 }
-    .creditos-form{
+
+/* FORMULARIOS */
+
+.creditos-form{
     display:flex;
     flex-direction:column;
     gap:12px;
     margin-top:18px;
 }
 
-.creditos-form input{
+.creditos-form input,
+.creditos-form textarea{
     width:100%;
     padding:15px 16px;
     border-radius:14px;
-    border:1px solid rgba(255,255,255,0.12);
-    background:rgba(255,255,255,0.05);
-    color:#f5f5f2;
+    border:1px solid rgba(167,177,194,.18);
+    background:rgba(13,27,42,.72);
+    color:#f7f7f5;
     font-size:16px;
     outline:none;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.creditos-form input::placeholder{
-    color:rgba(255,255,255,0.45);
+.creditos-form textarea{
+    resize:vertical;
+    min-height:120px;
 }
 
-.creditos-form input:focus{
-    border-color:#9baa52;
+.creditos-form input::placeholder,
+.creditos-form textarea::placeholder{
+    color:rgba(167,177,194,.65);
+}
+
+.creditos-form input:focus,
+.creditos-form textarea:focus{
+    border-color:#E6DCC6;
 }
 
 .creditos-form button{
     width:100%;
     padding:15px 18px;
-    border:0;
+    border:1px solid #64748B;
     border-radius:14px;
-    background:#7f9638;
+    background:linear-gradient(120deg,#24385B,#3D4F6B);
     color:white;
     font-size:16px;
     font-weight:700;
     cursor:pointer;
 }
+
+.creditos-form button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
 </style>
 </head>
 
 <body>
-
- 
 
 <div class="container">
 
@@ -424,9 +440,13 @@ footer strong span{
     </div>
 
     <section class="hero">
-<div class="nex-card-symbol"><img src="nex-symbol.png" alt="NEX ID"></div>
+
+        <div class="nex-card-symbol">
+            <img src="nex-symbol.png" alt="NEX ID">
+        </div>
 
         <div class="hero-content">
+
             <div class="line"></div>
 
             <h1>CARLOS TORRES</h1>
@@ -438,6 +458,7 @@ footer strong span{
             <div class="phrase">
                 Proyectos · Personas · Oportunidades
             </div>
+
         </div>
 
     </section>
@@ -447,169 +468,188 @@ footer strong span{
         <a class="btn primary"
            href="https://wa.me/524446669557"
            target="_blank">
+
             <div class="icon">◉</div>
+
             <div class="text">
                 <strong>WhatsApp</strong>
                 <small>Hablemos de tu proyecto</small>
             </div>
+
             <div class="arrow">›</div>
+
         </a>
 
         <a class="btn" href="#creditos">
+
             <div class="icon">♙</div>
+
             <div class="text">
-               <strong>Créditos hipotecarios</strong>
-<small>Asesoría sin costo para el cliente</small>
+                <strong>Créditos hipotecarios</strong>
+                <small>Asesoría sin costo para el cliente</small>
             </div>
+
             <div class="arrow">›</div>
+
         </a>
-<div id="creditos" class="creditos-info">
 
-    <h3>Créditos hipotecarios</h3>
+        <div id="creditos" class="creditos-info">
 
-    <p>
-        Encuentra una alternativa de financiamiento de acuerdo
-        con tu perfil y proyecto.
-    </p>
+            <h3>Créditos hipotecarios</h3>
 
-    <ul>
-        <li>Compra de vivienda</li>
-        <li>Cofinavit e Infonavit</li>
-        <li>Construcción</li>
-        <li>Sustitución de hipoteca</li>
-        <li>Liquidez</li>
-    </ul>
+            <p>
+                Encuentra una alternativa de financiamiento de acuerdo
+                con tu perfil y proyecto.
+            </p>
 
-    <p>
-        <strong>Asesoría y gestión sin costo para el cliente.</strong>
-    </p>
+            <ul>
+                <li>Compra de vivienda</li>
+                <li>Cofinavit e Infonavit</li>
+                <li>Construcción</li>
+                <li>Sustitución de hipoteca</li>
+                <li>Liquidez</li>
+            </ul>
 
-    <h3>¿Quieres que revisemos tu caso?</h3>
+            <p>
+                <strong>Asesoría y gestión sin costo para el cliente.</strong>
+            </p>
 
-    <p>
-        Déjanos tus datos y nos pondremos en contacto contigo.
-    </p>
+            <h3>¿Quieres que revisemos tu caso?</h3>
 
-    <form class="creditos-form"
-      action="https://formsubmit.co/ctorres@tuenlacehipotecario.com" method="POST">
-<input type="hidden"
-       name="_subject"
-       value="Nuevo prospecto hipotecario | NEX ID">
-        <input type="hidden"
-       name="_template"
-       value="table">
-        <input type="hidden"
-       name="_next"
-       value="https://nexidbusiness-commits.github.io/carlos/">
-        <input type="text"
-               name="nombre"
-               placeholder="Nombre"
-               required>
+            <p>
+                Déjanos tus datos y nos pondremos en contacto contigo.
+            </p>
 
-        <input type="tel"
-               name="whatsapp"
-               placeholder="WhatsApp"
-               required>
+            <form class="creditos-form"
+                  action="https://formsubmit.co/ctorres@tuenlacehipotecario.com"
+                  method="POST">
 
-        <input type="email"
-               name="email"
-               placeholder="Correo electrónico"
-               required>
+                <input type="hidden"
+                       name="_subject"
+                       value="Nuevo prospecto hipotecario | NEX ID">
 
-       <button type="submit" id="enviar-creditos" disabled>
-            Enviar mis datos
-        </button>
+                <input type="hidden"
+                       name="_template"
+                       value="table">
 
-    </form>
+                <input type="hidden"
+                       name="_next"
+                       value="https://nexidbusiness-commits.github.io/carlos/">
 
-</div>
-       <a class="btn" href="#crea-nexid">
+                <input type="text"
+                       name="nombre"
+                       placeholder="Nombre"
+                       required>
+
+                <input type="tel"
+                       name="whatsapp"
+                       placeholder="WhatsApp"
+                       required>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Correo electrónico"
+                       required>
+
+                <button type="submit" id="enviar-creditos" disabled>
+                    Enviar mis datos
+                </button>
+
+            </form>
+
+        </div>
+
+        <a class="btn" href="#crea-nexid">
+
             <div class="icon">▣</div>
+
             <div class="text">
                 <strong>Crea tu NEX ID</strong>
-<small>Solicita tu tarjeta inteligente</small>
+                <small>Solicita tu tarjeta inteligente</small>
             </div>
+
             <div class="arrow">›</div>
+
         </a>
-<div id="crea-nexid" class="creditos-info">
 
-    <h3>Crea tu NEX ID</h3>
+        <div id="crea-nexid" class="creditos-info">
 
-    <p>
-        Lleva tu identidad contigo y comparte tu información
-        con un solo toque.
-    </p>
+            <h3>Crea tu NEX ID</h3>
 
-    <p>
-        Completa tus datos para comenzar a crear tu NEX ID.
-    </p>
+            <p>
+                Lleva tu identidad contigo y comparte tu información
+                con un solo toque.
+            </p>
 
-<form class="creditos-form nexid-form"
-      id="nexid-form">
+            <p>
+                Completa tus datos para comenzar a crear tu NEX ID.
+            </p>
 
+            <form class="creditos-form nexid-form"
+                  id="nexid-form">
 
-        <input type="text"
-               name="nombre_nexid"
-               placeholder="Nombre completo"
-               required>
+                <input type="text"
+                       name="nombre_nexid"
+                       placeholder="Nombre completo"
+                       required>
 
-        <input type="tel"
-               name="whatsapp_nexid"
-               placeholder="WhatsApp"
-               required>
+                <input type="tel"
+                       name="whatsapp_nexid"
+                       placeholder="WhatsApp"
+                       required>
 
-        <input type="email"
-               name="email_nexid"
-               placeholder="Correo electrónico"
-               required>
+                <input type="email"
+                       name="email_nexid"
+                       placeholder="Correo electrónico"
+                       required>
 
-        <input type="text"
-               name="nombre_mostrar_nexid"
-               placeholder="Nombre para mostrar en tu NEX ID"
-               required>
+                <input type="text"
+                       name="nombre_mostrar_nexid"
+                       placeholder="Nombre para mostrar en tu NEX ID"
+                       required>
 
-        <input type="text"
-               name="negocio_nexid"
-               placeholder="Empresa o negocio (opcional)">
+                <input type="text"
+                       name="negocio_nexid"
+                       placeholder="Empresa o negocio (opcional)">
 
-        <input type="text"
-               name="puesto_nexid"
-               placeholder="Puesto, profesión o actividad (opcional)">
+                <input type="text"
+                       name="puesto_nexid"
+                       placeholder="Puesto, profesión o actividad (opcional)">
 
-        <input type="url"
-               name="instagram_nexid"
-               placeholder="Link de Instagram (opcional)">
+                <input type="url"
+                       name="instagram_nexid"
+                       placeholder="Link de Instagram (opcional)">
 
-        <input type="url"
-               name="facebook_nexid"
-               placeholder="Link de Facebook (opcional)">
+                <input type="url"
+                       name="facebook_nexid"
+                       placeholder="Link de Facebook (opcional)">
 
-        <input type="url"
-               name="linkedin_nexid"
-               placeholder="Link de LinkedIn (opcional)">
+                <input type="url"
+                       name="linkedin_nexid"
+                       placeholder="Link de LinkedIn (opcional)">
 
-        <input type="url"
-               name="web_nexid"
-               placeholder="Página web (opcional)">
+                <input type="url"
+                       name="web_nexid"
+                       placeholder="Página web (opcional)">
 
+                <textarea name="informacion_nexid"
+                          placeholder="¿Qué información o botones adicionales quieres incluir? Ej. ubicación, catálogo, menú, otras redes sociales, datos de pago, servicios, etc."
+                          rows="5"></textarea>
 
+                <button type="submit" id="enviar-nexid">
+                    Solicitar mi NEX ID
+                </button>
 
-        <textarea name="informacion_nexid"
-                  placeholder="¿Qué información o botones adicionales quieres incluir? Ej. ubicación, catálogo, menú, otras redes sociales, datos de pago, servicios, etc."
-                  rows="5"></textarea>
+            </form>
 
-        <button type="submit" id="enviar-nexid">
-            Solicitar mi NEX ID
-        </button>
+            <script>
+            document.getElementById("nexid-form").addEventListener("submit", function(event) {
 
-    </form>
-    <script>
-document.getElementById("nexid-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+                event.preventDefault();
 
-    const datos = new FormData(this);
+                const datos = new FormData(this);
 
-    const mensaje =
+                const mensaje =
 `Hola, quiero solicitar mi NEX ID.
 
 Nombre completo: ${datos.get("nombre_nexid")}
@@ -627,64 +667,99 @@ Página web: ${datos.get("web_nexid") || "No especificado"}
 Información o botones adicionales:
 ${datos.get("informacion_nexid") || "Ninguno"}`;
 
-    const telefono = "524446669557";
-    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+                const telefono = "524446669557";
 
-    window.location.href = url;
-});
-</script>
-    <div class="section-title">Transferencia</div>
+                const url =
+                    "https://wa.me/" +
+                    telefono +
+                    "?text=" +
+                    encodeURIComponent(mensaje);
 
-    <section class="bank">
+                window.location.href = url;
 
-        <div class="bank-top">
-            <div class="bank-name">Mercado Pago</div>
-            <div class="bank-label">CUENTA PERSONAL</div>
+            });
+            </script>
+
+            <div class="section-title">Transferencia</div>
+
+            <section class="bank">
+
+                <div class="bank-top">
+
+                    <div class="bank-name">
+                        Mercado Pago
+                    </div>
+
+                    <div class="bank-label">
+                        CUENTA PERSONAL
+                    </div>
+
+                </div>
+
+                <div class="clabe-label">
+                    CLABE
+                </div>
+
+                <div class="clabe" id="clabe">
+                    722969010625850785
+                </div>
+
+                <button class="copy"
+                        type="button"
+                        onclick="copiarClabe()">
+                    Copiar CLABE
+                </button>
+
+                <div class="copied" id="copied"></div>
+
+            </section>
+
         </div>
 
-        <div class="clabe-label">CLABE</div>
-
-        <div class="clabe" id="clabe">
-            722969010625850785
-        </div>
-
-        <button class="copy" onclick="copiarClabe()">
-            Copiar CLABE
-        </button>
-
-        <div class="copied" id="copied"></div>
-
-    </section>
-</div>
         <a class="btn"
-           href=https://www.instagram.com/carlositorresl/
+           href="https://www.instagram.com/carlositorresl/"
            target="_blank">
+
             <div class="icon">◎</div>
+
             <div class="text">
                 <strong>Instagram</strong>
                 <small>Sígueme</small>
             </div>
+
             <div class="arrow">›</div>
+
         </a>
 
     </div>
 
-
-
     <section class="quote">
-        <div class="nex-symbol">
-    <img src="nex-symbol.png" alt="NEX ID">
-</div>
 
-        <p>“Disciplina hoy.<br>Resultados siempre.”</p>
+        <div class="nex-symbol">
+            <img src="nex-symbol.png" alt="NEX ID">
+        </div>
+
+        <p>
+            “Disciplina hoy.<br>
+            Resultados siempre.”
+        </p>
 
         <span>CARLOS TORRES</span>
+
     </section>
 
     <footer>
+
         POWERED BY<br><br>
-        <strong>NE<span>X</span> ID</strong><br><br>
+
+        <strong>
+            NE<span>X</span> ID
+        </strong>
+
+        <br><br>
+
         Conecta tu identidad. Un toque.
+
     </footer>
 
 </div>
@@ -697,32 +772,55 @@ function copiarClabe(){
     navigator.clipboard.writeText(clabe).then(function(){
 
         document.getElementById("copied").innerText =
-        "✓ CLABE copiada";
+            "✓ CLABE copiada";
 
         setTimeout(function(){
+
             document.getElementById("copied").innerText = "";
+
         },2500);
 
     });
+
 }
 </script>
+
 <script>
-const formularioCreditos = document.querySelector(".creditos-form");
-const botonCreditos = document.getElementById("enviar-creditos");
-const camposCreditos = formularioCreditos.querySelectorAll("input[required]");
+const formularioCreditos =
+    document.querySelector("#creditos .creditos-form");
+
+const botonCreditos =
+    document.getElementById("enviar-creditos");
+
+const camposCreditos =
+    formularioCreditos.querySelectorAll("input[required]");
 
 function validarCreditos(){
-    botonCreditos.disabled = !formularioCreditos.checkValidity();
+
+    botonCreditos.disabled =
+        !formularioCreditos.checkValidity();
+
 }
 
 camposCreditos.forEach(function(campo){
-    campo.addEventListener("input", validarCreditos);
+
+    campo.addEventListener(
+        "input",
+        validarCreditos
+    );
+
 });
 
-formularioCreditos.addEventListener("submit", function(){
-    botonCreditos.disabled = true;
-    botonCreditos.innerText = "Enviando...";
-});
+formularioCreditos.addEventListener(
+    "submit",
+    function(){
+
+        botonCreditos.disabled = true;
+        botonCreditos.innerText = "Enviando...";
+
+    }
+);
 </script>
+
 </body>
 </html>
