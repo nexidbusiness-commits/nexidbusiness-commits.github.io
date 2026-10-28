@@ -61,7 +61,7 @@ body{
 
 .hero{
     position:relative;
-    min-height:315px;
+    min-height:350px;
     overflow:hidden;
     border-radius:28px;
     border:1px solid rgba(167,177,194,.20);
@@ -87,12 +87,33 @@ body{
         radial-gradient(circle,rgba(100,116,139,.30),transparent 67%);
 }
 
+/* NUEVO LOGO POWERED BY NEX ID */
+
+.powered-logo{
+    position:absolute;
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+    width:78%;
+    max-width:315px;
+    z-index:3;
+}
+
+.powered-logo img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:8px;
+}
+
+/* MARCA DE AGUA */
+
 .nex-card-symbol{
     position:absolute;
-    top:22px;
+    top:135px;
     right:22px;
     width:110px;
-    opacity:.18;
+    opacity:.10;
     z-index:2;
     pointer-events:none;
 }
@@ -105,7 +126,7 @@ body{
 
 .hero-content{
     position:relative;
-    z-index:2;
+    z-index:4;
 }
 
 .line{
@@ -207,7 +228,83 @@ h1{
     font-size:21px;
 }
 
-/* SECCIÓN */
+/* PANEL NEX ID */
+
+.nexid-info{
+    display:none;
+    margin-top:12px;
+    padding:22px;
+    border:1px solid rgba(167,177,194,.17);
+    border-radius:22px;
+    background:linear-gradient(145deg,rgba(27,42,73,.80),rgba(13,27,42,.92));
+    color:#f7f7f5;
+}
+
+.nexid-info:target{
+    display:block;
+}
+
+.nexid-info h3{
+    margin:0 0 10px;
+    font-size:18px;
+}
+
+.nexid-info p{
+    margin:0 0 12px;
+    color:#A7B1C2;
+    line-height:1.5;
+}
+
+/* FORMULARIO */
+
+.nexid-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:18px;
+}
+
+.nexid-form input,
+.nexid-form textarea{
+    width:100%;
+    padding:15px 16px;
+    border-radius:14px;
+    border:1px solid rgba(167,177,194,.18);
+    background:rgba(13,27,42,.72);
+    color:#f7f7f5;
+    font-size:16px;
+    outline:none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.nexid-form textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+.nexid-form input::placeholder,
+.nexid-form textarea::placeholder{
+    color:rgba(167,177,194,.65);
+}
+
+.nexid-form input:focus,
+.nexid-form textarea:focus{
+    border-color:#E6DCC6;
+}
+
+.nexid-form button{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #64748B;
+    border-radius:14px;
+    background:linear-gradient(120deg,#24385B,#3D4F6B);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* TRANSFERENCIA */
 
 .section-title{
     margin:29px 4px 13px;
@@ -216,8 +313,6 @@ h1{
     letter-spacing:4px;
     text-transform:uppercase;
 }
-
-/* TRANSFERENCIA */
 
 .bank{
     background:linear-gradient(145deg,#16263B,#0D1B2A);
@@ -338,95 +433,6 @@ footer strong span{
     color:#E6DCC6;
 }
 
-/* PANELES DESPLEGABLES */
-
-.creditos-info{
-    display:none;
-    margin-top:12px;
-    padding:22px;
-    border:1px solid rgba(167,177,194,.17);
-    border-radius:22px;
-    background:linear-gradient(145deg,rgba(27,42,73,.80),rgba(13,27,42,.92));
-    color:#f7f7f5;
-}
-
-.creditos-info:target{
-    display:block;
-}
-
-.creditos-info h3{
-    margin:0 0 10px;
-    font-size:18px;
-}
-
-.creditos-info p{
-    margin:0 0 12px;
-    color:#A7B1C2;
-    line-height:1.5;
-}
-
-.creditos-info ul{
-    margin:0;
-    padding-left:20px;
-    color:#A7B1C2;
-    line-height:1.7;
-}
-
-/* FORMULARIOS */
-
-.creditos-form{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-top:18px;
-}
-
-.creditos-form input,
-.creditos-form textarea{
-    width:100%;
-    padding:15px 16px;
-    border-radius:14px;
-    border:1px solid rgba(167,177,194,.18);
-    background:rgba(13,27,42,.72);
-    color:#f7f7f5;
-    font-size:16px;
-    outline:none;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.creditos-form textarea{
-    resize:vertical;
-    min-height:120px;
-}
-
-.creditos-form input::placeholder,
-.creditos-form textarea::placeholder{
-    color:rgba(167,177,194,.65);
-}
-
-.creditos-form input:focus,
-.creditos-form textarea:focus{
-    border-color:#E6DCC6;
-}
-
-.creditos-form button{
-    width:100%;
-    padding:15px 18px;
-    border:1px solid #64748B;
-    border-radius:14px;
-    background:linear-gradient(120deg,#24385B,#3D4F6B);
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.creditos-form button:disabled{
-    opacity:.45;
-    cursor:not-allowed;
-}
-
 </style>
 </head>
 
@@ -440,6 +446,11 @@ footer strong span{
     </div>
 
     <section class="hero">
+
+        <div class="powered-logo">
+            <img src="powered-by-nexid.jpeg"
+                 alt="Powered by NEX ID">
+        </div>
 
         <div class="nex-card-symbol">
             <img src="nex-symbol.png" alt="NEX ID">
@@ -477,87 +488,7 @@ footer strong span{
             </div>
 
             <div class="arrow">›</div>
-
         </a>
-
-        <a class="btn" href="#creditos">
-
-            <div class="icon">♙</div>
-
-            <div class="text">
-                <strong>Créditos hipotecarios</strong>
-                <small>Asesoría sin costo para el cliente</small>
-            </div>
-
-            <div class="arrow">›</div>
-
-        </a>
-
-        <div id="creditos" class="creditos-info">
-
-            <h3>Créditos hipotecarios</h3>
-
-            <p>
-                Encuentra una alternativa de financiamiento de acuerdo
-                con tu perfil y proyecto.
-            </p>
-
-            <ul>
-                <li>Compra de vivienda</li>
-                <li>Cofinavit e Infonavit</li>
-                <li>Construcción</li>
-                <li>Sustitución de hipoteca</li>
-                <li>Liquidez</li>
-            </ul>
-
-            <p>
-                <strong>Asesoría y gestión sin costo para el cliente.</strong>
-            </p>
-
-            <h3>¿Quieres que revisemos tu caso?</h3>
-
-            <p>
-                Déjanos tus datos y nos pondremos en contacto contigo.
-            </p>
-
-            <form class="creditos-form"
-                  action="https://formsubmit.co/ctorres@tuenlacehipotecario.com"
-                  method="POST">
-
-                <input type="hidden"
-                       name="_subject"
-                       value="Nuevo prospecto hipotecario | NEX ID">
-
-                <input type="hidden"
-                       name="_template"
-                       value="table">
-
-                <input type="hidden"
-                       name="_next"
-                       value="https://nexidbusiness-commits.github.io/carlos/">
-
-                <input type="text"
-                       name="nombre"
-                       placeholder="Nombre"
-                       required>
-
-                <input type="tel"
-                       name="whatsapp"
-                       placeholder="WhatsApp"
-                       required>
-
-                <input type="email"
-                       name="email"
-                       placeholder="Correo electrónico"
-                       required>
-
-                <button type="submit" id="enviar-creditos" disabled>
-                    Enviar mis datos
-                </button>
-
-            </form>
-
-        </div>
 
         <a class="btn" href="#crea-nexid">
 
@@ -569,10 +500,9 @@ footer strong span{
             </div>
 
             <div class="arrow">›</div>
-
         </a>
 
-        <div id="crea-nexid" class="creditos-info">
+        <div id="crea-nexid" class="nexid-info">
 
             <h3>Crea tu NEX ID</h3>
 
@@ -585,8 +515,7 @@ footer strong span{
                 Completa tus datos para comenzar a crear tu NEX ID.
             </p>
 
-            <form class="creditos-form nexid-form"
-                  id="nexid-form">
+            <form class="nexid-form" id="nexid-form">
 
                 <input type="text"
                        name="nombre_nexid"
@@ -636,69 +565,22 @@ footer strong span{
                           placeholder="¿Qué información o botones adicionales quieres incluir? Ej. ubicación, catálogo, menú, otras redes sociales, datos de pago, servicios, etc."
                           rows="5"></textarea>
 
-                <button type="submit" id="enviar-nexid">
+                <button type="submit">
                     Solicitar mi NEX ID
                 </button>
 
             </form>
-
-            <script>
-            document.getElementById("nexid-form").addEventListener("submit", function(event) {
-
-                event.preventDefault();
-
-                const datos = new FormData(this);
-
-                const mensaje =
-`Hola, quiero solicitar mi NEX ID.
-
-Nombre completo: ${datos.get("nombre_nexid")}
-WhatsApp: ${datos.get("whatsapp_nexid")}
-Correo: ${datos.get("email_nexid")}
-Nombre para mostrar: ${datos.get("nombre_mostrar_nexid")}
-Empresa o negocio: ${datos.get("negocio_nexid") || "No especificado"}
-Puesto / profesión: ${datos.get("puesto_nexid") || "No especificado"}
-
-Instagram: ${datos.get("instagram_nexid") || "No especificado"}
-Facebook: ${datos.get("facebook_nexid") || "No especificado"}
-LinkedIn: ${datos.get("linkedin_nexid") || "No especificado"}
-Página web: ${datos.get("web_nexid") || "No especificado"}
-
-Información o botones adicionales:
-${datos.get("informacion_nexid") || "Ninguno"}`;
-
-                const telefono = "524446669557";
-
-                const url =
-                    "https://wa.me/" +
-                    telefono +
-                    "?text=" +
-                    encodeURIComponent(mensaje);
-
-                window.location.href = url;
-
-            });
-            </script>
 
             <div class="section-title">Transferencia</div>
 
             <section class="bank">
 
                 <div class="bank-top">
-
-                    <div class="bank-name">
-                        Mercado Pago
-                    </div>
-
-                    <div class="bank-label">
-                        CUENTA PERSONAL
-                    </div>
-
+                    <div class="bank-name">Mercado Pago</div>
+                    <div class="bank-label">CUENTA PERSONAL</div>
                 </div>
 
-                <div class="clabe-label">
-                    CLABE
-                </div>
+                <div class="clabe-label">CLABE</div>
 
                 <div class="clabe" id="clabe">
                     722969010625850785
@@ -717,6 +599,20 @@ ${datos.get("informacion_nexid") || "Ninguno"}`;
         </div>
 
         <a class="btn"
+           href="https://www.google.com/maps/search/?api=1&query=Cordillera%20Occidental%20777%2C%20Lomas%204ta.%20Secci%C3%B3n%2C%2078216%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.%2C%20M%C3%A9xico"
+           target="_blank">
+
+            <div class="icon">⌖</div>
+
+            <div class="text">
+                <strong>Cómo llegar</strong>
+                <small>Ubicación de la oficina</small>
+            </div>
+
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="btn"
            href="https://www.instagram.com/carlositorresl/"
            target="_blank">
 
@@ -728,7 +624,20 @@ ${datos.get("informacion_nexid") || "Ninguno"}`;
             </div>
 
             <div class="arrow">›</div>
+        </a>
 
+        <a class="btn"
+           href="https://www.facebook.com/carlos.torreslopez.5494/about?locale=es_LA"
+           target="_blank">
+
+            <div class="icon">f</div>
+
+            <div class="text">
+                <strong>Facebook</strong>
+                <small>Conecta conmigo</small>
+            </div>
+
+            <div class="arrow">›</div>
         </a>
 
     </div>
@@ -765,6 +674,43 @@ ${datos.get("informacion_nexid") || "Ninguno"}`;
 </div>
 
 <script>
+
+document.getElementById("nexid-form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const datos = new FormData(this);
+
+    const mensaje =
+`Hola, quiero solicitar mi NEX ID.
+
+Nombre completo: ${datos.get("nombre_nexid")}
+WhatsApp: ${datos.get("whatsapp_nexid")}
+Correo: ${datos.get("email_nexid")}
+Nombre para mostrar: ${datos.get("nombre_mostrar_nexid")}
+Empresa o negocio: ${datos.get("negocio_nexid") || "No especificado"}
+Puesto / profesión: ${datos.get("puesto_nexid") || "No especificado"}
+
+Instagram: ${datos.get("instagram_nexid") || "No especificado"}
+Facebook: ${datos.get("facebook_nexid") || "No especificado"}
+LinkedIn: ${datos.get("linkedin_nexid") || "No especificado"}
+Página web: ${datos.get("web_nexid") || "No especificado"}
+
+Información o botones adicionales:
+${datos.get("informacion_nexid") || "Ninguno"}`;
+
+    const telefono = "524446669557";
+
+    const url =
+        "https://wa.me/" +
+        telefono +
+        "?text=" +
+        encodeURIComponent(mensaje);
+
+    window.location.href = url;
+
+});
+
 function copiarClabe(){
 
     const clabe = "722969010625850785";
@@ -775,51 +721,13 @@ function copiarClabe(){
             "✓ CLABE copiada";
 
         setTimeout(function(){
-
             document.getElementById("copied").innerText = "";
-
         },2500);
 
     });
 
 }
-</script>
 
-<script>
-const formularioCreditos =
-    document.querySelector("#creditos .creditos-form");
-
-const botonCreditos =
-    document.getElementById("enviar-creditos");
-
-const camposCreditos =
-    formularioCreditos.querySelectorAll("input[required]");
-
-function validarCreditos(){
-
-    botonCreditos.disabled =
-        !formularioCreditos.checkValidity();
-
-}
-
-camposCreditos.forEach(function(campo){
-
-    campo.addEventListener(
-        "input",
-        validarCreditos
-    );
-
-});
-
-formularioCreditos.addEventListener(
-    "submit",
-    function(){
-
-        botonCreditos.disabled = true;
-        botonCreditos.innerText = "Enviando...";
-
-    }
-);
 </script>
 
 </body>
