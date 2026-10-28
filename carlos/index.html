@@ -544,30 +544,10 @@ footer strong span{
         Completa tus datos para comenzar a crear tu NEX ID.
     </p>
 
-  <form class="creditos-form nexid-form"
-      id="nexid-form"
-      action="https://formsubmit.co/nexidbusiness@gmail.com"
-      method="POST"
-      enctype="multipart/form-data">
+<form class="creditos-form nexid-form"
+      id="nexid-form">
 
-<input type="hidden"
-       name="_subject"
-       value="Nueva solicitud de NEX ID">
 
-<input type="hidden"
-       name="_captcha"
-       value="false">
-      <input type="hidden"
-       name="_template"
-       value="table">
-
-<input type="hidden"
-       name="_autoresponse"
-       value="¡Gracias por solicitar tu NEX ID! Hemos recibido tu información correctamente. Nos pondremos en contacto contigo para continuar con la creación de tu tarjeta inteligente.">
-
-      <input type="hidden"
-       name="_next"
-       value="https://nexidbusiness-commits.github.io/carlos/gracias.html">
         <input type="text"
                name="nombre_nexid"
                placeholder="Nombre completo"
@@ -612,28 +592,7 @@ footer strong span{
                name="web_nexid"
                placeholder="Página web (opcional)">
 
-        <label for="logo-nexid">
-            Logo de tu empresa o negocio (opcional)
-        </label>
 
-        <input type="file"
-               id="logo-nexid"
-               name="logo_nexid"
-               accept=".png,.jpg,.jpeg,.webp,.svg,.pdf">
-
-        <small>
-            Si no tienes tu logo en el formato adecuado,
-            envíanos el archivo que tengas y nosotros lo preparamos.
-        </small>
-
-        <label for="foto-nexid">
-            Fotografía de perfil (opcional)
-        </label>
-
-        <input type="file"
-               id="foto-nexid"
-               name="foto_nexid"
-               accept=".png,.jpg,.jpeg,.webp">
 
         <textarea name="informacion_nexid"
                   placeholder="¿Qué información o botones adicionales quieres incluir? Ej. ubicación, catálogo, menú, otras redes sociales, datos de pago, servicios, etc."
@@ -644,6 +603,36 @@ footer strong span{
         </button>
 
     </form>
+    <script>
+document.getElementById("nexid-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const datos = new FormData(this);
+
+    const mensaje =
+`Hola, quiero solicitar mi NEX ID.
+
+Nombre completo: ${datos.get("nombre_nexid")}
+WhatsApp: ${datos.get("whatsapp_nexid")}
+Correo: ${datos.get("email_nexid")}
+Nombre para mostrar: ${datos.get("nombre_mostrar_nexid")}
+Empresa o negocio: ${datos.get("negocio_nexid") || "No especificado"}
+Puesto / profesión: ${datos.get("puesto_nexid") || "No especificado"}
+
+Instagram: ${datos.get("instagram_nexid") || "No especificado"}
+Facebook: ${datos.get("facebook_nexid") || "No especificado"}
+LinkedIn: ${datos.get("linkedin_nexid") || "No especificado"}
+Página web: ${datos.get("web_nexid") || "No especificado"}
+
+Información o botones adicionales:
+${datos.get("informacion_nexid") || "Ninguno"}`;
+
+    const telefono = "524446669557";
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+
+    window.location.href = url;
+});
+</script>
     <div class="section-title">Transferencia</div>
 
     <section class="bank">
