@@ -1,1 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0878c9">
 
+<title>Fernanda | FerLo Servicios Inmobiliarios</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --blue:#0878c9;
+  --blue-dark:#075a99;
+  --blue-light:#28a7ed;
+  --black:#18181b;
+  --gray:#70757a;
+  --light:#f4f6f8;
+  --white:#ffffff;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#edf0f3;
+  color:var(--black);
+  min-height:100vh;
+}
+
+.page{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+  background:#fff;
+  min-height:100vh;
+  overflow:hidden;
+  box-shadow:0 0 45px rgba(0,0,0,.10);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+  position:relative;
+  padding:52px 25px 38px;
+  text-align:center;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.98),rgba(244,248,251,.97));
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  border-radius:50%;
+  top:-190px;
+  right:-150px;
+  border:55px solid rgba(8,120,201,.07);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  left:-135px;
+  bottom:-125px;
+  transform:rotate(45deg);
+  background:rgba(8,120,201,.045);
+}
+
+.texture{
+  position:absolute;
+  inset:0;
+  opacity:.22;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(8,120,201,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(8,120,201,.08) 1px,transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+.top-line{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:6px;
+  background:linear-gradient(
+    90deg,
+    #18181b 0%,
+    #18181b 26%,
+    #0878c9 26%,
+    #0878c9 75%,
+    #28a7ed 100%
+  );
+}
+
+.logo-wrap{
+  position:relative;
+  z-index:2;
+  width:220px;
+  margin:0 auto 30px;
+  padding:15px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 14px 38px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.05);
+}
+
+.logo-wrap img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.eyebrow{
+  position:relative;
+  z-index:2;
+  color:var(--blue);
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:3px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+h1{
+  position:relative;
+  z-index:2;
+  font-size:36px;
+  line-height:1;
+  letter-spacing:-1.3px;
+  margin-bottom:9px;
+  font-weight:800;
+}
+
+.role{
+  position:relative;
+  z-index:2;
+  color:var(--blue);
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.company{
+  position:relative;
+  z-index:2;
+  color:#666;
+  font-size:12px;
+  letter-spacing:.3px;
+}
+
+.hero-divider{
+  position:relative;
+  z-index:2;
+  width:44px;
+  height:3px;
+  background:var(--blue);
+  margin:23px auto 0;
+  border-radius:10px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  position:relative;
+  padding:33px 30px 26px;
+  text-align:center;
+}
+
+.intro-label{
+  color:var(--blue);
+  font-size:9px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.intro h2{
+  font-size:22px;
+  line-height:1.2;
+  margin-bottom:12px;
+  letter-spacing:-.5px;
+}
+
+.intro p{
+  color:#777;
+  font-size:13px;
+  line-height:1.65;
+  max-width:390px;
+  margin:0 auto;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.actions{
+  padding:7px 22px 34px;
+}
+
+.action{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#18181b;
+  background:#fff;
+  border:1px solid #e8eaed;
+  border-radius:17px;
+  margin-bottom:12px;
+  min-height:72px;
+  padding:13px 16px;
+  box-shadow:0 7px 22px rgba(0,0,0,.045);
+  transition:.2s ease;
+}
+
+.action:active{
+  transform:scale(.985);
+}
+
+.icon{
+  flex:0 0 45px;
+  height:45px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,#0878c9,#075a99);
+  color:#fff;
+  margin-right:14px;
+  box-shadow:0 8px 18px rgba(8,120,201,.20);
+}
+
+.icon svg{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.action-content{
+  flex:1;
+  min-width:0;
+}
+
+.action-title{
+  display:block;
+  font-size:14px;
+  font-weight:750;
+  margin-bottom:3px;
+}
+
+.action-subtitle{
+  display:block;
+  color:#8a8e93;
+  font-size:10px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.arrow{
+  color:#a6aaae;
+  font-size:21px;
+  margin-left:10px;
+}
+
+/* =========================
+   BLOQUE INMOBILIARIO
+========================= */
+
+.realestate{
+  position:relative;
+  overflow:hidden;
+  margin:0 22px 36px;
+  border-radius:23px;
+  background:#161719;
+  color:#fff;
+  padding:29px 25px 30px;
+}
+
+.realestate::before{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  right:-120px;
+  top:-100px;
+  transform:rotate(45deg);
+  background:var(--blue);
+  opacity:.9;
+}
+
+.realestate::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-105px;
+  bottom:-85px;
+  transform:rotate(45deg);
+  border:25px solid rgba(40,167,237,.28);
+}
+
+.realestate > *{
+  position:relative;
+  z-index:2;
+}
+
+.realestate small{
+  display:block;
+  color:#55b9f0;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2.3px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.realestate h3{
+  max-width:300px;
+  font-size:21px;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+
+.realestate p{
+  max-width:325px;
+  color:rgba(255,255,255,.67);
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* =========================
+   DATOS
+========================= */
+
+.details{
+  padding:0 25px 37px;
+}
+
+.details-title{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2.2px;
+  color:#8c9094;
+  font-weight:800;
+  margin-bottom:17px;
+}
+
+.detail{
+  display:flex;
+  align-items:flex-start;
+  padding:14px 0;
+  border-bottom:1px solid #eef0f2;
+}
+
+.detail-dot{
+  width:8px;
+  height:8px;
+  background:var(--blue);
+  border-radius:50%;
+  margin-top:6px;
+  margin-right:13px;
+  flex:0 0 auto;
+}
+
+.detail strong{
+  display:block;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.detail span{
+  display:block;
+  color:#777;
+  font-size:11px;
+  line-height:1.45;
+}
+
+/* =========================
+   FIRMA OFICIAL NEXID
+========================= */
+
+.nexid-brand{
+  position:relative;
+  overflow:hidden;
+  padding:53px 25px 31px;
+  background:#03182b;
+  text-align:center;
+}
+
+.nexid-brand::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(40,167,237,.11);
+  border-radius:50%;
+  top:-180px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.nexid-brand::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border:1px solid rgba(255,255,255,.055);
+  transform:rotate(45deg);
+  right:-130px;
+  bottom:-125px;
+}
+
+.nexid-lines{
+  position:absolute;
+  inset:0;
+  opacity:.07;
+  background-image:
+    linear-gradient(90deg,transparent 49%,#48b4ef 50%,transparent 51%);
+  background-size:33px 100%;
+}
+
+.nexid-watermark{
+  position:absolute;
+  width:430px;
+  max-width:none;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  opacity:.035;
+  filter:grayscale(1);
+}
+
+.powered{
+  position:relative;
+  z-index:3;
+  display:block;
+  width:285px;
+  max-width:88%;
+  height:auto;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+
+.created{
+  position:relative;
+  z-index:3;
+  margin-top:17px;
+  color:rgba(255,255,255,.42);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:390px){
+  .hero{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  .logo-wrap{
+    width:205px;
+  }
+
+  .intro{
+    padding-left:25px;
+    padding-right:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="texture"></div>
+    <div class="top-line"></div>
+
+    <div class="logo-wrap">
+      <img src="logo-ferlo.jpeg" alt="FerLo Servicios Inmobiliarios">
+    </div>
+
+    <div class="eyebrow">Servicios Inmobiliarios</div>
+
+    <h1>Fernanda</h1>
+
+    <div class="role">Directora</div>
+
+    <div class="company">
+      FerLo Servicios Inmobiliarios
+    </div>
+
+    <div class="hero-divider"></div>
+  </section>
+
+
+  <section class="intro">
+    <div class="intro-label">Conecta conmigo</div>
+
+    <h2>Soluciones inmobiliarias<br>con atención personalizada</h2>
+
+    <p>
+      Encuentra de forma rápida mis medios de contacto
+      y redes sociales.
+    </p>
+  </section>
+
+
+  <section class="actions">
+
+    <!-- WHATSAPP -->
+    <a class="action"
+       href="https://wa.me/524441543467"
+       target="_blank">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 9.6 9.6 0 0 1-4.1-.9L3 21l1.9-4.7A8.5 8.5 0 1 1 21 11.5z"/>
+          <path d="M8.5 8.5c.5 3 2 4.5 5 5"/>
+        </svg>
+      </div>
+
+      <div class="action-content">
+        <span class="action-title">WhatsApp</span>
+        <span class="action-subtitle">Envíame un mensaje</span>
+      </div>
+
+      <span class="arrow">›</span>
+    </a>
+
+
+    <!-- LLAMAR -->
+    <a class="action"
+       href="tel:+524441543467">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
+
+      <div class="action-content">
+        <span class="action-title">Llamar</span>
+        <span class="action-subtitle">444 154 3467</span>
+      </div>
+
+      <span class="arrow">›</span>
+    </a>
+
+
+    <!-- CORREO -->
+    <a class="action"
+       href="mailto:ferlovel15@gmail.com">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+          <path d="m22 6-10 7L2 6"/>
+        </svg>
+      </div>
+
+      <div class="action-content">
+        <span class="action-title">Correo electrónico</span>
+        <span class="action-subtitle">ferlovel15@gmail.com</span>
+      </div>
+
+      <span class="arrow">›</span>
+    </a>
+
+
+    <!-- INSTAGRAM -->
+    <a class="action"
+       href="https://www.instagram.com/ferlo_servicios_inmobiliarios?exln=MXdyMGVrYW9oMWY2Nw%3D%3D&utm_source=qr"
+       target="_blank">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1"/>
+        </svg>
+      </div>
+
+      <div class="action-content">
+        <span class="action-title">Instagram</span>
+        <span class="action-subtitle">@ferlo_servicios_inmobiliarios</span>
+      </div>
+
+      <span class="arrow">›</span>
+    </a>
+
+
+    <!-- FACEBOOK -->
+    <a class="action"
+       href="https://www.facebook.com/share/1BZyViMygC/?mibextid=wwXIfr"
+       target="_blank">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </div>
+
+      <div class="action-content">
+        <span class="action-title">Facebook</span>
+        <span class="action-subtitle">FerLo Servicios Inmobiliarios</span>
+      </div>
+
+      <span class="arrow">›</span>
+    </a>
+
+  </section>
+
+
+  <section class="realestate">
+
+    <small>FerLo Servicios Inmobiliarios</small>
+
+    <h3>
+      Tu próximo espacio comienza con una buena decisión.
+    </h3>
+
+    <p>
+      Atención profesional y personalizada para acompañarte
+      en tus necesidades inmobiliarias.
+    </p>
+
+  </section>
+
+
+  <section class="details">
+
+    <div class="details-title">
+      Información profesional
+    </div>
+
+    <div class="detail">
+      <div class="detail-dot"></div>
+      <div>
+        <strong>M. Fernanda López Velderrain</strong>
+        <span>Directora</span>
+      </div>
+    </div>
+
+    <div class="detail">
+      <div class="detail-dot"></div>
+      <div>
+        <strong>FerLo</strong>
+        <span>Servicios Inmobiliarios</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- FIRMA ESTÁNDAR NEXID -->
+  <footer class="nexid-brand">
+
+    <div class="nexid-lines"></div>
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="nexid-watermark"
+      alt=""
+    >
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="powered"
+      alt="Powered by NexID"
+    >
+
+    <p class="created">
+      Experiencia digital creada con NexID
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
