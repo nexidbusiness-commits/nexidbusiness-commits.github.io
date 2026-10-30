@@ -1,1 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1597a6">
 
+<title>Dolores Mejía | GSI</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --turquoise:#1597a6;
+  --turquoise-dark:#0c7884;
+  --gray:#5b5c60;
+  --dark:#202124;
+  --light:#f4f5f5;
+  --white:#ffffff;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#e9ecec;
+  color:var(--dark);
+  min-height:100vh;
+}
+
+.page{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+  background:#fff;
+  min-height:100vh;
+  overflow:hidden;
+  box-shadow:0 0 45px rgba(0,0,0,.10);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+  position:relative;
+  padding:55px 25px 42px;
+  text-align:center;
+  overflow:hidden;
+  background:linear-gradient(145deg,#4f5054,#252629);
+  color:#fff;
+}
+
+.hero-texture{
+  position:absolute;
+  inset:0;
+  opacity:.08;
+  pointer-events:none;
+  background-image:
+    linear-gradient(45deg,transparent 48%,#19a5b5 49%,#19a5b5 51%,transparent 52%),
+    linear-gradient(-45deg,transparent 48%,#fff 49%,#fff 51%,transparent 52%);
+  background-size:85px 85px;
+}
+
+.hero-circle{
+  position:absolute;
+  width:260px;
+  height:260px;
+  border:1px solid rgba(27,170,185,.16);
+  border-radius:50%;
+  top:-150px;
+  right:-100px;
+}
+
+.logo-wrap{
+  position:relative;
+  z-index:2;
+  width:225px;
+  margin:0 auto 28px;
+  padding:16px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.22);
+}
+
+.logo-wrap img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:9px;
+}
+
+.eyebrow{
+  position:relative;
+  z-index:2;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#54c4cf;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+h1{
+  position:relative;
+  z-index:2;
+  font-size:35px;
+  line-height:1.05;
+  letter-spacing:-1px;
+  margin-bottom:8px;
+  font-weight:800;
+}
+
+.role{
+  position:relative;
+  z-index:2;
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+  font-weight:500;
+}
+
+.hero-line{
+  position:relative;
+  z-index:2;
+  width:42px;
+  height:3px;
+  background:var(--turquoise);
+  margin:22px auto 0;
+  border-radius:10px;
+}
+
+/* =========================
+   PRESENTACIÓN
+========================= */
+
+.intro{
+  padding:35px 29px 26px;
+  text-align:center;
+}
+
+.intro-label{
+  color:var(--turquoise);
+  font-size:9px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.intro h2{
+  font-size:22px;
+  line-height:1.2;
+  letter-spacing:-.5px;
+  margin-bottom:12px;
+}
+
+.intro p{
+  max-width:390px;
+  margin:0 auto;
+  color:#777;
+  font-size:13px;
+  line-height:1.65;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.actions{
+  padding:7px 22px 34px;
+}
+
+.action{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:var(--dark);
+  background:#fff;
+  border:1px solid #e6e8e8;
+  border-radius:17px;
+  margin-bottom:12px;
+  min-height:72px;
+  padding:13px 16px;
+  box-shadow:0 7px 22px rgba(0,0,0,.045);
+  transition:.2s ease;
+}
+
+.action:active{
+  transform:scale(.985);
+}
+
+.icon{
+  flex:0 0 45px;
+  height:45px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,var(--turquoise),var(--turquoise-dark));
+  color:#fff;
+  margin-right:14px;
+  box-shadow:0 8px 18px rgba(21,151,166,.20);
+}
+
+.icon svg{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.action-content{
+  flex:1;
+  min-width:0;
+}
+
+.action-title{
+  display:block;
+  font-size:14px;
+  font-weight:750;
+  margin-bottom:3px;
+}
+
+.action-subtitle{
+  display:block;
+  color:#8a8e93;
+  font-size:10px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.arrow{
+  color:#a6aaae;
+  font-size:21px;
+  margin-left:10px;
+}
+
+/* =========================
+   BLOQUE GSI
+========================= */
+
+.business{
+  position:relative;
+  overflow:hidden;
+  margin:0 22px 36px;
+  border-radius:23px;
+  background:linear-gradient(145deg,#55565a,#303135);
+  color:#fff;
+  padding:30px 25px 31px;
+}
+
+.business::before{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  right:-125px;
+  top:-115px;
+  border:30px solid rgba(27,170,185,.08);
+  transform:rotate(45deg);
+}
+
+.business::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  left:-100px;
+  bottom:-105px;
+  border:22px solid rgba(255,255,255,.04);
+  transform:rotate(45deg);
+}
+
+.business > *{
+  position:relative;
+  z-index:2;
+}
+
+.business small{
+  display:block;
+  color:#58c7d1;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2.3px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.business h3{
+  max-width:330px;
+  font-size:22px;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+
+.business p{
+  max-width:340px;
+  color:rgba(255,255,255,.70);
+  font-size:12px;
+  line-height:1.65;
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.details{
+  padding:0 25px 38px;
+}
+
+.details-title{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2.2px;
+  color:#8c9094;
+  font-weight:800;
+  margin-bottom:17px;
+}
+
+.detail{
+  display:flex;
+  align-items:flex-start;
+  padding:14px 0;
+  border-bottom:1px solid #eef0f0;
+}
+
+.detail-dot{
+  width:8px;
+  height:8px;
+  background:var(--turquoise);
+  border-radius:50%;
+  margin-top:6px;
+  margin-right:13px;
+  flex:0 0 auto;
+}
+
+.detail strong{
+  display:block;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.detail span{
+  display:block;
+  color:#777;
+  font-size:11px;
+  line-height:1.45;
+}
+
+/* =========================
+   FIRMA ESTÁNDAR NEXID
+========================= */
+
+.nexid-brand{
+  position:relative;
+  overflow:hidden;
+  padding:53px 25px 31px;
+  background:#03182b;
+  text-align:center;
+}
+
+.nexid-brand::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(40,167,237,.11);
+  border-radius:50%;
+  top:-180px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.nexid-brand::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border:1px solid rgba(255,255,255,.055);
+  transform:rotate(45deg);
+  right:-130px;
+  bottom:-125px;
+}
+
+.nexid-lines{
+  position:absolute;
+  inset:0;
+  opacity:.07;
+  background-image:
+    linear-gradient(90deg,transparent 49%,#48b4ef 50%,transparent 51%);
+  background-size:33px 100%;
+}
+
+.nexid-watermark{
+  position:absolute;
+  width:430px;
+  max-width:none;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  opacity:.035;
+  filter:grayscale(1);
+}
+
+.powered{
+  position:relative;
+  z-index:3;
+  display:block;
+  width:285px;
+  max-width:88%;
+  height:auto;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+
+.created{
+  position:relative;
+  z-index:3;
+  margin-top:17px;
+  color:rgba(255,255,255,.42);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+@media(max-width:390px){
+  .hero{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  h1{
+    font-size:31px;
+  }
+
+  .logo-wrap{
+    width:215px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<section class="hero">
+
+  <div class="hero-texture"></div>
+  <div class="hero-circle"></div>
+
+  <div class="logo-wrap">
+    <img src="logo-dolores.jpeg" alt="GSI Gestoría y Servicios Inmobiliarios">
+  </div>
+
+  <div class="eyebrow">
+    Gestoría y Servicios Inmobiliarios
+  </div>
+
+  <h1>Dolores Mejía</h1>
+
+  <div class="role">
+    GSI
+  </div>
+
+  <div class="hero-line"></div>
+
+</section>
+
+
+<section class="intro">
+
+  <div class="intro-label">
+    Conecta conmigo
+  </div>
+
+  <h2>
+    Soluciones inmobiliarias<br>
+    a tu alcance
+  </h2>
+
+  <p>
+    Encuentra rápidamente mis medios de contacto,
+    redes sociales y ubicación.
+  </p>
+
+</section>
+
+
+<section class="actions">
+
+  <!-- WHATSAPP -->
+  <a class="action"
+     href="https://wa.me/524444409553"
+     target="_blank">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 9.6 9.6 0 0 1-4.1-.9L3 21l1.9-4.7A8.5 8.5 0 1 1 21 11.5z"/>
+        <path d="M8.5 8.5c.5 3 2 4.5 5 5"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">WhatsApp</span>
+      <span class="action-subtitle">Envíame un mensaje</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+
+  <!-- LLAMAR -->
+  <a class="action"
+     href="tel:+524444409553">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">Llamar</span>
+      <span class="action-subtitle">444 440 9553</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+
+  <!-- CORREO -->
+  <a class="action"
+     href="mailto:gsinmobiliario@gmail.com">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+        <path d="m22 6-10 7L2 6"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">Correo electrónico</span>
+      <span class="action-subtitle">gsinmobiliario@gmail.com</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+
+  <!-- INSTAGRAM -->
+  <a class="action"
+     href="https://www.instagram.com/gsinmobiliarioslp"
+     target="_blank">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">Instagram</span>
+      <span class="action-subtitle">@gsinmobiliarioslp</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+
+  <!-- FACEBOOK -->
+  <a class="action"
+     href="https://www.facebook.com/profile.php?id=100063495403653"
+     target="_blank">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">Facebook</span>
+      <span class="action-subtitle">GSI</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+
+  <!-- UBICACIÓN -->
+  <a class="action"
+     href="https://www.google.com/maps/search/?api=1&query=Hidalgo+89-A,+Villa+de+Reyes+Centro,+San+Luis+Potosi"
+     target="_blank">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+    </div>
+
+    <div class="action-content">
+      <span class="action-title">Cómo llegar</span>
+      <span class="action-subtitle">Hidalgo #89-A · Villa de Reyes Centro</span>
+    </div>
+
+    <span class="arrow">›</span>
+  </a>
+
+</section>
+
+
+<section class="business">
+
+  <small>
+    GSI · Gestoría y Servicios Inmobiliarios
+  </small>
+
+  <h3>
+    Acompañamiento para tus necesidades inmobiliarias.
+  </h3>
+
+  <p>
+    Atención personalizada en gestoría y servicios
+    inmobiliarios en San Luis Potosí.
+  </p>
+
+</section>
+
+
+<section class="details">
+
+  <div class="details-title">
+    Información profesional
+  </div>
+
+  <div class="detail">
+    <div class="detail-dot"></div>
+
+    <div>
+      <strong>Dolores Mejía</strong>
+      <span>GSI · Gestoría y Servicios Inmobiliarios</span>
+    </div>
+  </div>
+
+  <div class="detail">
+    <div class="detail-dot"></div>
+
+    <div>
+      <strong>Ubicación</strong>
+      <span>Villa de Reyes, San Luis Potosí</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FIRMA ESTÁNDAR NEXID -->
+
+<footer class="nexid-brand">
+
+  <div class="nexid-lines"></div>
+
+  <img
+    src="powered-by-nexid.jpeg"
+    class="nexid-watermark"
+    alt=""
+  >
+
+  <img
+    src="powered-by-nexid.jpeg"
+    class="powered"
+    alt="Powered by NexID"
+  >
+
+  <p class="created">
+    Experiencia digital creada con NexID
+  </p>
+
+</footer>
+
+</main>
+
+</body>
+</html>
