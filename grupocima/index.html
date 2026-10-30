@@ -1,1 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b5121b">
 
+  <title>Neil Castro | Grupo MC Inmobiliaria</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    :root{
+      --red:#b5121b;
+      --red-dark:#850b12;
+      --black:#151515;
+      --gray:#6d6d6d;
+      --light:#f5f5f5;
+      --white:#ffffff;
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:#ececec;
+      color:var(--black);
+    }
+
+    .page{
+      width:100%;
+      max-width:520px;
+      margin:0 auto;
+      background:#fff;
+      min-height:100vh;
+      box-shadow:0 0 35px rgba(0,0,0,.12);
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:46px 26px 42px;
+      text-align:center;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(181,18,27,.18), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(181,18,27,.15), transparent 32%),
+        linear-gradient(145deg,#ffffff 0%,#f6f6f6 100%);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:230px;
+      height:230px;
+      border:1px solid rgba(181,18,27,.10);
+      border-radius:50%;
+      top:-125px;
+      right:-100px;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:170px;
+      height:170px;
+      border:1px solid rgba(0,0,0,.05);
+      transform:rotate(45deg);
+      bottom:-120px;
+      left:-100px;
+    }
+
+    .logo-wrap{
+      position:relative;
+      z-index:2;
+      width:190px;
+      min-height:115px;
+      margin:0 auto 28px;
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 12px 32px rgba(0,0,0,.10);
+    }
+
+    .logo-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .eyebrow{
+      position:relative;
+      z-index:2;
+      color:var(--red);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .hero h1{
+      position:relative;
+      z-index:2;
+      font-size:34px;
+      line-height:1.08;
+      font-weight:800;
+      color:var(--black);
+      margin-bottom:9px;
+    }
+
+    .role{
+      position:relative;
+      z-index:2;
+      color:var(--gray);
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* INTRO */
+
+    .intro{
+      padding:38px 28px 22px;
+      text-align:center;
+    }
+
+    .section-label{
+      color:var(--red);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .intro h2{
+      font-size:25px;
+      line-height:1.18;
+      margin-bottom:13px;
+    }
+
+    .intro p{
+      max-width:400px;
+      margin:0 auto;
+      color:var(--gray);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    /* BOTONES */
+
+    .actions{
+      padding:14px 25px 38px;
+      display:grid;
+      gap:12px;
+    }
+
+    .action{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      width:100%;
+      padding:16px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      background:#fff;
+      color:var(--black);
+      border:1px solid #e7e7e7;
+      box-shadow:0 8px 22px rgba(0,0,0,.055);
+      transition:.2s ease;
+    }
+
+    .action:active{
+      transform:scale(.985);
+    }
+
+    .action-icon{
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:var(--red);
+      color:#fff;
+      font-size:19px;
+    }
+
+    .action-text{
+      text-align:left;
+    }
+
+    .action-text strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:3px;
+    }
+
+    .action-text span{
+      display:block;
+      color:var(--gray);
+      font-size:11px;
+    }
+
+    /* BLOQUE PROFESIONAL */
+
+    .professional{
+      margin:0 25px 38px;
+      padding:29px 24px;
+      border-radius:20px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(181,18,27,.55),transparent 42%),
+        linear-gradient(145deg,#111,#242424);
+      box-shadow:0 18px 38px rgba(0,0,0,.16);
+    }
+
+    .professional .mini{
+      color:#efb1b5;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .professional h3{
+      font-size:22px;
+      line-height:1.25;
+      margin-bottom:12px;
+    }
+
+    .professional p{
+      color:rgba(255,255,255,.72);
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    /* INFORMACIÓN */
+
+    .details{
+      padding:0 25px 43px;
+    }
+
+    .detail{
+      padding:17px 0;
+      border-bottom:1px solid #ececec;
+    }
+
+    .detail:last-child{
+      border-bottom:0;
+    }
+
+    .detail-label{
+      color:var(--gray);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+
+    .detail-value{
+      color:var(--black);
+      font-size:14px;
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    /* FIRMA ESTÁNDAR NEXID */
+
+    .nexid-brand{
+      position:relative;
+      overflow:hidden;
+      padding:53px 25px 31px;
+      background:#03182b;
+      text-align:center;
+    }
+
+    .nexid-brand::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border:1px solid rgba(40,167,237,.11);
+      border-radius:50%;
+      top:-180px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .nexid-brand::after{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border:1px solid rgba(255,255,255,.055);
+      transform:rotate(45deg);
+      right:-130px;
+      bottom:-125px;
+    }
+
+    .nexid-lines{
+      position:absolute;
+      inset:0;
+      opacity:.07;
+      background-image:
+        linear-gradient(90deg,transparent 49%,#48b4ef 50%,transparent 51%);
+      background-size:33px 100%;
+    }
+
+    .nexid-watermark{
+      position:absolute;
+      width:430px;
+      max-width:none;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      opacity:.035;
+      filter:grayscale(1);
+    }
+
+    .powered{
+      position:relative;
+      z-index:3;
+      display:block;
+      width:285px;
+      max-width:88%;
+      height:auto;
+      margin:0 auto;
+      border-radius:10px;
+      box-shadow:0 12px 35px rgba(0,0,0,.22);
+    }
+
+    .created{
+      position:relative;
+      z-index:3;
+      margin-top:17px;
+      color:rgba(255,255,255,.42);
+      font-size:9px;
+      font-weight:600;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:380px){
+      .hero h1{
+        font-size:30px;
+      }
+
+      .intro h2{
+        font-size:22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <section class="hero">
+
+    <div class="logo-wrap">
+      <img src="logo-neil.jpeg" alt="Grupo MC Inmobiliaria">
+    </div>
+
+    <p class="eyebrow">Grupo MC Inmobiliaria</p>
+
+    <h1>Neil Castro</h1>
+
+    <p class="role">Servicios Inmobiliarios</p>
+
+  </section>
+
+
+  <section class="intro">
+
+    <p class="section-label">Conecta conmigo</p>
+
+    <h2>Tu contacto inmobiliario en un solo lugar.</h2>
+
+    <p>
+      Atención directa para ayudarte con tus necesidades inmobiliarias
+      en San Luis Potosí.
+    </p>
+
+  </section>
+
+
+  <section class="actions">
+
+    <a class="action"
+       href="https://wa.me/524441427636"
+       target="_blank">
+
+      <div class="action-icon">✆</div>
+
+      <div class="action-text">
+        <strong>WhatsApp</strong>
+        <span>Enviar mensaje</span>
+      </div>
+
+    </a>
+
+
+    <a class="action"
+       href="tel:+524441427636">
+
+      <div class="action-icon">☎️</div>
+
+      <div class="action-text">
+        <strong>Llamar</strong>
+        <span>444 142 7636</span>
+      </div>
+
+    </a>
+
+
+    <a class="action"
+       href="mailto:neil_castro@grupomc-inmobiliaria.com">
+
+      <div class="action-icon">✉️</div>
+
+      <div class="action-text">
+        <strong>Correo electrónico</strong>
+        <span>Enviar correo</span>
+      </div>
+
+    </a>
+
+
+    <a class="action"
+       href="https://www.grupomc-inmobiliaria.com"
+       target="_blank">
+
+      <div class="action-icon">◎</div>
+
+      <div class="action-text">
+        <strong>Página web</strong>
+        <span>Visitar Grupo MC Inmobiliaria</span>
+      </div>
+
+    </a>
+
+
+    <a class="action"
+       href="https://www.google.com/maps/search/?api=1&query=Av.+Seminario+374,+Fracc.+Las+Mercedes,+San+Luis+Potosi,+SLP"
+       target="_blank">
+
+      <div class="action-icon">⌖</div>
+
+      <div class="action-text">
+        <strong>Cómo llegar</strong>
+        <span>Abrir ubicación</span>
+      </div>
+
+    </a>
+
+  </section>
+
+
+  <section class="professional">
+
+    <p class="mini">Grupo MC · Inmobiliaria</p>
+
+    <h3>Experiencia y atención para tus operaciones inmobiliarias.</h3>
+
+    <p>
+      Acompañamiento profesional y atención personalizada para ayudarte
+      durante tu proceso inmobiliario.
+    </p>
+
+  </section>
+
+
+  <section class="details">
+
+    <div class="detail">
+      <p class="detail-label">Contacto</p>
+      <p class="detail-value">Neil Castro</p>
+    </div>
+
+    <div class="detail">
+      <p class="detail-label">Empresa</p>
+      <p class="detail-value">Grupo MC Inmobiliaria</p>
+    </div>
+
+    <div class="detail">
+      <p class="detail-label">Teléfono</p>
+      <p class="detail-value">444 142 7636</p>
+    </div>
+
+    <div class="detail">
+      <p class="detail-label">Ubicación</p>
+      <p class="detail-value">
+        Av. Seminario #374, Fracc. Las Mercedes,<br>
+        San Luis Potosí, S.L.P.
+      </p>
+    </div>
+
+  </section>
+
+
+  <footer class="nexid-brand">
+
+    <div class="nexid-lines"></div>
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="nexid-watermark"
+      alt=""
+    >
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="powered"
+      alt="Powered by NexID"
+    >
+
+    <p class="created">
+      Experiencia digital creada con NexID
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
