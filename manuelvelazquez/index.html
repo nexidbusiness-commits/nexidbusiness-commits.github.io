@@ -1,531 +1,1054 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Manuel Velazquez | Óptica Evan's</title>
+<title>Manuel Velazquez | Óptica Evan's</title>
 
-  <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+<meta name="description"
+content="Manuel Velazquez - Aux. Optometría en Óptica Evan's">
 
-    :root{
-      --primary:#111111;
-      --secondary:#292929;
-      --accent:#555555;
-      --light:#f5f5f5;
-      --white:#ffffff;
-      --text:#1c1c1c;
-      --muted:#707070;
-    }
+<style>
 
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:#ffffff;
-      color:var(--text);
-      line-height:1.5;
-    }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    main{
-      width:100%;
-      overflow:hidden;
-    }
+:root{
+  --navy:#111111;
+  --deep:#090909;
+  --blue:#555555;
+  --orange:#777777;
+  --white:#ffffff;
+  --soft:#f5f5f5;
+  --text:#1c1c1c;
+  --gray:#707070;
+  --line:#e3e3e3;
+}
 
-    /* HERO */
+html{
+  scroll-behavior:smooth;
+}
 
-    .hero{
-      position:relative;
-      min-height:430px;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,.08), transparent 28%),
-        linear-gradient(145deg,#090909 0%,#202020 55%,#090909 100%);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:55px 25px 50px;
-      color:#fff;
-      overflow:hidden;
-    }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#e9eef3;
+  color:var(--text);
+}
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      width:320px;
-      height:320px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:50%;
-      top:-190px;
-      right:-100px;
-    }
+.page{
+  width:100%;
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  background:white;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(0,0,0,.10);
+}
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      border:1px solid rgba(255,255,255,.05);
-      transform:rotate(45deg);
-      left:-140px;
-      bottom:-130px;
-    }
 
-    .logo-wrap{
-      position:relative;
-      z-index:2;
-      width:150px;
-      height:150px;
-      background:#fff;
-      border-radius:24px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:15px;
-      margin-bottom:27px;
-      box-shadow:0 18px 45px rgba(0,0,0,.28);
-    }
+/* =========================
+   HERO
+========================= */
 
-    .logo-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:14px;
-    }
+.hero{
+  min-height:440px;
+  position:relative;
+  overflow:hidden;
+  padding:34px 27px 45px;
 
-    .eyebrow{
-      position:relative;
-      z-index:2;
-      font-size:11px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:2.5px;
-      opacity:.72;
-      margin-bottom:9px;
-    }
+  background:
+    radial-gradient(circle at 90% 15%,
+      rgba(255,255,255,.10),
+      transparent 32%),
 
-    .hero h1{
-      position:relative;
-      z-index:2;
-      font-size:34px;
-      line-height:1.1;
-      font-weight:750;
-      margin-bottom:9px;
-    }
+    radial-gradient(circle at 10% 90%,
+      rgba(255,255,255,.06),
+      transparent 30%),
 
-    .hero .role{
-      position:relative;
-      z-index:2;
-      font-size:15px;
-      color:rgba(255,255,255,.78);
-      font-weight:500;
-    }
+    linear-gradient(145deg,
+      #090909 0%,
+      #202020 55%,
+      #111111 100%);
+}
 
-    /* INTRO */
 
-    .intro{
-      max-width:650px;
-      margin:auto;
-      padding:50px 25px 22px;
-      text-align:center;
-    }
+/* TEXTURA GEOMÉTRICA */
 
-    .section-label{
-      font-size:10px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:2.4px;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
+.hero-pattern{
+  position:absolute;
+  inset:0;
+  opacity:.10;
+  pointer-events:none;
 
-    .intro h2{
-      font-size:27px;
-      line-height:1.2;
-      margin-bottom:14px;
-      color:#111;
-    }
+  background-image:
+    linear-gradient(30deg,
+      transparent 48%,
+      rgba(255,255,255,.32) 49%,
+      rgba(255,255,255,.32) 50%,
+      transparent 51%),
 
-    .intro p{
-      max-width:510px;
-      margin:auto;
-      font-size:14px;
-      color:#707070;
-      line-height:1.7;
-    }
+    linear-gradient(150deg,
+      transparent 48%,
+      rgba(255,255,255,.22) 49%,
+      rgba(255,255,255,.22) 50%,
+      transparent 51%);
 
-    /* BOTONES */
+  background-size:72px 125px;
+}
 
-    .actions{
-      max-width:590px;
-      margin:auto;
-      padding:24px 22px 55px;
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:13px;
-    }
 
-    .action{
-      text-decoration:none;
-      background:#fff;
-      color:#161616;
-      min-height:105px;
-      border:1px solid #e6e6e6;
-      border-radius:20px;
-      padding:19px 13px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      box-shadow:0 7px 22px rgba(0,0,0,.055);
-      transition:.2s ease;
-    }
+/* POLÍGONOS DECORATIVOS */
 
-    .action:active{
-      transform:scale(.97);
-    }
+.geo-one{
+  position:absolute;
+  width:250px;
+  height:250px;
+  right:-125px;
+  top:80px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.16);
+}
 
-    .icon{
-      width:43px;
-      height:43px;
-      border-radius:50%;
-      background:#111;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:9px;
-      font-size:19px;
-      font-weight:700;
-    }
+.geo-two{
+  position:absolute;
+  width:175px;
+  height:175px;
+  right:-85px;
+  top:118px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.20);
+}
 
-    .action span{
-      font-size:12px;
-      font-weight:750;
-    }
+.geo-three{
+  position:absolute;
+  width:120px;
+  height:120px;
+  left:-72px;
+  bottom:-30px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.14);
+}
 
-    /* BLOQUE PROFESIONAL */
 
-    .professional{
-      background:#f5f5f5;
-      padding:55px 25px;
-    }
+/* LOGO */
 
-    .professional-inner{
-      max-width:600px;
-      margin:auto;
-    }
+.logo-card{
+  position:relative;
+  z-index:5;
 
-    .professional .small{
-      font-size:10px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      color:#777;
-      margin-bottom:12px;
-    }
+  width:100%;
+  max-width:285px;
 
-    .professional h3{
-      font-size:25px;
-      line-height:1.25;
-      color:#111;
-      margin-bottom:15px;
-    }
+  background:rgba(255,255,255,.97);
+  padding:17px 20px;
 
-    .professional p{
-      font-size:14px;
-      line-height:1.7;
-      color:#696969;
-    }
+  border-radius:16px;
 
-    /* DATOS */
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.16);
 
-    .details{
-      max-width:600px;
-      margin:auto;
-      padding:48px 25px 55px;
-    }
+  margin-bottom:43px;
+}
 
-    .detail{
-      padding:19px 0;
-      border-bottom:1px solid #ececec;
-    }
+.logo-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:120px;
+  object-fit:contain;
+}
 
-    .detail:last-child{
-      border-bottom:none;
-    }
 
-    .detail-label{
-      font-size:10px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1.8px;
-      color:#999;
-      margin-bottom:5px;
-    }
+/* PERFIL */
 
-    .detail-value{
-      font-size:15px;
-      font-weight:650;
-      color:#222;
-    }
+.profile{
+  position:relative;
+  z-index:5;
+}
 
-    /* FIRMA NEXID MAESTRA */
+.mini-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 
-    .nexid-brand{
-      position:relative;
-      overflow:hidden;
-      padding:53px 25px 31px;
-      background:#03182b;
-      text-align:center;
-    }
+  padding:7px 12px;
 
-    .nexid-brand::before{
-      content:"";
-      position:absolute;
-      width:280px;
-      height:280px;
-      border:1px solid rgba(40,167,237,.11);
-      border-radius:50%;
-      top:-180px;
-      left:50%;
-      transform:translateX(-50%);
-    }
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:100px;
 
-    .nexid-brand::after{
-      content:"";
-      position:absolute;
-      width:190px;
-      height:190px;
-      border:1px solid rgba(255,255,255,.055);
-      transform:rotate(45deg);
-      right:-130px;
-      bottom:-125px;
-    }
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(10px);
 
-    .nexid-lines{
-      position:absolute;
-      inset:0;
-      opacity:.07;
-      background-image:
-        linear-gradient(90deg,transparent 49%,#48b4ef 50%,transparent 51%);
-      background-size:33px 100%;
-    }
+  color:rgba(255,255,255,.78);
 
-    .nexid-watermark{
-      position:absolute;
-      width:430px;
-      max-width:none;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      opacity:.035;
-      filter:grayscale(1);
-    }
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
 
-    .powered{
-      position:relative;
-      z-index:3;
-      display:block;
-      width:285px;
-      max-width:88%;
-      height:auto;
-      margin:0 auto;
-      border-radius:10px;
-      box-shadow:0 12px 35px rgba(0,0,0,.22);
-    }
+  margin-bottom:17px;
+}
 
-    .created{
-      position:relative;
-      z-index:3;
-      margin-top:17px;
-      color:rgba(255,255,255,.42);
-      font-size:9px;
-      font-weight:600;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-    }
+.mini-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ffffff;
+}
 
-    @media(max-width:380px){
-      .hero h1{
-        font-size:30px;
-      }
+.profile h1{
+  color:white;
+  font-size:42px;
+  line-height:1;
+  letter-spacing:-1.3px;
+  margin-bottom:13px;
+}
 
-      .actions{
-        padding-left:17px;
-        padding-right:17px;
-        gap:10px;
-      }
-    }
-  </style>
+.job{
+  color:white;
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.business{
+  color:rgba(255,255,255,.68);
+  font-size:14px;
+  line-height:1.5;
+  max-width:330px;
+}
+
+.profile-accent{
+  width:68px;
+  height:4px;
+  margin-top:24px;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #777777
+  );
+
+  border-radius:20px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.actions{
+  position:relative;
+  z-index:10;
+
+  padding:0 21px 35px;
+  margin-top:-27px;
+}
+
+
+/* WHATSAPP PRINCIPAL */
+
+.whatsapp{
+  width:100%;
+  min-height:78px;
+
+  display:flex;
+  align-items:center;
+
+  padding:16px 20px;
+  gap:15px;
+
+  text-decoration:none;
+
+  background:white;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.16);
+
+  border:1px solid rgba(0,0,0,.08);
+
+  margin-bottom:13px;
+
+  transition:.18s ease;
+}
+
+.whatsapp:active{
+  transform:scale(.98);
+}
+
+.whatsapp-icon{
+  flex:none;
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:var(--navy);
+  color:white;
+}
+
+.whatsapp-icon svg{
+  width:24px;
+  height:24px;
+}
+
+.whatsapp-copy{
+  flex:1;
+}
+
+.whatsapp-small{
+  display:block;
+  color:var(--gray);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  margin-bottom:3px;
+}
+
+.whatsapp-title{
+  color:var(--navy);
+  font-size:17px;
+  font-weight:750;
+}
+
+.arrow{
+  color:#555555;
+  font-size:25px;
+  font-weight:300;
+}
+
+
+/* GRID */
+
+.action-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+.action{
+  min-height:104px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  padding:17px;
+
+  background:#f8fafc;
+
+  border:1px solid #e5ebf0;
+  border-radius:17px;
+
+  text-decoration:none;
+
+  transition:.18s ease;
+}
+
+.action:active{
+  transform:scale(.97);
+}
+
+.action-icon{
+  width:39px;
+  height:39px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  background:white;
+
+  color:var(--navy);
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.08);
+}
+
+.action-icon svg{
+  width:20px;
+  height:20px;
+}
+
+.action-name{
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+}
+
+
+/* FACEBOOK DESTACADO */
+
+.action.web{
+  background:#111111;
+  border:none;
+}
+
+.action.web .action-icon{
+  background:rgba(255,255,255,.17);
+  color:white;
+  box-shadow:none;
+}
+
+.action.web .action-name{
+  color:white;
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.statement{
+  position:relative;
+  overflow:hidden;
+
+  margin:15px 21px 0;
+
+  padding:45px 27px 42px;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111111,
+      #292929
+    );
+
+  color:white;
+}
+
+.statement-grid{
+  position:absolute;
+  inset:0;
+  opacity:.08;
+
+  background-image:
+    linear-gradient(
+      30deg,
+      transparent 48%,
+      white 49%,
+      white 50%,
+      transparent 51%
+    ),
+
+    linear-gradient(
+      150deg,
+      transparent 48%,
+      white 49%,
+      white 50%,
+      transparent 51%
+    );
+
+  background-size:52px 90px;
+}
+
+.statement-content{
+  position:relative;
+  z-index:2;
+}
+
+.statement-label{
+  color:#bdbdbd;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  margin-bottom:15px;
+}
+
+.statement h2{
+  font-size:29px;
+  line-height:1.16;
+  letter-spacing:-.5px;
+
+  margin-bottom:21px;
+}
+
+.statement p{
+  color:rgba(255,255,255,.72);
+
+  font-size:15px;
+  line-height:1.75;
+}
+
+.statement-line{
+  width:55px;
+  height:4px;
+
+  background:#ffffff;
+
+  border-radius:20px;
+
+  margin-top:25px;
+}
+
+
+/* =========================
+   UBICACIÓN
+========================= */
+
+.location{
+  padding:52px 22px 45px;
+}
+
+.location-label{
+  color:#555555;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  margin-bottom:10px;
+}
+
+.location h3{
+  color:var(--navy);
+
+  font-size:27px;
+  letter-spacing:-.5px;
+
+  margin-bottom:11px;
+}
+
+.address{
+  color:var(--gray);
+
+  font-size:14px;
+  line-height:1.7;
+
+  margin-bottom:21px;
+}
+
+.map{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:17px 18px;
+
+  text-decoration:none;
+
+  border-radius:14px;
+
+  background:#f5f5f5;
+  border:1px solid #e4e4e4;
+
+  color:var(--navy);
+
+  font-size:14px;
+  font-weight:700;
+}
+
+.map-arrow{
+  color:#555555;
+  font-size:21px;
+}
+
+
+/* =========================
+   NEXID BRAND AREA
+========================= */
+
+.nexid-brand{
+  position:relative;
+  overflow:hidden;
+
+  padding:53px 25px 31px;
+
+  background:#03182b;
+
+  text-align:center;
+}
+
+
+/* textura inspirada en NexID */
+
+.nexid-lines{
+  position:absolute;
+  inset:0;
+
+  opacity:.14;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255,179,70,.45) 30.5%,
+      transparent 31%
+    ),
+
+    linear-gradient(
+      60deg,
+      transparent 64%,
+      rgba(0,164,255,.45) 64.5%,
+      transparent 65%
+    );
+
+  background-size:90px 90px;
+}
+
+
+/* marca de agua */
+
+.nexid-watermark{
+  position:absolute;
+
+  width:470px;
+  max-width:none;
+
+  left:50%;
+  top:50%;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-4deg);
+
+  opacity:.045;
+
+  pointer-events:none;
+}
+
+
+/* logo visible */
+
+.powered{
+  position:relative;
+  z-index:3;
+
+  display:block;
+
+  width:285px;
+  max-width:88%;
+
+  margin:0 auto;
+
+  border-radius:10px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.22);
+}
+
+.created{
+  position:relative;
+  z-index:3;
+
+  margin-top:17px;
+
+  color:rgba(255,255,255,.42);
+
+  font-size:9px;
+  font-weight:600;
+
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:360px){
+
+  .profile h1{
+    font-size:37px;
+  }
+
+  .statement h2{
+    font-size:26px;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<main>
+<main class="page">
 
-  <section class="hero">
 
-    <div class="logo-wrap">
-      <img src="logo-evans.jpeg" alt="Óptica Evan's">
+<!-- ======================
+     HERO
+====================== -->
+
+<section class="hero">
+
+  <div class="hero-pattern"></div>
+  <div class="geo-one"></div>
+  <div class="geo-two"></div>
+  <div class="geo-three"></div>
+
+
+  <div class="logo-card">
+
+    <img
+      src="logo-evans.jpeg"
+      alt="Óptica Evan's">
+
+  </div>
+
+
+  <div class="profile">
+
+    <div class="mini-label">
+      <span class="mini-dot"></span>
+      Óptica Evan's
     </div>
-
-    <div class="eyebrow">Óptica Evan's</div>
 
     <h1>Manuel Velazquez</h1>
 
-    <div class="role">Aux. Optometría</div>
+    <p class="job">
+      Aux. Optometría
+    </p>
 
-  </section>
+    <p class="business">
+      Óptica Evan's
+    </p>
+
+    <div class="profile-accent"></div>
+
+  </div>
+
+</section>
 
 
-  <section class="intro">
 
-    <div class="section-label">Conecta conmigo</div>
+<!-- ======================
+     CONTACTO
+====================== -->
 
-    <h2>Óptica Evan's</h2>
+<section class="actions">
+
+
+<!-- WHATSAPP -->
+
+<a
+  href="https://wa.me/524446368332"
+  class="whatsapp"
+  target="_blank"
+  rel="noopener">
+
+  <div class="whatsapp-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8
+      8.5 8.5 0 0 1-7.6 4.7
+      8.38 8.38 0 0 1-3.8-.9
+      L3 21l1.9-5.7
+      A8.38 8.38 0 0 1 4 11.5
+      a8.5 8.5 0 0 1 4.7-7.6
+      A8.38 8.38 0 0 1 12.5 3
+      H13
+      a8.48 8.48 0 0 1 8 8
+      v.5z"/>
+
+    </svg>
+
+  </div>
+
+  <div class="whatsapp-copy">
+
+    <span class="whatsapp-small">
+      Contacto directo
+    </span>
+
+    <span class="whatsapp-title">
+      Escríbeme por WhatsApp
+    </span>
+
+  </div>
+
+  <span class="arrow">→</span>
+
+</a>
+
+
+
+<div class="action-grid">
+
+
+<!-- LLAMAR -->
+
+<a
+  href="tel:+524446368332"
+  class="action">
+
+  <span class="action-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <path d="M22 16.92v3
+      a2 2 0 0 1-2.18 2
+      19.79 19.79 0 0 1-8.63-3.07
+      19.5 19.5 0 0 1-6-6
+      19.79 19.79 0 0 1-3.07-8.67
+      A2 2 0 0 1 4.11 2h3
+      a2 2 0 0 1 2 1.72
+      12.84 12.84 0 0 0 .7 2.81
+      2 2 0 0 1-.45 2.11
+      L8.09 9.91
+      a16 16 0 0 0 6 6
+      l1.27-1.27
+      a2 2 0 0 1 2.11-.45
+      12.84 12.84 0 0 0 2.81.7
+      A2 2 0 0 1 22 16.92z"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Llamar
+  </span>
+
+</a>
+
+
+
+<!-- CORREO -->
+
+<a
+  href="mailto:optievans@gmail.com"
+  class="action">
+
+  <span class="action-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"/>
+
+      <path d="M3 7l9 6 9-6"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Correo
+  </span>
+
+</a>
+
+
+
+<!-- INSTAGRAM -->
+
+<a
+  href="https://www.instagram.com/optievans?mdxt=MWJmbzRwZTZ0d2xuOQ=="
+  class="action"
+  target="_blank"
+  rel="noopener">
+
+  <span class="action-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"/>
+
+      <circle
+        cx="12"
+        cy="12"
+        r="4"/>
+
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r=".7"
+        fill="currentColor"
+        stroke="none"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Instagram
+  </span>
+
+</a>
+
+
+
+<!-- FACEBOOK -->
+
+<a
+  href="https://www.facebook.com/share/1DnbkrZErU/"
+  class="action web"
+  target="_blank"
+  rel="noopener">
+
+  <span class="action-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <path d="M14 8h3V4h-3
+      c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9
+      c0-.7.3-1 1-1z"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Facebook
+  </span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ======================
+     MENSAJE CORPORATIVO
+====================== -->
+
+<section class="statement">
+
+  <div class="statement-grid"></div>
+
+  <div class="statement-content">
+
+    <p class="statement-label">
+      Óptica Evan's
+    </p>
+
+    <h2>
+      Tu visión, nuestra atención.
+    </h2>
 
     <p>
-      Atención y servicio óptico profesional.
-      Comunícate directamente o visita nuestras redes sociales.
+      Atención personalizada para ayudarte con tus necesidades
+      de salud visual y servicios ópticos.
     </p>
 
-  </section>
+    <div class="statement-line"></div>
+
+  </div>
+
+</section>
 
 
-  <section class="actions">
 
-    <a class="action"
-       href="https://wa.me/524446368332"
-       target="_blank">
+<!-- ======================
+     UBICACIÓN
+====================== -->
 
-      <div class="icon">W</div>
-      <span>WhatsApp</span>
+<section class="location">
 
-    </a>
+  <p class="location-label">
+    Óptica Evan's
+  </p>
 
+  <h3>
+    Encuéntranos
+  </h3>
 
-    <a class="action"
-       href="tel:+524446368332">
+  <p class="address">
+    Calle de las Huertas #119, Fracc. San Andrés<br>
+    Soledad de Graciano Sánchez, San Luis Potosí
+  </p>
 
-      <div class="icon">☎️</div>
-      <span>Llamar</span>
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Calle+de+las+Huertas+119,+Fracc.+San+Andres,+Soledad+de+Graciano+Sanchez,+San+Luis+Potosi,+Mexico"
+    class="map"
+    target="_blank"
+    rel="noopener">
 
-    </a>
+    <span>Abrir ubicación</span>
 
+    <span class="map-arrow">→</span>
 
-    <a class="action"
-       href="mailto:optievans@gmail.com">
+  </a>
 
-      <div class="icon">✉️</div>
-      <span>Correo</span>
-
-    </a>
-
-
-    <a class="action"
-       href="https://www.instagram.com/optievans?mdxt=MWJmbzRwZTZ0d2xuOQ=="
-       target="_blank">
-
-      <div class="icon">◎</div>
-      <span>Instagram</span>
-
-    </a>
+</section>
 
 
-    <a class="action"
-       href="https://www.facebook.com/share/1DnbkrZErU/"
-       target="_blank">
 
-      <div class="icon">f</div>
-      <span>Facebook</span>
+<!-- ======================
+     NEXID
+====================== -->
 
-    </a>
+<footer class="nexid-brand">
 
+  <div class="nexid-lines"></div>
 
-    <a class="action"
-       href="https://www.google.com/maps/search/?api=1&query=Calle+de+las+Huertas+119,+Fracc.+San+Andres,+Soledad+de+Graciano+Sanchez,+San+Luis+Potosi,+Mexico"
-       target="_blank">
+  <img
+    src="powered-by-nexid.jpeg"
+    alt=""
+    class="nexid-watermark">
 
-      <div class="icon">⌖</div>
-      <span>Ubicación</span>
+  <img
+    src="powered-by-nexid.jpeg"
+    alt="Powered by NexID"
+    class="powered">
 
-    </a>
+  <p class="created">
+    Experiencia digital creada con NexID
+  </p>
 
-  </section>
+</footer>
 
-
-  <section class="professional">
-
-    <div class="professional-inner">
-
-      <div class="small">Óptica Evan's</div>
-
-      <h3>Tu visión, nuestra atención.</h3>
-
-      <p>
-        Atención personalizada para ayudarte con tus necesidades
-        de salud visual y servicios ópticos.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <section class="details">
-
-    <div class="detail">
-      <div class="detail-label">Nombre</div>
-      <div class="detail-value">Manuel Velazquez</div>
-    </div>
-
-    <div class="detail">
-      <div class="detail-label">Empresa</div>
-      <div class="detail-value">Óptica Evan's</div>
-    </div>
-
-    <div class="detail">
-      <div class="detail-label">Profesión</div>
-      <div class="detail-value">Aux. Optometría</div>
-    </div>
-
-    <div class="detail">
-      <div class="detail-label">Ubicación</div>
-      <div class="detail-value">
-        Calle de las Huertas #119, Fracc. San Andrés,
-        Soledad de Graciano Sánchez, San Luis Potosí
-      </div>
-    </div>
-
-  </section>
-
-
-  <footer class="nexid-brand">
-
-    <div class="nexid-lines"></div>
-
-    <img
-      src="powered-by-nexid.jpeg"
-      class="nexid-watermark"
-      alt="">
-
-    <img
-      src="powered-by-nexid.jpeg"
-      class="powered"
-      alt="Powered by NexID">
-
-    <p class="created">
-      Experiencia digital creada con NexID
-    </p>
-
-  </footer>
 
 </main>
 
