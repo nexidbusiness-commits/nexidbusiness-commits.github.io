@@ -1,1 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263442">
 
+  <title>Fernando Díaz De León | Ventas Eufer</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    :root{
+      --green:#24963f;
+      --green-dark:#14752d;
+      --green-light:#39ad55;
+      --yellow:#ffd629;
+      --dark:#263442;
+      --deep:#1d2934;
+      --white:#ffffff;
+      --soft:#f5f8f6;
+      --text:#1e2a23;
+      --gray:#6d756f;
+      --line:#e1e8e3;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:#ffffff;
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    main{
+      width:100%;
+      overflow:hidden;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      position:relative;
+      min-height:470px;
+      background:
+        radial-gradient(circle at 85% 15%,rgba(255,214,41,.15),transparent 28%),
+        radial-gradient(circle at 10% 90%,rgba(36,150,63,.25),transparent 30%),
+        linear-gradient(145deg,#1d2934 0%,#263442 55%,#17212a 100%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:58px 25px 52px;
+      color:#fff;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:330px;
+      height:330px;
+      border:1px solid rgba(57,173,85,.18);
+      border-radius:50%;
+      top:-190px;
+      right:-110px;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:230px;
+      height:230px;
+      border:1px solid rgba(255,214,41,.12);
+      transform:rotate(45deg);
+      left:-145px;
+      bottom:-135px;
+    }
+
+    .logo-wrap{
+      position:relative;
+      z-index:2;
+      width:190px;
+      height:150px;
+      background:#fff;
+      border-radius:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px;
+      margin-bottom:28px;
+      box-shadow:0 18px 45px rgba(0,0,0,.30);
+    }
+
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:13px;
+    }
+
+    .eyebrow{
+      position:relative;
+      z-index:2;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:2.6px;
+      color:var(--yellow);
+      margin-bottom:10px;
+    }
+
+    .hero h1{
+      position:relative;
+      z-index:2;
+      font-size:34px;
+      line-height:1.1;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .hero .role{
+      position:relative;
+      z-index:2;
+      font-size:15px;
+      color:rgba(255,255,255,.78);
+      font-weight:500;
+    }
+
+    /* =========================
+       INTRO
+    ========================== */
+
+    .intro{
+      max-width:650px;
+      margin:auto;
+      padding:50px 25px 24px;
+      text-align:center;
+    }
+
+    .section-label{
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:2.4px;
+      color:var(--green);
+      margin-bottom:12px;
+    }
+
+    .intro h2{
+      font-size:28px;
+      line-height:1.2;
+      margin-bottom:14px;
+      color:var(--dark);
+    }
+
+    .intro p{
+      max-width:520px;
+      margin:auto;
+      font-size:14px;
+      color:var(--gray);
+      line-height:1.75;
+    }
+
+    /* =========================
+       WHATSAPP PRINCIPAL
+    ========================== */
+
+    .whatsapp-main{
+      max-width:590px;
+      margin:25px auto 15px;
+      padding:0 22px;
+    }
+
+    .whatsapp-button{
+      text-decoration:none;
+      min-height:92px;
+      border-radius:22px;
+      padding:20px 22px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      background:
+        linear-gradient(135deg,var(--green-dark),var(--green-light));
+      color:#fff;
+      box-shadow:0 12px 30px rgba(36,150,63,.25);
+      transition:.2s ease;
+    }
+
+    .whatsapp-button:active{
+      transform:scale(.98);
+    }
+
+    .whatsapp-icon{
+      flex:0 0 50px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:rgba(255,255,255,.17);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:23px;
+      font-weight:800;
+    }
+
+    .whatsapp-copy{
+      flex:1;
+    }
+
+    .whatsapp-small{
+      display:block;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      opacity:.75;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+
+    .whatsapp-title{
+      display:block;
+      font-size:17px;
+      font-weight:800;
+    }
+
+    .arrow{
+      font-size:23px;
+      font-weight:500;
+    }
+
+    /* =========================
+       BOTONES
+    ========================== */
+
+    .actions{
+      max-width:590px;
+      margin:auto;
+      padding:10px 22px 55px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:13px;
+    }
+
+    .action{
+      text-decoration:none;
+      background:#fff;
+      color:var(--dark);
+      min-height:108px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:19px 13px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      box-shadow:0 7px 22px rgba(0,0,0,.055);
+      transition:.2s ease;
+    }
+
+    .action:active{
+      transform:scale(.97);
+    }
+
+    .action-icon{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:9px;
+      font-size:19px;
+      font-weight:800;
+    }
+
+    .action-name{
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .action.web{
+      background:var(--dark);
+      color:#fff;
+      border:none;
+    }
+
+    .action.web .action-icon{
+      background:rgba(255,255,255,.14);
+      color:var(--yellow);
+    }
+
+    /* =========================
+       BLOQUE CORPORATIVO
+    ========================== */
+
+    .statement{
+      position:relative;
+      max-width:600px;
+      margin:15px auto 0;
+      padding:45px 27px 42px;
+      border-radius:24px;
+      overflow:hidden;
+      background:
+        linear-gradient(145deg,var(--green-dark),var(--green));
+      color:#fff;
+    }
+
+    .statement::after{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      border:1px solid rgba(255,214,41,.25);
+      right:-90px;
+      top:-100px;
+    }
+
+    .statement-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .statement-label{
+      color:var(--yellow);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+
+    .statement h2{
+      font-size:28px;
+      line-height:1.18;
+      margin-bottom:16px;
+    }
+
+    .statement p{
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .statement-line{
+      width:55px;
+      height:4px;
+      background:var(--yellow);
+      border-radius:20px;
+      margin-top:25px;
+    }
+
+    /* =========================
+       DATOS
+    ========================== */
+
+    .details{
+      max-width:600px;
+      margin:auto;
+      padding:50px 25px 55px;
+    }
+
+    .detail{
+      padding:19px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .detail:last-child{
+      border-bottom:none;
+    }
+
+    .detail-label{
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1.8px;
+      color:var(--green);
+      margin-bottom:5px;
+    }
+
+    .detail-value{
+      font-size:15px;
+      font-weight:650;
+      color:var(--dark);
+    }
+
+    /* =========================
+       FIRMA NEXID MAESTRA
+    ========================== */
+
+    .nexid-brand{
+      position:relative;
+      overflow:hidden;
+      padding:53px 25px 31px;
+      background:#03182b;
+      text-align:center;
+    }
+
+    .nexid-brand::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border:1px solid rgba(40,167,237,.11);
+      border-radius:50%;
+      top:-180px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .nexid-brand::after{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border:1px solid rgba(255,255,255,.055);
+      transform:rotate(45deg);
+      right:-130px;
+      bottom:-125px;
+    }
+
+    .nexid-lines{
+      position:absolute;
+      inset:0;
+      opacity:.07;
+      background-image:
+        linear-gradient(90deg,transparent 49%,#48b4ef 50%,transparent 51%);
+      background-size:33px 100%;
+    }
+
+    .nexid-watermark{
+      position:absolute;
+      width:430px;
+      max-width:none;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      opacity:.035;
+      filter:grayscale(1);
+    }
+
+    .powered{
+      position:relative;
+      z-index:3;
+      display:block;
+      width:285px;
+      max-width:88%;
+      height:auto;
+      margin:0 auto;
+      border-radius:10px;
+      box-shadow:0 12px 35px rgba(0,0,0,.22);
+    }
+
+    .created{
+      position:relative;
+      z-index:3;
+      margin-top:17px;
+      color:rgba(255,255,255,.42);
+      font-size:9px;
+      font-weight:600;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:380px){
+      .hero h1{
+        font-size:30px;
+      }
+
+      .actions{
+        padding-left:17px;
+        padding-right:17px;
+        gap:10px;
+      }
+
+      .whatsapp-main{
+        padding-left:17px;
+        padding-right:17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="logo-wrap">
+      <img src="logo-eufer.jpeg" alt="Ventas Eufer">
+    </div>
+
+    <div class="eyebrow">
+      Ventas Eufer
+    </div>
+
+    <h1>
+      Fernando Díaz De León
+    </h1>
+
+    <div class="role">
+      Asesor Inmobiliario
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="section-label">
+      Conecta conmigo
+    </div>
+
+    <h2>
+      Ventas Eufer
+    </h2>
+
+    <p>
+      Atención inmobiliaria directa y personalizada.
+      Contáctame para conocer propiedades y oportunidades disponibles.
+    </p>
+
+  </section>
+
+
+  <!-- WHATSAPP PRINCIPAL -->
+
+  <div class="whatsapp-main">
+
+    <a
+      class="whatsapp-button"
+      href="https://wa.me/524448400600"
+      target="_blank"
+      rel="noopener">
+
+      <div class="whatsapp-icon">
+        W
+      </div>
+
+      <div class="whatsapp-copy">
+
+        <span class="whatsapp-small">
+          Contacto directo
+        </span>
+
+        <span class="whatsapp-title">
+          WhatsApp
+        </span>
+
+      </div>
+
+      <span class="arrow">→</span>
+
+    </a>
+
+  </div>
+
+
+  <!-- BOTONES -->
+
+  <section class="actions">
+
+    <!-- LLAMAR -->
+
+    <a
+      href="tel:+524448400600"
+      class="action">
+
+      <span class="action-icon">
+        ☎️
+      </span>
+
+      <span class="action-name">
+        Llamar
+      </span>
+
+    </a>
+
+
+    <!-- CORREO -->
+
+    <a
+      href="mailto:ventaseufer@hotmail.com"
+      class="action">
+
+      <span class="action-icon">
+        ✉️
+      </span>
+
+      <span class="action-name">
+        Correo
+      </span>
+
+    </a>
+
+
+    <!-- FACEBOOK -->
+
+    <a
+      href="https://www.facebook.com/share/19KEeUfPX1/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener"
+      class="action">
+
+      <span class="action-icon">
+        f
+      </span>
+
+      <span class="action-name">
+        Facebook
+      </span>
+
+    </a>
+
+
+    <!-- UBICACIÓN -->
+
+    <a
+      href="https://maps.apple/la/ofbYrvCCu5f_as"
+      target="_blank"
+      rel="noopener"
+      class="action">
+
+      <span class="action-icon">
+        ⌖
+      </span>
+
+      <span class="action-name">
+        Ubicación
+      </span>
+
+    </a>
+
+
+    <!-- PÁGINA WEB -->
+
+    <a
+      href="http://ventaseufer.com/"
+      target="_blank"
+      rel="noopener"
+      class="action web">
+
+      <span class="action-icon">
+        ↗️
+      </span>
+
+      <span class="action-name">
+        Página web
+      </span>
+
+    </a>
+
+  </section>
+
+
+  <!-- MENSAJE CORPORATIVO -->
+
+  <section class="statement">
+
+    <div class="statement-content">
+
+      <div class="statement-label">
+        Ventas Eufer
+      </div>
+
+      <h2>
+        Tu próximo inmueble comienza con una buena decisión.
+      </h2>
+
+      <p>
+        Atención personalizada para acompañarte en la búsqueda
+        de la propiedad que mejor se adapte a tus necesidades.
+      </p>
+
+      <div class="statement-line"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DATOS -->
+
+  <section class="details">
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Nombre
+      </div>
+
+      <div class="detail-value">
+        Fernando Díaz De León
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Empresa
+      </div>
+
+      <div class="detail-value">
+        Ventas Eufer
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Teléfono
+      </div>
+
+      <div class="detail-value">
+        444 840 0600
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Correo
+      </div>
+
+      <div class="detail-value">
+        ventaseufer@hotmail.com
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FIRMA NEXID -->
+
+  <footer class="nexid-brand">
+
+    <div class="nexid-lines"></div>
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="nexid-watermark"
+      alt="">
+
+    <img
+      src="powered-by-nexid.jpeg"
+      class="powered"
+      alt="Powered by NexID">
+
+    <p class="created">
+      Experiencia digital creada con NexID
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
