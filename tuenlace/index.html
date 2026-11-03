@@ -1,1 +1,1503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082c50">
 
+<title>Tu Enlace Hipotecario | Soluciones Hipotecarias</title>
+
+<meta name="description"
+content="Tu Enlace Hipotecario. Asesoría y soluciones de financiamiento hipotecario.">
+
+<style>
+
+/* CONFIGURACIÓN GENERAL */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --navy:#082c50;
+  --deep:#031b34;
+  --blue:#1265a2;
+  --accent:#16a6ba;
+  --white:#ffffff;
+  --soft:#f3f8fc;
+  --text:#173d5b;
+  --gray:#6c8293;
+  --line:#dce7ef;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#e8eff5;
+  color:var(--text);
+}
+
+button,input,select{
+  font:inherit;
+}
+
+.page{
+  width:100%;
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  background:white;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(0,30,60,.12);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:440px;
+  position:relative;
+  overflow:hidden;
+  padding:34px 27px 45px;
+
+  background:
+    radial-gradient(circle at 90% 15%,
+      rgba(22,166,186,.30),
+      transparent 32%),
+
+    radial-gradient(circle at 10% 90%,
+      rgba(18,101,162,.25),
+      transparent 30%),
+
+    linear-gradient(145deg,
+      #031b34 0%,
+      #082c50 55%,
+      #12577d 100%);
+}
+
+.hero-pattern{
+  position:absolute;
+  inset:0;
+  opacity:.12;
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(30deg,
+      transparent 48%,
+      rgba(255,255,255,.32) 49%,
+      rgba(255,255,255,.32) 50%,
+      transparent 51%),
+
+    linear-gradient(150deg,
+      transparent 48%,
+      rgba(255,255,255,.22) 49%,
+      rgba(255,255,255,.22) 50%,
+      transparent 51%);
+
+  background-size:72px 125px;
+}
+
+.geo-one{
+  position:absolute;
+  width:250px;
+  height:250px;
+  right:-125px;
+  top:80px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.geo-two{
+  position:absolute;
+  width:175px;
+  height:175px;
+  right:-85px;
+  top:118px;
+  transform:rotate(45deg);
+  border:1px solid rgba(22,166,186,.45);
+}
+
+.geo-three{
+  position:absolute;
+  width:120px;
+  height:120px;
+  left:-72px;
+  bottom:-30px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.25);
+}
+
+
+/* LOGOTIPO */
+
+.logo-card{
+  position:relative;
+  z-index:5;
+  width:100%;
+  max-width:285px;
+  background:rgba(255,255,255,.98);
+  padding:17px 20px;
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,40,60,.18);
+  margin-bottom:43px;
+}
+
+.logo-card img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+
+/* PERFIL */
+
+.profile{
+  position:relative;
+  z-index:5;
+}
+
+.mini-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.20);
+  border-radius:100px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  color:#d8f5ff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  margin-bottom:17px;
+}
+
+.mini-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+.profile h1{
+  color:white;
+  font-size:37px;
+  line-height:1.08;
+  letter-spacing:-1.2px;
+  margin-bottom:13px;
+}
+
+.job{
+  color:white;
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:7px;
+}
+
+.business{
+  color:rgba(255,255,255,.75);
+  font-size:14px;
+  line-height:1.6;
+  max-width:340px;
+}
+
+.profile-accent{
+  width:68px;
+  height:4px;
+  margin-top:24px;
+  background:linear-gradient(
+    90deg,
+    var(--accent),
+    #6ad6e5
+  );
+  border-radius:20px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.actions{
+  position:relative;
+  z-index:10;
+  padding:0 21px 35px;
+  margin-top:-27px;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.whatsapp{
+  width:100%;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  padding:16px 20px;
+  gap:15px;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 16px 40px rgba(0,44,80,.16);
+  border:1px solid rgba(22,166,186,.15);
+  margin-bottom:13px;
+  transition:.18s ease;
+  cursor:pointer;
+  text-align:left;
+}
+
+.whatsapp:active{
+  transform:scale(.98);
+}
+
+.whatsapp-icon{
+  flex:none;
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:var(--navy);
+  color:white;
+}
+
+.whatsapp-icon svg{
+  width:24px;
+  height:24px;
+}
+
+.whatsapp-copy{
+  flex:1;
+}
+
+.whatsapp-small{
+  display:block;
+  color:var(--gray);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  margin-bottom:3px;
+}
+
+.whatsapp-title{
+  color:var(--navy);
+  font-size:16px;
+  font-weight:750;
+}
+
+.arrow{
+  color:var(--accent);
+  font-size:25px;
+  font-weight:300;
+}
+
+
+/* GRID DE BOTONES */
+
+.action-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+.action{
+  min-height:104px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding:17px;
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:17px;
+  text-decoration:none;
+  transition:.18s ease;
+  cursor:pointer;
+  text-align:left;
+}
+
+.action:active{
+  transform:scale(.97);
+}
+
+.action-icon{
+  width:39px;
+  height:39px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:11px;
+  background:white;
+  color:var(--navy);
+  box-shadow:0 4px 12px rgba(0,44,80,.08);
+}
+
+.action-icon svg{
+  width:20px;
+  height:20px;
+}
+
+.action-name{
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+}
+
+.action.agenda{
+  background:linear-gradient(
+    145deg,
+    var(--blue),
+    var(--navy)
+  );
+  border:none;
+}
+
+.action.agenda .action-icon{
+  background:rgba(255,255,255,.18);
+  color:white;
+  box-shadow:none;
+}
+
+.action.agenda .action-name{
+  color:white;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.form-panel{
+  display:none;
+  margin:0 0 15px;
+  padding:24px 20px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#eff9fc,#e1f2f8);
+  border:1px solid #cde6ef;
+  box-shadow:0 12px 30px rgba(0,44,80,.09);
+}
+
+.form-panel.open{
+  display:block;
+}
+
+.form-label{
+  color:var(--accent);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.form-panel h3{
+  color:var(--navy);
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.form-intro{
+  color:var(--gray);
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+.form-group{
+  margin-bottom:15px;
+}
+
+.form-group label{
+  display:block;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:750;
+  margin-bottom:7px;
+}
+
+.form-control{
+  width:100%;
+  min-height:48px;
+  padding:12px 13px;
+  border:1px solid #c9dfe9;
+  border-radius:12px;
+  background:white;
+  color:var(--text);
+  outline:none;
+  font-size:14px;
+}
+
+.form-control:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(22,166,186,.12);
+}
+
+.form-submit{
+  width:100%;
+  margin-top:8px;
+  padding:16px;
+  border:0;
+  border-radius:13px;
+  background:linear-gradient(145deg,var(--blue),var(--navy));
+  color:white;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.form-note{
+  margin-top:12px;
+  color:var(--gray);
+  font-size:11px;
+  line-height:1.6;
+}
+
+
+/* =========================
+   MENSAJE CORPORATIVO
+========================= */
+
+.statement{
+  position:relative;
+  overflow:hidden;
+  margin:15px 21px 0;
+  padding:45px 27px 42px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#082c50,#12618c);
+  color:white;
+}
+
+.statement-grid{
+  position:absolute;
+  inset:0;
+  opacity:.08;
+  background-image:
+    linear-gradient(30deg,
+      transparent 48%,
+      white 49%,
+      white 50%,
+      transparent 51%),
+    linear-gradient(150deg,
+      transparent 48%,
+      white 49%,
+      white 50%,
+      transparent 51%);
+  background-size:52px 90px;
+}
+
+.statement-content{
+  position:relative;
+  z-index:2;
+}
+
+.statement-label{
+  color:#6ad6e5;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.statement h2{
+  font-size:29px;
+  line-height:1.16;
+  letter-spacing:-.5px;
+  margin-bottom:21px;
+}
+
+.statement p{
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+  line-height:1.75;
+}
+
+.statement-line{
+  width:55px;
+  height:4px;
+  background:var(--accent);
+  border-radius:20px;
+  margin-top:25px;
+}
+
+
+/* =========================
+   SERVICIOS HIPOTECARIOS
+========================= */
+
+.services{
+  margin:24px 21px 0;
+  padding:35px 23px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#eef7fc,#e3f1f9);
+  border:1px solid #d2e6f0;
+}
+
+.services-label{
+  color:var(--accent);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.services h3{
+  color:var(--navy);
+  font-size:27px;
+  letter-spacing:-.5px;
+  margin-bottom:15px;
+}
+
+.services-intro{
+  color:var(--gray);
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.service-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(8,44,80,.12);
+}
+
+.service-item:last-child{
+  border-bottom:none;
+}
+
+.service-dot{
+  width:9px;
+  height:9px;
+  flex:none;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+.service-name{
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+
+/* =========================
+   CONTACTO INSTITUCIONAL
+========================= */
+
+.contact{
+  padding:52px 22px 45px;
+}
+
+.contact-label{
+  color:var(--accent);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.contact h3{
+  color:var(--navy);
+  font-size:27px;
+  letter-spacing:-.5px;
+  margin-bottom:11px;
+}
+
+.contact p{
+  color:var(--gray);
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:21px;
+}
+
+.contact-link{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px 18px;
+  border-radius:14px;
+  background:#e7f6fa;
+  border:1px solid #cde6ef;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.contact-arrow{
+  color:var(--accent);
+  font-size:21px;
+}
+
+
+/* =========================
+   NEXID BRAND AREA
+========================= */
+
+.nexid-brand{
+  position:relative;
+  overflow:hidden;
+  padding:53px 25px 31px;
+  background:#03182b;
+  text-align:center;
+}
+
+.nexid-lines{
+  position:absolute;
+  inset:0;
+  opacity:.14;
+  background:
+    linear-gradient(120deg,
+      transparent 30%,
+      rgba(255,179,70,.45) 30.5%,
+      transparent 31%),
+    linear-gradient(60deg,
+      transparent 64%,
+      rgba(0,164,255,.45) 64.5%,
+      transparent 65%);
+  background-size:90px 90px;
+}
+
+.nexid-watermark{
+  position:absolute;
+  width:470px;
+  max-width:none;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) rotate(-4deg);
+  opacity:.045;
+  pointer-events:none;
+}
+
+.powered{
+  position:relative;
+  z-index:3;
+  display:block;
+  width:285px;
+  max-width:88%;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+
+.created{
+  position:relative;
+  z-index:3;
+  margin-top:17px;
+  color:rgba(255,255,255,.42);
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:360px){
+  .profile h1{
+    font-size:33px;
+  }
+
+  .statement h2{
+    font-size:26px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+<!-- ======================
+     HERO
+====================== -->
+
+<section class="hero">
+
+  <div class="hero-pattern"></div>
+  <div class="geo-one"></div>
+  <div class="geo-two"></div>
+  <div class="geo-three"></div>
+
+  <div class="logo-card">
+
+    <img
+      src="logo-tuenlace.jpeg"
+      alt="Tu Enlace Hipotecario">
+
+  </div>
+
+  <div class="profile">
+
+    <div class="mini-label">
+      <span class="mini-dot"></span>
+      Asesoría y financiamiento
+    </div>
+
+    <h1>
+      TU ENLACE<br>
+      HIPOTECARIO
+    </h1>
+
+    <p class="job">
+      Soluciones hipotecarias
+    </p>
+
+    <p class="business">
+      Te acompañamos a encontrar el financiamiento
+      adecuado para tu patrimonio.
+    </p>
+
+    <div class="profile-accent"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+     CONTACTO
+====================== -->
+
+<section class="actions">
+
+
+<!-- BOTÓN PRINCIPAL -->
+
+<button
+  type="button"
+  class="whatsapp"
+  id="openForm"
+  aria-expanded="false"
+  aria-controls="formPanel">
+
+  <div class="whatsapp-icon">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8">
+
+      <rect x="4" y="3" width="16" height="18" rx="2"/>
+      <path d="M8 8h8M8 12h8M8 16h4"/>
+
+    </svg>
+
+  </div>
+
+  <div class="whatsapp-copy">
+
+    <span class="whatsapp-small">
+      Comienza aquí
+    </span>
+
+    <span class="whatsapp-title">
+      Solicitar asesoría hipotecaria
+    </span>
+
+  </div>
+
+  <span class="arrow">→</span>
+
+</button>
+
+
+
+<!-- FORMULARIO HIPOTECARIO -->
+
+<div class="form-panel" id="formPanel">
+
+  <p class="form-label">
+    Tu Enlace Hipotecario
+  </p>
+
+  <h3>
+    Solicitud de asesoría
+  </h3>
+
+  <p class="form-intro">
+    Completa tus datos y selecciona el tipo de
+    financiamiento que necesitas.
+  </p>
+
+  <form id="leadForm">
+
+    <div class="form-group">
+
+      <label for="clientName">
+        Nombre completo
+      </label>
+
+      <input
+        class="form-control"
+        id="clientName"
+        type="text"
+        autocomplete="name"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="clientPhone">
+        WhatsApp
+      </label>
+
+      <input
+        class="form-control"
+        id="clientPhone"
+        type="tel"
+        autocomplete="tel"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="clientEmail">
+        Correo electrónico
+      </label>
+
+      <input
+        class="form-control"
+        id="clientEmail"
+        type="email"
+        autocomplete="email"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="creditType">
+        ¿Qué tipo de financiamiento necesitas?
+      </label>
+
+      <select
+        class="form-control"
+        id="creditType"
+        required>
+
+        <option value="">
+          Selecciona una opción
+        </option>
+
+        <option>Crédito hipotecario bancario</option>
+        <option>Infonavit</option>
+        <option>Cofinavit</option>
+        <option>Fovissste</option>
+        <option>Adquisición de terreno</option>
+        <option>Terreno y construcción</option>
+        <option>Construcción</option>
+        <option>Remodelación</option>
+        <option>Sustitución de hipoteca</option>
+        <option>Mejora de hipoteca</option>
+        <option>Liquidez con garantía hipotecaria</option>
+        <option>Otro financiamiento</option>
+
+      </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="income">
+        Ingreso mensual aproximado (opcional)
+      </label>
+
+      <select class="form-control" id="income">
+
+        <option value="">
+          Prefiero no indicarlo
+        </option>
+
+        <option>Menos de $15,000</option>
+        <option>$15,000 a $25,000</option>
+        <option>$25,001 a $40,000</option>
+        <option>$40,001 a $60,000</option>
+        <option>Más de $60,000</option>
+
+      </select>
+
+    </div>
+
+
+    <button type="submit" class="form-submit">
+      Enviar solicitud por WhatsApp
+    </button>
+
+    <p class="form-note">
+      Al continuar, se abrirá WhatsApp con tu solicitud
+      preparada. El mensaje se enviará únicamente
+      cuando tú lo confirmes.
+    </p>
+
+  </form>
+
+</div>
+
+
+
+<!-- GRID DE BOTONES -->
+
+<div class="action-grid">
+
+
+<!-- WHATSAPP -->
+
+<button
+  type="button"
+  class="action agenda"
+  data-contact="whatsapp">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    WhatsApp
+  </span>
+
+</button>
+
+
+
+<!-- LLAMAR -->
+
+<button
+  type="button"
+  class="action"
+  data-contact="telefono">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.08 2h3a2 2 0 0 1 2 1.72l.7 2.81a2 2 0 0 1-.45 2.11L9.06 9.91a16 16 0 0 0 5.03 5.03l1.27-1.27a2 2 0 0 1 2.11-.45l2.81.7A2 2 0 0 1 22 16.92z"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Llamar
+  </span>
+
+</button>
+
+
+
+<!-- CORREO -->
+
+<button
+  type="button"
+  class="action"
+  data-contact="correo">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="M3 7l9 6 9-6"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Correo
+  </span>
+
+</button>
+
+
+
+<!-- UBICACIÓN -->
+
+<button
+  type="button"
+  class="action"
+  data-contact="ubicacion">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Ubicación
+  </span>
+
+</button>
+
+
+
+<!-- SERVICIOS -->
+
+<a href="#services" class="action">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <path d="M3 10l9-7 9 7v11H3z"/>
+      <path d="M9 21v-8h6v8"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Nuestros créditos
+  </span>
+
+</a>
+
+
+
+<!-- INSTAGRAM -->
+
+<button
+  type="button"
+  class="action"
+  data-contact="instagram">
+
+  <span class="action-icon">
+
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.8">
+
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r=".7"
+        fill="currentColor" stroke="none"/>
+
+    </svg>
+
+  </span>
+
+  <span class="action-name">
+    Instagram
+  </span>
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ======================
+     MENSAJE CORPORATIVO
+====================== -->
+
+<section class="statement">
+
+  <div class="statement-grid"></div>
+
+  <div class="statement-content">
+
+    <p class="statement-label">
+      Tu Enlace Hipotecario
+    </p>
+
+    <h2>
+      Tu patrimonio comienza con una buena decisión.
+    </h2>
+
+    <p>
+      Te orientamos durante el proceso de financiamiento,
+      desde la evaluación de tus opciones hasta el
+      acompañamiento en los trámites de tu crédito.
+      Nuestro objetivo es ayudarte a tomar decisiones
+      informadas para tu futuro.
+    </p>
+
+    <div class="statement-line"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+     SERVICIOS HIPOTECARIOS
+====================== -->
+
+<section class="services" id="services">
+
+  <p class="services-label">
+    Nuestros servicios
+  </p>
+
+  <h3>
+    Soluciones hipotecarias
+  </h3>
+
+  <p class="services-intro">
+    Conoce las opciones de financiamiento en las que
+    podemos orientarte.
+  </p>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Créditos hipotecarios bancarios
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Infonavit y Cofinavit
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Fovissste
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Créditos para construcción
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Adquisición de terreno y construcción
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Créditos para remodelación
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Sustitución y mejora de hipoteca
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Liquidez con garantía hipotecaria
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Apoyo Infonavit
+    </span>
+  </div>
+
+  <div class="service-item">
+    <span class="service-dot"></span>
+    <span class="service-name">
+      Terminación de obra y otros financiamientos
+    </span>
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+     CONTACTO INSTITUCIONAL
+====================== -->
+
+<section class="contact">
+
+  <p class="contact-label">
+    Estamos para ayudarte
+  </p>
+
+  <h3>
+    Hablemos de tu próximo proyecto
+  </h3>
+
+  <p>
+    Nuestro equipo puede orientarte para identificar
+    las alternativas de financiamiento que mejor
+    se adapten a tus necesidades.
+  </p>
+
+  <button
+    type="button"
+    class="contact-link"
+    id="bottomContact">
+
+    <span>Solicitar asesoría</span>
+    <span class="contact-arrow">→</span>
+
+  </button>
+
+</section>
+
+
+
+<!-- ======================
+     NEXID
+====================== -->
+
+<footer class="nexid-brand">
+
+  <div class="nexid-lines"></div>
+
+  <img
+    src="powered-by-nexid.jpeg"
+    alt=""
+    class="nexid-watermark">
+
+  <img
+    src="powered-by-nexid.jpeg"
+    alt="Powered by NexID"
+    class="powered">
+
+  <p class="created">
+    Experiencia digital creada con NexID
+  </p>
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================
+   DATOS DE CONTACTO
+   PENDIENTES DE CONFIGURAR
+========================= */
+
+const CONFIG = {
+  whatsapp:"",
+  telefono:"",
+  correo:"",
+  ubicacion:"",
+  instagram:""
+};
+
+
+/* =========================
+   ABRIR FORMULARIO
+========================= */
+
+const openForm =
+  document.getElementById("openForm");
+
+const formPanel =
+  document.getElementById("formPanel");
+
+const bottomContact =
+  document.getElementById("bottomContact");
+
+function mostrarFormulario(){
+
+  formPanel.classList.add("open");
+
+  openForm.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+  formPanel.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+openForm.addEventListener("click",function(){
+
+  const isOpen =
+    formPanel.classList.toggle("open");
+
+  openForm.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  if(isOpen){
+    formPanel.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }
+
+});
+
+bottomContact.addEventListener(
+  "click",
+  mostrarFormulario
+);
+
+
+/* =========================
+   FORMULARIO A WHATSAPP
+========================= */
+
+document.getElementById("leadForm")
+.addEventListener("submit",function(event){
+
+  event.preventDefault();
+
+  if(!CONFIG.whatsapp){
+    alert(
+      "El WhatsApp institucional está pendiente de configurar."
+    );
+    return;
+  }
+
+  const name =
+    document.getElementById("clientName").value.trim();
+
+  const phone =
+    document.getElementById("clientPhone").value.trim();
+
+  const email =
+    document.getElementById("clientEmail").value.trim();
+
+  const credit =
+    document.getElementById("creditType").value;
+
+  const income =
+    document.getElementById("income").value;
+
+  const message =
+`Hola, quiero solicitar asesoría con TU ENLACE HIPOTECARIO.
+
+Nombre completo: ${name}
+WhatsApp: ${phone}
+Correo electrónico: ${email}
+Tipo de financiamiento: ${credit}
+Ingreso mensual aproximado: ${income || "No especificado"}
+
+Quedo pendiente de que un asesor se comunique conmigo.`;
+
+  const url =
+    "https://wa.me/" +
+    CONFIG.whatsapp.replace(/\D/g,"") +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank","noopener");
+
+});
+
+
+/* =========================
+   BOTONES DE CONTACTO
+========================= */
+
+document.querySelectorAll("[data-contact]")
+.forEach(function(button){
+
+  button.addEventListener("click",function(){
+
+    const type =
+      button.dataset.contact;
+
+    let url = "";
+
+    if(type==="whatsapp" && CONFIG.whatsapp){
+      url="https://wa.me/" +
+        CONFIG.whatsapp.replace(/\D/g,"");
+    }
+
+    if(type==="telefono" && CONFIG.telefono){
+      url="tel:" + CONFIG.telefono;
+    }
+
+    if(type==="correo" && CONFIG.correo){
+      url="mailto:" + CONFIG.correo;
+    }
+
+    if(type==="ubicacion" && CONFIG.ubicacion){
+      url=CONFIG.ubicacion;
+    }
+
+    if(type==="instagram" && CONFIG.instagram){
+      url=CONFIG.instagram;
+    }
+
+    if(!url){
+      alert(
+        "Este dato de contacto está pendiente de configurar."
+      );
+      return;
+    }
+
+    if(type==="telefono" || type==="correo"){
+      window.location.href=url;
+    }else{
+      window.open(url,"_blank","noopener");
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
