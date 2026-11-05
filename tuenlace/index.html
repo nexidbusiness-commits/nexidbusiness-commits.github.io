@@ -2,1502 +2,260 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#082c50">
-
-<title>Tu Enlace Hipotecario | Soluciones Hipotecarias</title>
-
-<meta name="description"
-content="Tu Enlace Hipotecario. Asesoría y soluciones de financiamiento hipotecario.">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#00518b">
+<title>Tu Enlace Hipotecario | NexID</title>
+<meta name="description" content="Asesoría hipotecaria, requisitos y formulario de admisión de Tu Enlace Hipotecario.">
 <style>
-
-/* CONFIGURACIÓN GENERAL */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9f1f8;color:#123c60;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+.page{max-width:520px;margin:auto;min-height:100vh;background:white;box-shadow:0 0 35px #143b5b18}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 95% 10%,#4ca8df55,transparent 35%),linear-gradient(140deg,#052f55,#00518b 65%,#267cb4);padding:34px 25px 62px;color:white}
+.hero:after{content:"";position:absolute;right:-130px;top:105px;width:245px;height:245px;transform:rotate(45deg);border:1px solid #ffffff44}
+.logo-card{position:relative;z-index:1;background:white;border-radius:16px;max-width:290px;padding:18px;box-shadow:0 15px 35px #001a3550;margin-bottom:43px}
+.logo-card img{width:100%;height:auto;display:block}
+.eyebrow{display:inline-block;font-size:10px;letter-spacing:1.6px;font-weight:800;text-transform:uppercase;border:1px solid #ffffff55;padding:8px 12px;border-radius:30px}
+.hero h1{font-size:37px;line-height:1.05;letter-spacing:-1px;margin:18px 0 12px}
+.hero p{line-height:1.6;color:#e0edf9;max-width:350px;margin:0}
+.accent{width:62px;height:4px;background:#56c5ee;border-radius:10px;margin-top:24px}
+.actions{position:relative;z-index:2;margin-top:-28px;padding:0 21px 28px}
+.main-btn{display:flex;align-items:center;gap:14px;background:white;width:100%;border:1px solid #d9eaf4;border-radius:18px;padding:18px;text-decoration:none;color:#073f6d;box-shadow:0 15px 35px #083d6d24;cursor:pointer;text-align:left;margin-bottom:12px}
+.main-btn .bubble{width:47px;height:47px;border-radius:13px;background:#07588c;color:white;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.main-btn small{display:block;text-transform:uppercase;color:#6e879b;letter-spacing:1px;font-size:10px;margin-bottom:4px}
+.main-btn strong{font-size:16px}
+.main-btn .arrow{margin-left:auto;font-size:23px;color:#1e9bd0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.action{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-height:103px;border:1px solid #dce8f0;border-radius:17px;background:#f3f8fc;padding:16px;color:#06436d;text-decoration:none;font-weight:750;font-size:14px;cursor:pointer;text-align:left}
+.action .symbol{width:38px;height:38px;border-radius:11px;background:white;display:grid;place-items:center;font-size:20px}
+.action.featured{background:linear-gradient(140deg,#1677b7,#064775);color:white;border:0}
+.action.featured .symbol{background:#ffffff2b}
+.panel{display:none;margin:15px 21px 25px;padding:23px 19px;border-radius:20px;background:#f1f9fd;border:1px solid #cde5f3}
+.panel.open{display:block}
+.panel h2{font-size:23px;margin:0 0 9px;color:#06446f}
+.panel p{font-size:13px;line-height:1.6;color:#57748a}
+.panel h3{font-size:16px;color:#07527f;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid #cfe1ec}
+.field{margin:12px 0}
+.field label{display:block;font-size:12px;font-weight:750;color:#164768;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cbdfea;border-radius:10px;background:white;color:#143e5b;font-size:14px}
+.field textarea{min-height:80px;resize:vertical}
+.fields2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.wide{grid-column:1/-1}
+.panel-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.btn{border:0;background:#07588c;color:white;padding:13px 15px;border-radius:11px;font-size:13px;font-weight:800;cursor:pointer}
+.btn.secondary{background:white;color:#07588c;border:1px solid #bcd8e8}
+.notice{font-size:11px!important;color:#687f91!important}
+.section{margin:18px 21px 0;padding:37px 24px;border-radius:22px;background:linear-gradient(145deg,#06416c,#126b9d);color:white}
+.section small{color:#74d9f4;text-transform:uppercase;font-weight:800;letter-spacing:2px}
+.section h2{font-size:28px;line-height:1.15;margin:13px 0 17px}
+.section p{font-size:14px;line-height:1.75;color:#d7e8f2}
+.services{margin:23px 21px;padding:28px 23px;border:1px solid #d2e6f2;border-radius:22px;background:#f0f8fd}
+.services h2{font-size:26px;color:#06436e;margin:0 0 15px}
+.services ul{list-style:none;padding:0;margin:0}
+.services li{border-bottom:1px solid #d7e6ef;padding:13px 0;font-size:14px;font-weight:650}
+.services li:before{content:'●';color:#32a5d2;margin-right:12px}
+.services li:last-child{border:0}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:12px 0;border-bottom:1px solid #d7e7f1;line-height:1.45;font-size:14px}
+.checklist label{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.checklist input{width:18px;height:18px;accent-color:#0874b5;flex-shrink:0}
+.nexid-brand{position:relative;overflow:hidden;padding:53px 25px 31px;background:#03182b;text-align:center}
+.nexid-lines{position:absolute;inset:0;opacity:.14;background:linear-gradient(120deg,transparent 30%,rgba(255,179,70,.45) 30.5%,transparent 31%),linear-gradient(60deg,transparent 64%,rgba(0,164,255,.45) 64.5%,transparent 65%);background-size:90px 90px}
+.nexid-watermark{position:absolute;width:470px;max-width:none;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg);opacity:.045;pointer-events:none}
+.powered{position:relative;z-index:3;display:block;width:285px;max-width:88%;margin:0 auto;border-radius:10px;box-shadow:0 12px 35px #0006}
+.created{position:relative;z-index:3;margin-top:17px;color:#ffffff6b;font-size:9px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase}
+@media(max-width:360px){.hero h1{font-size:32px}.fields2{grid-template-columns:1fr}}
+@media print{
+body{background:white}
+.page{box-shadow:none;max-width:none}
+.hero,.actions,.section,.services,.nexid-brand,.requirements,.panel-actions,.no-print{display:none!important}
+.panel{display:none!important}
+#admissionPanel{display:block!important;border:0;margin:0;padding:0;background:white}
+#admissionPanel h2{font-size:20px}
+.field{break-inside:avoid}
+.field input,.field textarea,.field select{border:0;border-bottom:1px solid #777;border-radius:0;padding:6px 0}
+.fields2{grid-template-columns:1fr 1fr}
+h3{break-after:avoid}
+#admissionPanel .notice{display:none}
 }
-
-:root{
-  --navy:#082c50;
-  --deep:#031b34;
-  --blue:#1265a2;
-  --accent:#16a6ba;
-  --white:#ffffff;
-  --soft:#f3f8fc;
-  --text:#173d5b;
-  --gray:#6c8293;
-  --line:#dce7ef;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:#e8eff5;
-  color:var(--text);
-}
-
-button,input,select{
-  font:inherit;
-}
-
-.page{
-  width:100%;
-  max-width:520px;
-  min-height:100vh;
-  margin:auto;
-  background:white;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,30,60,.12);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:440px;
-  position:relative;
-  overflow:hidden;
-  padding:34px 27px 45px;
-
-  background:
-    radial-gradient(circle at 90% 15%,
-      rgba(22,166,186,.30),
-      transparent 32%),
-
-    radial-gradient(circle at 10% 90%,
-      rgba(18,101,162,.25),
-      transparent 30%),
-
-    linear-gradient(145deg,
-      #031b34 0%,
-      #082c50 55%,
-      #12577d 100%);
-}
-
-.hero-pattern{
-  position:absolute;
-  inset:0;
-  opacity:.12;
-  pointer-events:none;
-
-  background-image:
-    linear-gradient(30deg,
-      transparent 48%,
-      rgba(255,255,255,.32) 49%,
-      rgba(255,255,255,.32) 50%,
-      transparent 51%),
-
-    linear-gradient(150deg,
-      transparent 48%,
-      rgba(255,255,255,.22) 49%,
-      rgba(255,255,255,.22) 50%,
-      transparent 51%);
-
-  background-size:72px 125px;
-}
-
-.geo-one{
-  position:absolute;
-  width:250px;
-  height:250px;
-  right:-125px;
-  top:80px;
-  transform:rotate(45deg);
-  border:1px solid rgba(255,255,255,.16);
-}
-
-.geo-two{
-  position:absolute;
-  width:175px;
-  height:175px;
-  right:-85px;
-  top:118px;
-  transform:rotate(45deg);
-  border:1px solid rgba(22,166,186,.45);
-}
-
-.geo-three{
-  position:absolute;
-  width:120px;
-  height:120px;
-  left:-72px;
-  bottom:-30px;
-  transform:rotate(45deg);
-  border:1px solid rgba(255,255,255,.25);
-}
-
-
-/* LOGOTIPO */
-
-.logo-card{
-  position:relative;
-  z-index:5;
-  width:100%;
-  max-width:285px;
-  background:rgba(255,255,255,.98);
-  padding:17px 20px;
-  border-radius:16px;
-  box-shadow:0 15px 35px rgba(0,40,60,.18);
-  margin-bottom:43px;
-}
-
-.logo-card img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-
-
-/* PERFIL */
-
-.profile{
-  position:relative;
-  z-index:5;
-}
-
-.mini-label{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:7px 12px;
-  border:1px solid rgba(255,255,255,.20);
-  border-radius:100px;
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(10px);
-  color:#d8f5ff;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.7px;
-  text-transform:uppercase;
-  margin-bottom:17px;
-}
-
-.mini-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--accent);
-}
-
-.profile h1{
-  color:white;
-  font-size:37px;
-  line-height:1.08;
-  letter-spacing:-1.2px;
-  margin-bottom:13px;
-}
-
-.job{
-  color:white;
-  font-size:18px;
-  font-weight:600;
-  margin-bottom:7px;
-}
-
-.business{
-  color:rgba(255,255,255,.75);
-  font-size:14px;
-  line-height:1.6;
-  max-width:340px;
-}
-
-.profile-accent{
-  width:68px;
-  height:4px;
-  margin-top:24px;
-  background:linear-gradient(
-    90deg,
-    var(--accent),
-    #6ad6e5
-  );
-  border-radius:20px;
-}
-
-
-/* =========================
-   CONTACTO
-========================= */
-
-.actions{
-  position:relative;
-  z-index:10;
-  padding:0 21px 35px;
-  margin-top:-27px;
-}
-
-
-/* BOTÓN PRINCIPAL */
-
-.whatsapp{
-  width:100%;
-  min-height:78px;
-  display:flex;
-  align-items:center;
-  padding:16px 20px;
-  gap:15px;
-  background:white;
-  border-radius:18px;
-  box-shadow:0 16px 40px rgba(0,44,80,.16);
-  border:1px solid rgba(22,166,186,.15);
-  margin-bottom:13px;
-  transition:.18s ease;
-  cursor:pointer;
-  text-align:left;
-}
-
-.whatsapp:active{
-  transform:scale(.98);
-}
-
-.whatsapp-icon{
-  flex:none;
-  width:48px;
-  height:48px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:14px;
-  background:var(--navy);
-  color:white;
-}
-
-.whatsapp-icon svg{
-  width:24px;
-  height:24px;
-}
-
-.whatsapp-copy{
-  flex:1;
-}
-
-.whatsapp-small{
-  display:block;
-  color:var(--gray);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:1.3px;
-  margin-bottom:3px;
-}
-
-.whatsapp-title{
-  color:var(--navy);
-  font-size:16px;
-  font-weight:750;
-}
-
-.arrow{
-  color:var(--accent);
-  font-size:25px;
-  font-weight:300;
-}
-
-
-/* GRID DE BOTONES */
-
-.action-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
-}
-
-.action{
-  min-height:104px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:space-between;
-  padding:17px;
-  background:var(--soft);
-  border:1px solid var(--line);
-  border-radius:17px;
-  text-decoration:none;
-  transition:.18s ease;
-  cursor:pointer;
-  text-align:left;
-}
-
-.action:active{
-  transform:scale(.97);
-}
-
-.action-icon{
-  width:39px;
-  height:39px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:11px;
-  background:white;
-  color:var(--navy);
-  box-shadow:0 4px 12px rgba(0,44,80,.08);
-}
-
-.action-icon svg{
-  width:20px;
-  height:20px;
-}
-
-.action-name{
-  color:var(--navy);
-  font-size:14px;
-  font-weight:700;
-}
-
-.action.agenda{
-  background:linear-gradient(
-    145deg,
-    var(--blue),
-    var(--navy)
-  );
-  border:none;
-}
-
-.action.agenda .action-icon{
-  background:rgba(255,255,255,.18);
-  color:white;
-  box-shadow:none;
-}
-
-.action.agenda .action-name{
-  color:white;
-}
-
-
-/* =========================
-   FORMULARIO
-========================= */
-
-.form-panel{
-  display:none;
-  margin:0 0 15px;
-  padding:24px 20px;
-  border-radius:18px;
-  background:linear-gradient(145deg,#eff9fc,#e1f2f8);
-  border:1px solid #cde6ef;
-  box-shadow:0 12px 30px rgba(0,44,80,.09);
-}
-
-.form-panel.open{
-  display:block;
-}
-
-.form-label{
-  color:var(--accent);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:7px;
-}
-
-.form-panel h3{
-  color:var(--navy);
-  font-size:23px;
-  margin-bottom:8px;
-}
-
-.form-intro{
-  color:var(--gray);
-  font-size:13px;
-  line-height:1.6;
-  margin-bottom:20px;
-}
-
-.form-group{
-  margin-bottom:15px;
-}
-
-.form-group label{
-  display:block;
-  color:var(--navy);
-  font-size:12px;
-  font-weight:750;
-  margin-bottom:7px;
-}
-
-.form-control{
-  width:100%;
-  min-height:48px;
-  padding:12px 13px;
-  border:1px solid #c9dfe9;
-  border-radius:12px;
-  background:white;
-  color:var(--text);
-  outline:none;
-  font-size:14px;
-}
-
-.form-control:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(22,166,186,.12);
-}
-
-.form-submit{
-  width:100%;
-  margin-top:8px;
-  padding:16px;
-  border:0;
-  border-radius:13px;
-  background:linear-gradient(145deg,var(--blue),var(--navy));
-  color:white;
-  font-size:14px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.form-note{
-  margin-top:12px;
-  color:var(--gray);
-  font-size:11px;
-  line-height:1.6;
-}
-
-
-/* =========================
-   MENSAJE CORPORATIVO
-========================= */
-
-.statement{
-  position:relative;
-  overflow:hidden;
-  margin:15px 21px 0;
-  padding:45px 27px 42px;
-  border-radius:24px;
-  background:linear-gradient(145deg,#082c50,#12618c);
-  color:white;
-}
-
-.statement-grid{
-  position:absolute;
-  inset:0;
-  opacity:.08;
-  background-image:
-    linear-gradient(30deg,
-      transparent 48%,
-      white 49%,
-      white 50%,
-      transparent 51%),
-    linear-gradient(150deg,
-      transparent 48%,
-      white 49%,
-      white 50%,
-      transparent 51%);
-  background-size:52px 90px;
-}
-
-.statement-content{
-  position:relative;
-  z-index:2;
-}
-
-.statement-label{
-  color:#6ad6e5;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.statement h2{
-  font-size:29px;
-  line-height:1.16;
-  letter-spacing:-.5px;
-  margin-bottom:21px;
-}
-
-.statement p{
-  color:rgba(255,255,255,.78);
-  font-size:15px;
-  line-height:1.75;
-}
-
-.statement-line{
-  width:55px;
-  height:4px;
-  background:var(--accent);
-  border-radius:20px;
-  margin-top:25px;
-}
-
-
-/* =========================
-   SERVICIOS HIPOTECARIOS
-========================= */
-
-.services{
-  margin:24px 21px 0;
-  padding:35px 23px;
-  border-radius:24px;
-  background:linear-gradient(145deg,#eef7fc,#e3f1f9);
-  border:1px solid #d2e6f0;
-}
-
-.services-label{
-  color:var(--accent);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.services h3{
-  color:var(--navy);
-  font-size:27px;
-  letter-spacing:-.5px;
-  margin-bottom:15px;
-}
-
-.services-intro{
-  color:var(--gray);
-  font-size:13px;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-
-.service-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px 0;
-  border-bottom:1px solid rgba(8,44,80,.12);
-}
-
-.service-item:last-child{
-  border-bottom:none;
-}
-
-.service-dot{
-  width:9px;
-  height:9px;
-  flex:none;
-  border-radius:50%;
-  background:var(--accent);
-}
-
-.service-name{
-  color:var(--navy);
-  font-size:14px;
-  font-weight:700;
-  line-height:1.4;
-}
-
-
-/* =========================
-   CONTACTO INSTITUCIONAL
-========================= */
-
-.contact{
-  padding:52px 22px 45px;
-}
-
-.contact-label{
-  color:var(--accent);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.contact h3{
-  color:var(--navy);
-  font-size:27px;
-  letter-spacing:-.5px;
-  margin-bottom:11px;
-}
-
-.contact p{
-  color:var(--gray);
-  font-size:14px;
-  line-height:1.7;
-  margin-bottom:21px;
-}
-
-.contact-link{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:17px 18px;
-  border-radius:14px;
-  background:#e7f6fa;
-  border:1px solid #cde6ef;
-  color:var(--navy);
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.contact-arrow{
-  color:var(--accent);
-  font-size:21px;
-}
-
-
-/* =========================
-   NEXID BRAND AREA
-========================= */
-
-.nexid-brand{
-  position:relative;
-  overflow:hidden;
-  padding:53px 25px 31px;
-  background:#03182b;
-  text-align:center;
-}
-
-.nexid-lines{
-  position:absolute;
-  inset:0;
-  opacity:.14;
-  background:
-    linear-gradient(120deg,
-      transparent 30%,
-      rgba(255,179,70,.45) 30.5%,
-      transparent 31%),
-    linear-gradient(60deg,
-      transparent 64%,
-      rgba(0,164,255,.45) 64.5%,
-      transparent 65%);
-  background-size:90px 90px;
-}
-
-.nexid-watermark{
-  position:absolute;
-  width:470px;
-  max-width:none;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%) rotate(-4deg);
-  opacity:.045;
-  pointer-events:none;
-}
-
-.powered{
-  position:relative;
-  z-index:3;
-  display:block;
-  width:285px;
-  max-width:88%;
-  margin:0 auto;
-  border-radius:10px;
-  box-shadow:0 12px 35px rgba(0,0,0,.22);
-}
-
-.created{
-  position:relative;
-  z-index:3;
-  margin-top:17px;
-  color:rgba(255,255,255,.42);
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:360px){
-  .profile h1{
-    font-size:33px;
-  }
-
-  .statement h2{
-    font-size:26px;
-  }
-}
-
 </style>
 </head>
-
-
 <body>
-
 <main class="page">
-
-
-<!-- ======================
-     HERO
-====================== -->
-
 <section class="hero">
-
-  <div class="hero-pattern"></div>
-  <div class="geo-one"></div>
-  <div class="geo-two"></div>
-  <div class="geo-three"></div>
-
-  <div class="logo-card">
-
-    <img
-      src="logo-tuenlace.jpeg"
-      alt="Tu Enlace Hipotecario">
-
-  </div>
-
-  <div class="profile">
-
-    <div class="mini-label">
-      <span class="mini-dot"></span>
-      Asesoría y financiamiento
-    </div>
-
-    <h1>
-      TU ENLACE<br>
-      HIPOTECARIO
-    </h1>
-
-    <p class="job">
-      Soluciones hipotecarias
-    </p>
-
-    <p class="business">
-      Te acompañamos a encontrar el financiamiento
-      adecuado para tu patrimonio.
-    </p>
-
-    <div class="profile-accent"></div>
-
-  </div>
-
+<div class="logo-card"><img src="logo-tuenlace.jpeg" alt="Logotipo oficial Tu Enlace Hipotecario"></div>
+<span class="eyebrow">Asesoría y financiamiento</span>
+<h1>TU ENLACE<br>HIPOTECARIO</h1>
+<p>Soluciones de financiamiento y acompañamiento para construir tu patrimonio.</p>
+<div class="accent"></div>
 </section>
-
-
-
-<!-- ======================
-     CONTACTO
-====================== -->
-
 <section class="actions">
-
-
-<!-- BOTÓN PRINCIPAL -->
-
-<button
-  type="button"
-  class="whatsapp"
-  id="openForm"
-  aria-expanded="false"
-  aria-controls="formPanel">
-
-  <div class="whatsapp-icon">
-
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.8">
-
-      <rect x="4" y="3" width="16" height="18" rx="2"/>
-      <path d="M8 8h8M8 12h8M8 16h4"/>
-
-    </svg>
-
-  </div>
-
-  <div class="whatsapp-copy">
-
-    <span class="whatsapp-small">
-      Comienza aquí
-    </span>
-
-    <span class="whatsapp-title">
-      Solicitar asesoría hipotecaria
-    </span>
-
-  </div>
-
-  <span class="arrow">→</span>
-
+<button class="main-btn" type="button" data-panel="admissionPanel" aria-expanded="false">
+<span class="bubble">▤</span>
+<span><small>Formulario institucional</small><strong>Información para admisión</strong></span>
+<span class="arrow">→</span>
 </button>
-
-
-
-<!-- FORMULARIO HIPOTECARIO -->
-
-<div class="form-panel" id="formPanel">
-
-  <p class="form-label">
-    Tu Enlace Hipotecario
-  </p>
-
-  <h3>
-    Solicitud de asesoría
-  </h3>
-
-  <p class="form-intro">
-    Completa tus datos y selecciona el tipo de
-    financiamiento que necesitas.
-  </p>
-
-  <form id="leadForm">
-
-    <div class="form-group">
-
-      <label for="clientName">
-        Nombre completo
-      </label>
-
-      <input
-        class="form-control"
-        id="clientName"
-        type="text"
-        autocomplete="name"
-        required>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="clientPhone">
-        WhatsApp
-      </label>
-
-      <input
-        class="form-control"
-        id="clientPhone"
-        type="tel"
-        autocomplete="tel"
-        required>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="clientEmail">
-        Correo electrónico
-      </label>
-
-      <input
-        class="form-control"
-        id="clientEmail"
-        type="email"
-        autocomplete="email"
-        required>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="creditType">
-        ¿Qué tipo de financiamiento necesitas?
-      </label>
-
-      <select
-        class="form-control"
-        id="creditType"
-        required>
-
-        <option value="">
-          Selecciona una opción
-        </option>
-
-        <option>Crédito hipotecario bancario</option>
-        <option>Infonavit</option>
-        <option>Cofinavit</option>
-        <option>Fovissste</option>
-        <option>Adquisición de terreno</option>
-        <option>Terreno y construcción</option>
-        <option>Construcción</option>
-        <option>Remodelación</option>
-        <option>Sustitución de hipoteca</option>
-        <option>Mejora de hipoteca</option>
-        <option>Liquidez con garantía hipotecaria</option>
-        <option>Otro financiamiento</option>
-
-      </select>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="income">
-        Ingreso mensual aproximado (opcional)
-      </label>
-
-      <select class="form-control" id="income">
-
-        <option value="">
-          Prefiero no indicarlo
-        </option>
-
-        <option>Menos de $15,000</option>
-        <option>$15,000 a $25,000</option>
-        <option>$25,001 a $40,000</option>
-        <option>$40,001 a $60,000</option>
-        <option>Más de $60,000</option>
-
-      </select>
-
-    </div>
-
-
-    <button type="submit" class="form-submit">
-      Enviar solicitud por WhatsApp
-    </button>
-
-    <p class="form-note">
-      Al continuar, se abrirá WhatsApp con tu solicitud
-      preparada. El mensaje se enviará únicamente
-      cuando tú lo confirmes.
-    </p>
-
-  </form>
-
+<div class="grid">
+<a class="action featured" href="https://wa.me/524442660744" target="_blank" rel="noopener"><span class="symbol">✆</span>WhatsApp</a>
+<a class="action" href="tel:+524442660744"><span class="symbol">☎️</span>Llamar</a>
+<a class="action" href="mailto:carlos@tuenlacehipotecario.com"><span class="symbol">✉️</span>Correo</a>
+<a class="action" href="https://www.instagram.com/tuenlacehipotecario?xtok=MXNtNnVnNmF0aXozZA==" target="_blank" rel="noopener"><span class="symbol">◎</span>Instagram</a>
+<a class="action" href="https://www.facebook.com/share/1BuKDMq2PJ/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="symbol">f</span>Facebook</a>
+<a class="action" href="#services"><span class="symbol">⌂</span>Nuestros créditos</a>
+<button class="action" type="button" data-panel="salaryPanel" aria-expanded="false"><span class="symbol">✓</span>Requisitos asalariados</button>
+<button class="action" type="button" data-panel="independentPanel" aria-expanded="false"><span class="symbol">✓</span>Requisitos independientes</button>
 </div>
-
-
-
-<!-- GRID DE BOTONES -->
-
-<div class="action-grid">
-
-
-<!-- WHATSAPP -->
-
-<button
-  type="button"
-  class="action agenda"
-  data-contact="whatsapp">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    WhatsApp
-  </span>
-
-</button>
-
-
-
-<!-- LLAMAR -->
-
-<button
-  type="button"
-  class="action"
-  data-contact="telefono">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.08 2h3a2 2 0 0 1 2 1.72l.7 2.81a2 2 0 0 1-.45 2.11L9.06 9.91a16 16 0 0 0 5.03 5.03l1.27-1.27a2 2 0 0 1 2.11-.45l2.81.7A2 2 0 0 1 22 16.92z"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    Llamar
-  </span>
-
-</button>
-
-
-
-<!-- CORREO -->
-
-<button
-  type="button"
-  class="action"
-  data-contact="correo">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <rect x="3" y="5" width="18" height="14" rx="2"/>
-      <path d="M3 7l9 6 9-6"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    Correo
-  </span>
-
-</button>
-
-
-
-<!-- UBICACIÓN -->
-
-<button
-  type="button"
-  class="action"
-  data-contact="ubicacion">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
-      <circle cx="12" cy="10" r="3"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    Ubicación
-  </span>
-
-</button>
-
-
-
-<!-- SERVICIOS -->
-
-<a href="#services" class="action">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <path d="M3 10l9-7 9 7v11H3z"/>
-      <path d="M9 21v-8h6v8"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    Nuestros créditos
-  </span>
-
-</a>
-
-
-
-<!-- INSTAGRAM -->
-
-<button
-  type="button"
-  class="action"
-  data-contact="instagram">
-
-  <span class="action-icon">
-
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.8">
-
-      <rect x="3" y="3" width="18" height="18" rx="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r=".7"
-        fill="currentColor" stroke="none"/>
-
-    </svg>
-
-  </span>
-
-  <span class="action-name">
-    Instagram
-  </span>
-
-</button>
-
-
+</section>
+<section class="panel requirements" id="salaryPanel">
+<h2>Requisitos para asalariados</h2>
+<p>Ingresos por nómina. Marca los documentos que ya tienes preparados.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> INE o pasaporte vigente</label></li>
+<li><label><input type="checkbox"> Comprobante de domicilio (no mayor a 3 meses)</label></li>
+<li><label><input type="checkbox"> Acta de nacimiento y matrimonio</label></li>
+<li><label><input type="checkbox"> Últimos 3 meses de recibos de nómina timbrados</label></li>
+<li><label><input type="checkbox"> Últimos 3 meses de estados de cuenta</label></li>
+<li><label><input type="checkbox"> Constancia de situación fiscal reciente</label></li>
+</ul>
+<p class="notice">Lista orientativa; los requisitos definitivos pueden variar según la institución y el tipo de crédito.</p>
+</section>
+<section class="panel requirements" id="independentPanel">
+<h2>Requisitos para independientes</h2>
+<p>Marca los documentos que ya tienes preparados.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> INE o pasaporte vigente</label></li>
+<li><label><input type="checkbox"> Comprobante de domicilio (no mayor a 3 meses)</label></li>
+<li><label><input type="checkbox"> Acta de nacimiento y matrimonio</label></li>
+<li><label><input type="checkbox"> Últimos 6 meses de estados de cuenta</label></li>
+<li><label><input type="checkbox"> Constancia de situación fiscal reciente</label></li>
+<li><label><input type="checkbox"> Si es persona moral, agregar acta constitutiva</label></li>
+</ul>
+<p class="notice">Lista orientativa; los requisitos definitivos pueden variar según la institución y el tipo de crédito.</p>
+</section>
+<section class="panel" id="admissionPanel">
+<h2>Información para admisión</h2>
+<p>Completa el formulario y utiliza “Guardar / imprimir PDF” para generar tu documento. Los datos no se envían ni se almacenan en un servidor mediante esta página.</p>
+<form id="admissionForm" autocomplete="off">
+<h3>Información del crédito</h3>
+<div class="fields2">
+<div class="field"><label>Monto de crédito</label><input name="Monto de crédito" inputmode="decimal"></div>
+<div class="field"><label>Valor vivienda</label><input name="Valor vivienda" inputmode="decimal"></div>
 </div>
-
+<h3>Datos personales</h3>
+<div class="fields2">
+<div class="field wide"><label>Nombre completo</label><input name="Nombre completo"></div>
+<div class="field"><label>Fecha de nacimiento</label><input type="date" name="Fecha de nacimiento"></div>
+<div class="field"><label>Lugar de nacimiento</label><input name="Lugar de nacimiento"></div>
+<div class="field"><label>RFC</label><input name="RFC"></div>
+<div class="field"><label>NSS</label><input name="NSS"></div>
+<div class="field wide"><label>CURP</label><input name="CURP"></div>
+<div class="field"><label>Escolaridad</label><input name="Escolaridad"></div>
+<div class="field"><label>Estado civil</label><input name="Estado civil"></div>
+<div class="field"><label>Estatura</label><input name="Estatura"></div>
+<div class="field"><label>Peso</label><input name="Peso"></div>
+</div>
+<h3>Cónyuge (si aplica)</h3>
+<div class="fields2">
+<div class="field wide"><label>Nombre completo</label><input name="Cónyuge nombre completo"></div>
+<div class="field"><label>Fecha de nacimiento</label><input type="date" name="Cónyuge fecha de nacimiento"></div>
+<div class="field"><label>RFC</label><input name="Cónyuge RFC"></div>
+<div class="field"><label>CURP</label><input name="Cónyuge CURP"></div>
+<div class="field"><label>Lugar de nacimiento</label><input name="Cónyuge lugar de nacimiento"></div>
+<div class="field wide"><label>Ocupación</label><input name="Cónyuge ocupación"></div>
+</div>
+<h3>Domicilio</h3>
+<div class="fields2">
+<div class="field wide"><label>Calle</label><input name="Calle"></div>
+<div class="field"><label>Número</label><input name="Número"></div>
+<div class="field"><label>Código postal</label><input name="Código postal"></div>
+<div class="field"><label>Antigüedad en domicilio</label><input name="Antigüedad en domicilio"></div>
+<div class="field"><label>Colonia</label><input name="Colonia"></div>
+<div class="field wide"><label>Población</label><input name="Población"></div>
+<div class="field"><label>Celular</label><input type="tel" name="Celular"></div>
+<div class="field"><label>Correo</label><input type="email" name="Correo"></div>
+</div>
+<h3>Datos laborales</h3>
+<div class="fields2">
+<div class="field"><label>Empresa</label><input name="Empresa"></div>
+<div class="field"><label>Giro</label><input name="Giro"></div>
+<div class="field"><label>Teléfono</label><input type="tel" name="Teléfono laboral"></div>
+<div class="field"><label>Domicilio</label><input name="Domicilio laboral"></div>
+<div class="field"><label>Ingreso</label><input name="Ingreso laboral" inputmode="decimal"></div>
+<div class="field"><label>Departamento</label><input name="Departamento"></div>
+<div class="field wide"><label>Puesto</label><input name="Puesto"></div>
+<div class="field wide"><label>Descripción de funciones</label><textarea name="Descripción de funciones"></textarea></div>
+</div>
+<h3>Referencias personales</h3>
+<p class="notice">Proporciona estos datos únicamente con conocimiento de las personas referidas.</p>
+<div class="fields2">
+<div class="field wide"><label>Referencia 1 — Nombre</label><input name="Referencia 1 nombre"></div>
+<div class="field"><label>Domicilio</label><input name="Referencia 1 domicilio"></div>
+<div class="field"><label>Teléfono</label><input type="tel" name="Referencia 1 teléfono"></div>
+<div class="field wide"><label>Referencia 2 — Nombre</label><input name="Referencia 2 nombre"></div>
+<div class="field"><label>Domicilio</label><input name="Referencia 2 domicilio"></div>
+<div class="field"><label>Teléfono</label><input type="tel" name="Referencia 2 teléfono"></div>
+<div class="field wide"><label>Referencia 3 — Nombre</label><input name="Referencia 3 nombre"></div>
+<div class="field"><label>Domicilio</label><input name="Referencia 3 domicilio"></div>
+<div class="field"><label>Teléfono</label><input type="tel" name="Referencia 3 teléfono"></div>
+</div>
+<h3>Ingresos</h3>
+<div class="fields2">
+<div class="field"><label>Ingreso bruto al mes</label><input name="Ingreso bruto al mes" inputmode="decimal"></div>
+<div class="field"><label>Ingreso neto al mes</label><input name="Ingreso neto al mes" inputmode="decimal"></div>
+</div>
+<h3>Observaciones</h3>
+<div class="field"><label>Observaciones adicionales</label><textarea name="Observaciones" rows="4"></textarea></div>
+<div class="panel-actions">
+<button type="button" class="btn" id="printAdmission">Guardar / imprimir PDF</button>
+<button type="reset" class="btn secondary">Limpiar formulario</button>
+</div>
+<p class="notice">Privacidad: este formulario no tiene conexión con una base de datos. No compartas documentos con datos personales por canales públicos. Para recibir solicitudes digitales de forma segura necesitaremos un servicio protegido y un aviso de privacidad.</p>
+</form>
 </section>
-
-
-
-<!-- ======================
-     MENSAJE CORPORATIVO
-====================== -->
-
-<section class="statement">
-
-  <div class="statement-grid"></div>
-
-  <div class="statement-content">
-
-    <p class="statement-label">
-      Tu Enlace Hipotecario
-    </p>
-
-    <h2>
-      Tu patrimonio comienza con una buena decisión.
-    </h2>
-
-    <p>
-      Te orientamos durante el proceso de financiamiento,
-      desde la evaluación de tus opciones hasta el
-      acompañamiento en los trámites de tu crédito.
-      Nuestro objetivo es ayudarte a tomar decisiones
-      informadas para tu futuro.
-    </p>
-
-    <div class="statement-line"></div>
-
-  </div>
-
+<section class="section">
+<small>Tu Enlace Hipotecario</small>
+<h2>Tu patrimonio comienza con una buena decisión.</h2>
+<p>Te orientamos para identificar opciones de financiamiento y te acompañamos durante el proceso de tu crédito hipotecario.</p>
 </section>
-
-
-
-<!-- ======================
-     SERVICIOS HIPOTECARIOS
-====================== -->
-
 <section class="services" id="services">
-
-  <p class="services-label">
-    Nuestros servicios
-  </p>
-
-  <h3>
-    Soluciones hipotecarias
-  </h3>
-
-  <p class="services-intro">
-    Conoce las opciones de financiamiento en las que
-    podemos orientarte.
-  </p>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Créditos hipotecarios bancarios
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Infonavit y Cofinavit
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Fovissste
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Créditos para construcción
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Adquisición de terreno y construcción
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Créditos para remodelación
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Sustitución y mejora de hipoteca
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Liquidez con garantía hipotecaria
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Apoyo Infonavit
-    </span>
-  </div>
-
-  <div class="service-item">
-    <span class="service-dot"></span>
-    <span class="service-name">
-      Terminación de obra y otros financiamientos
-    </span>
-  </div>
-
+<h2>Soluciones hipotecarias</h2>
+<ul>
+<li>Créditos hipotecarios bancarios</li>
+<li>Infonavit y Cofinavit</li>
+<li>Fovissste</li>
+<li>Apoyo Infonavit</li>
+<li>Construcción</li>
+<li>Terreno y construcción</li>
+<li>Remodelación</li>
+<li>Sustitución y mejora de hipoteca</li>
+<li>Liquidez con garantía hipotecaria</li>
+<li>Terminación de obra en preventa</li>
+</ul>
 </section>
-
-
-
-<!-- ======================
-     CONTACTO INSTITUCIONAL
-====================== -->
-
-<section class="contact">
-
-  <p class="contact-label">
-    Estamos para ayudarte
-  </p>
-
-  <h3>
-    Hablemos de tu próximo proyecto
-  </h3>
-
-  <p>
-    Nuestro equipo puede orientarte para identificar
-    las alternativas de financiamiento que mejor
-    se adapten a tus necesidades.
-  </p>
-
-  <button
-    type="button"
-    class="contact-link"
-    id="bottomContact">
-
-    <span>Solicitar asesoría</span>
-    <span class="contact-arrow">→</span>
-
-  </button>
-
-</section>
-
-
-
-<!-- ======================
-     NEXID
-====================== -->
-
 <footer class="nexid-brand">
-
-  <div class="nexid-lines"></div>
-
-  <img
-    src="powered-by-nexid.jpeg"
-    alt=""
-    class="nexid-watermark">
-
-  <img
-    src="powered-by-nexid.jpeg"
-    alt="Powered by NexID"
-    class="powered">
-
-  <p class="created">
-    Experiencia digital creada con NexID
-  </p>
-
+<div class="nexid-lines"></div>
+<img src="powered-by-nexid.jpeg" alt="" class="nexid-watermark">
+<img src="powered-by-nexid.jpeg" alt="Powered by NexID" class="powered">
+<p class="created">Experiencia digital creada con NexID</p>
 </footer>
-
-
 </main>
-
-
 <script>
-
-/* =========================
-   DATOS DE CONTACTO
-   PENDIENTES DE CONFIGURAR
-========================= */
-
-const CONFIG = {
-  whatsapp:"",
-  telefono:"",
-  correo:"",
-  ubicacion:"",
-  instagram:""
-};
-
-
-/* =========================
-   ABRIR FORMULARIO
-========================= */
-
-const openForm =
-  document.getElementById("openForm");
-
-const formPanel =
-  document.getElementById("formPanel");
-
-const bottomContact =
-  document.getElementById("bottomContact");
-
-function mostrarFormulario(){
-
-  formPanel.classList.add("open");
-
-  openForm.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-  formPanel.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-openForm.addEventListener("click",function(){
-
-  const isOpen =
-    formPanel.classList.toggle("open");
-
-  openForm.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
-
-  if(isOpen){
-    formPanel.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
+const panels=document.querySelectorAll('.panel');
+document.querySelectorAll('[data-panel]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const panel=document.getElementById(button.dataset.panel);
+  const shouldOpen=!panel.classList.contains('open');
+  panels.forEach(p=>p.classList.remove('open'));
+  document.querySelectorAll('[data-panel]').forEach(b=>b.setAttribute('aria-expanded','false'));
+  if(shouldOpen){
+   panel.classList.add('open');
+   button.setAttribute('aria-expanded','true');
+   panel.scrollIntoView({behavior:'smooth',block:'start'});
   }
-
+ });
 });
-
-bottomContact.addEventListener(
-  "click",
-  mostrarFormulario
-);
-
-
-/* =========================
-   FORMULARIO A WHATSAPP
-========================= */
-
-document.getElementById("leadForm")
-.addEventListener("submit",function(event){
-
-  event.preventDefault();
-
-  if(!CONFIG.whatsapp){
-    alert(
-      "El WhatsApp institucional está pendiente de configurar."
-    );
-    return;
-  }
-
-  const name =
-    document.getElementById("clientName").value.trim();
-
-  const phone =
-    document.getElementById("clientPhone").value.trim();
-
-  const email =
-    document.getElementById("clientEmail").value.trim();
-
-  const credit =
-    document.getElementById("creditType").value;
-
-  const income =
-    document.getElementById("income").value;
-
-  const message =
-`Hola, quiero solicitar asesoría con TU ENLACE HIPOTECARIO.
-
-Nombre completo: ${name}
-WhatsApp: ${phone}
-Correo electrónico: ${email}
-Tipo de financiamiento: ${credit}
-Ingreso mensual aproximado: ${income || "No especificado"}
-
-Quedo pendiente de que un asesor se comunique conmigo.`;
-
-  const url =
-    "https://wa.me/" +
-    CONFIG.whatsapp.replace(/\D/g,"") +
-    "?text=" +
-    encodeURIComponent(message);
-
-  window.open(url,"_blank","noopener");
-
-});
-
-
-/* =========================
-   BOTONES DE CONTACTO
-========================= */
-
-document.querySelectorAll("[data-contact]")
-.forEach(function(button){
-
-  button.addEventListener("click",function(){
-
-    const type =
-      button.dataset.contact;
-
-    let url = "";
-
-    if(type==="whatsapp" && CONFIG.whatsapp){
-      url="https://wa.me/" +
-        CONFIG.whatsapp.replace(/\D/g,"");
-    }
-
-    if(type==="telefono" && CONFIG.telefono){
-      url="tel:" + CONFIG.telefono;
-    }
-
-    if(type==="correo" && CONFIG.correo){
-      url="mailto:" + CONFIG.correo;
-    }
-
-    if(type==="ubicacion" && CONFIG.ubicacion){
-      url=CONFIG.ubicacion;
-    }
-
-    if(type==="instagram" && CONFIG.instagram){
-      url=CONFIG.instagram;
-    }
-
-    if(!url){
-      alert(
-        "Este dato de contacto está pendiente de configurar."
-      );
-      return;
-    }
-
-    if(type==="telefono" || type==="correo"){
-      window.location.href=url;
-    }else{
-      window.open(url,"_blank","noopener");
-    }
-
-  });
-
-});
-
+document.getElementById('printAdmission').addEventListener('click',()=>window.print());
 </script>
-
 </body>
 </html>
