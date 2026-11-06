@@ -1,1 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>MEXIGRAFIKOS | NexID</title>
+<style>
+:root{--pink:#ff087c;--lime:#eaff31;--black:#090909}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#202020;color:white;font-family:Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+.page{max-width:520px;margin:auto;background:#0c0c0c;min-height:100vh}
+.hero{padding:35px 25px 65px;background:radial-gradient(circle at top right,#ff087c25,transparent 45%),#080808}
+.logo{display:block;width:280px;max-width:90%;margin:0 auto 30px;border-radius:50%}
+.tag{color:var(--lime);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:bold}
+h1{font-size:36px;line-height:1.1;margin:18px 0}
+h1 span{color:var(--pink)}
+.intro{font-size:14px;line-height:1.75;color:#ddd}
+.line{height:4px;width:85px;background:linear-gradient(90deg,var(--pink) 50%,var(--lime) 50%);margin-top:25px}
+.actions{padding:0 20px 25px;margin-top:-25px;position:relative}
+.primary{display:block;width:100%;padding:20px;background:var(--pink);border:0;border-radius:17px;color:white;font-weight:bold;font-size:17px;cursor:pointer;text-align:left}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.action{display:flex;flex-direction:column;justify-content:space-between;min-height:100px;padding:16px;background:#1c1c1c;border:1px solid #393939;border-radius:16px;color:white;text-decoration:none;font-weight:bold;font-size:14px;cursor:pointer;text-align:left}
+.symbol{font-size:24px;color:var(--lime)}
+.panel{display:none;margin:0 20px 24px;padding:22px 19px;background:#181818;border:1px solid #444;border-radius:18px}
+.panel.open{display:block}
+.panel h2{margin-top:0}
+.panel p{font-size:13px;color:#ccc;line-height:1.6}
+.field{margin:14px 0}
+.field label{display:block;font-size:13px;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #555;border-radius:9px;background:#090909;color:white}
+.field textarea{min-height:100px}
+.btn{display:block;width:100%;background:var(--lime);color:#080808;text-align:center;text-decoration:none;border:0;border-radius:10px;padding:15px;font-weight:bold;cursor:pointer;margin-top:15px}
+.services{list-style:none;padding:0}
+.services li{padding:12px 0;border-bottom:1px solid #333;font-size:14px}
+.services li:before{content:"✓ ";color:var(--lime)}
+.statement{margin:15px 20px 25px;padding:28px 23px;background:linear-gradient(140deg,#321321,#111);border:1px solid #ff087c55;border-radius:19px}
+.statement h2{font-size:27px}
+.statement p{color:#ddd;line-height:1.7;font-size:14px}
+.address{margin:0 20px 25px;padding:25px;background:#191919;border:1px solid #383838;border-radius:19px}
+.address p{color:#ccc;line-height:1.6}
+.address a{color:var(--lime)}
+.nexid-brand{position:relative;overflow:hidden;padding:53px 25px 31px;background:#03182b;text-align:center}
+.nexid-lines{position:absolute;inset:0;opacity:.14;background:linear-gradient(120deg,transparent 30%,rgba(255,179,70,.45) 30.5%,transparent 31%),linear-gradient(60deg,transparent 64%,rgba(0,164,255,.45) 64.5%,transparent 65%);background-size:90px 90px}
+.powered{position:relative;z-index:3;display:block;width:285px;max-width:88%;margin:0 auto;border-radius:10px;box-shadow:0 12px 35px #0006}
+.created{position:relative;z-index:3;margin-top:17px;color:#ffffff6b;font-size:9px;letter-spacing:1.8px}
+</style>
+</head>
+<body>
+<main class="page">
 
+<header class="hero">
+<img class="logo" src="logo-mexigrafikos.jpeg" alt="MEXIGRAFIKOS">
+<div class="tag">Impresión · Publicidad · Personalización</div>
+<h1>IDEAS QUE <span>DESTACAN.</span></h1>
+<p class="intro">Transformamos tus ideas en impresiones que destacan. Somos especialistas en impresión de gran formato, DTF textil y UV, corte y grabado láser, sublimación y artículos publicitarios. Ofrecemos soluciones de impresión, personalización y rotulación para impulsar la imagen de tu negocio.</p>
+<div class="line"></div>
+</header>
+
+<section class="actions">
+<button class="primary" type="button" data-panel="quotePanel">✦ Solicitar cotización →</button>
+
+<div class="grid">
+<a class="action" href="https://wa.me/524444652960" target="_blank" rel="noopener"><span class="symbol">✆</span>WhatsApp</a>
+<a class="action" href="tel:+524444652960"><span class="symbol">☎️</span>Llamar</a>
+<a class="action" href="mailto:mexigrafikos@hotmail.com"><span class="symbol">✉️</span>Correo</a>
+<a class="action" href="https://www.instagram.com/mexigrafikos?mdxt=NDI2YzlxbDVmaTM3" target="_blank" rel="noopener"><span class="symbol">◎</span>Instagram</a>
+<a class="action" href="https://www.facebook.com/share/1LpuLnF4nF/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="symbol">f</span>Facebook</a>
+<a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potos%C3%AD" target="_blank" rel="noopener"><span class="symbol">⌖</span>Ubicación</a>
+<button class="action" type="button" data-panel="servicesPanel"><span class="symbol">▤</span>Nuestros servicios</button>
+<button class="action" type="button" id="shareBtn"><span class="symbol">↗️</span>Compartir tarjeta</button>
+</div>
+</section>
+
+<section class="panel" id="quotePanel">
+<h2>Solicita tu cotización</h2>
+<p>Completa los datos de tu proyecto para enviar tu solicitud por WhatsApp.</p>
+<form id="quoteForm">
+<div class="field">
+<label for="customer">Tu nombre</label>
+<input id="customer" required maxlength="100" placeholder="Nombre completo">
+</div>
+<div class="field">
+<label for="service">Servicio de interés</label>
+<select id="service" required>
+<option value="">Selecciona un servicio</option>
+<option>Impresión de gran formato</option>
+<option>Vinil y rotulación</option>
+<option>Lonas</option>
+<option>Microperforado</option>
+<option>DTF textil</option>
+<option>DTF UV</option>
+<option>Corte y grabado láser</option>
+<option>Impresión láser</option>
+<option>Artículos publicitarios</option>
+<option>Sublimación y transfer</option>
+<option>Otros servicios</option>
+</select>
+</div>
+<div class="field">
+<label for="details">Detalles del proyecto</label>
+<textarea id="details" required maxlength="1200" placeholder="Cantidad, medidas, material y fecha estimada"></textarea>
+</div>
+<button class="btn" type="submit">Enviar solicitud por WhatsApp</button>
+<p>Se abrirá WhatsApp con el mensaje preparado para que puedas enviarlo.</p>
+</form>
+</section>
+
+<section class="panel" id="servicesPanel">
+<h2>Servicios MEXIGRAFIKOS</h2>
+<ul class="services">
+<li>Impresión de gran formato</li>
+<li>Vinil textil y de rotulación</li>
+<li>Lonas y microperforado</li>
+<li>DTF textil</li>
+<li>DTF UV</li>
+<li>Corte y grabado láser</li>
+<li>Impresión láser</li>
+<li>Artículos publicitarios</li>
+<li>Artículos para sublimación</li>
+<li>Transfer para personalización</li>
+</ul>
+<a class="btn" href="https://wa.me/524444652960?text=Hola%2C%20quiero%20solicitar%20asesor%C3%ADa%20sobre%20los%20servicios%20de%20MEXIGRAFIKOS." target="_blank" rel="noopener">Solicitar asesoría por WhatsApp</a>
+</section>
+
+<section class="statement">
+<div class="tag">MEXIGRAFIKOS</div>
+<h2>Tu marca merece hacerse notar.</h2>
+<p>Desde una pieza personalizada hasta proyectos de impresión de gran formato, te ayudamos a dar vida a tus ideas con soluciones para tu negocio, evento o marca.</p>
+</section>
+
+<section class="address">
+<h2>Visítanos</h2>
+<p>Av. Industrias 448, Esmeralda, C.P. 78399, San Luis Potosí, S.L.P.</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potos%C3%AD" target="_blank" rel="noopener">Abrir ubicación en Google Maps</a>
+</section>
+
+<footer class="nexid-brand">
+<div class="nexid-lines"></div>
+<img class="powered" src="powered-by-nexid.jpeg" alt="Powered by NexID">
+<p class="created">EXPERIENCIA DIGITAL CREADA CON NEXID</p>
+</footer>
+
+</main>
+<script>
+document.querySelectorAll('[data-panel]').forEach(button=>{
+button.addEventListener('click',()=>{
+const panel=document.getElementById(button.dataset.panel);
+const open=!panel.classList.contains('open');
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('open'));
+if(open){
+panel.classList.add('open');
+panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+});
+});
+
+document.getElementById('quoteForm').addEventListener('submit',event=>{
+event.preventDefault();
+const name=document.getElementById('customer').value.trim();
+const service=document.getElementById('service').value;
+const details=document.getElementById('details').value.trim();
+if(!name||!service||!details)return;
+const msg='Hola, MEXIGRAFIKOS. Me gustaría solicitar una cotización.\n\nNombre: '+name+'\nServicio: '+service+'\nDetalles: '+details;
+window.open('https://wa.me/524444652960?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+});
+
+document.getElementById('shareBtn').addEventListener('click',async()=>{
+const url=location.href;
+if(navigator.share){
+try{
+await navigator.share({title:'MEXIGRAFIKOS | Tarjeta digital',url});
+return;
+}catch(e){
+if(e.name==='AbortError')return;
+}
+}
+if(navigator.clipboard&&location.protocol==='https:'){
+try{
+await navigator.clipboard.writeText(url);
+alert('Enlace copiado');
+return;
+}catch(e){}
+}
+prompt('Copia el enlace:',url);
+});
+</script>
+</body>
+</html>
