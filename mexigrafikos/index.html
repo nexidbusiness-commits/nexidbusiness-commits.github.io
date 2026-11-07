@@ -4,29 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#090909">
-<title>MEXIGRAFIKOS | NexID</title>
+<title>MEXIGRAFIKOS | NexID Business</title>
 <style>
-:root{--pink:#ff087c;--lime:#eaff31;--black:#090909}
+:root{
+--pink:#ff087c;
+--lime:#eaff31;
+--black:#090909;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#202020;color:white;font-family:Arial,sans-serif}
+body{margin:0;background:#242424;color:#fff;font-family:Arial,sans-serif}
 button,input,select,textarea{font:inherit}
-.page{max-width:520px;margin:auto;background:#0c0c0c;min-height:100vh}
-.hero{padding:35px 25px 65px;background:radial-gradient(circle at top right,#ff087c25,transparent 45%),#080808}
-.logo{display:block;width:280px;max-width:90%;margin:0 auto 30px;border-radius:50%}
+button{cursor:pointer}
+.page{max-width:520px;margin:auto;min-height:100vh;background:#090909}
+.hero{padding:35px 25px 65px;background:radial-gradient(circle at top right,#ff087c30,transparent 45%),#090909}
+.logo{display:block;width:270px;max-width:90%;height:auto;margin:0 auto 32px}
 .tag{color:var(--lime);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:bold}
-h1{font-size:36px;line-height:1.1;margin:18px 0}
+h1{font-size:37px;line-height:1.1;margin:18px 0}
 h1 span{color:var(--pink)}
 .intro{font-size:14px;line-height:1.75;color:#ddd}
 .line{height:4px;width:85px;background:linear-gradient(90deg,var(--pink) 50%,var(--lime) 50%);margin-top:25px}
 .actions{padding:0 20px 25px;margin-top:-25px;position:relative}
-.primary{display:block;width:100%;padding:20px;background:var(--pink);border:0;border-radius:17px;color:white;font-weight:bold;font-size:17px;cursor:pointer;text-align:left}
+.primary{display:block;width:100%;padding:20px;background:var(--pink);border:0;border-radius:17px;color:white;font-weight:bold;font-size:17px;text-align:left}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
-.action{display:flex;flex-direction:column;justify-content:space-between;min-height:100px;padding:16px;background:#1c1c1c;border:1px solid #393939;border-radius:16px;color:white;text-decoration:none;font-weight:bold;font-size:14px;cursor:pointer;text-align:left}
-.symbol{font-size:24px;color:var(--lime)}
+.action{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-height:103px;padding:16px;background:#1c1c1c;border:1px solid #393939;border-radius:16px;color:white;text-decoration:none;font-weight:bold;font-size:14px;text-align:left}
+.symbol{font-size:25px;color:var(--lime)}
+.action.bank{border-color:var(--lime);background:#252510}
 .panel{display:none;margin:0 20px 24px;padding:22px 19px;background:#181818;border:1px solid #444;border-radius:18px}
 .panel.open{display:block}
-.panel h2{margin-top:0}
+.panel h2{margin-top:0;font-size:24px}
 .panel p{font-size:13px;color:#ccc;line-height:1.6}
 .field{margin:14px 0}
 .field label{display:block;font-size:13px;margin-bottom:7px}
@@ -36,6 +42,12 @@ h1 span{color:var(--pink)}
 .services{list-style:none;padding:0}
 .services li{padding:12px 0;border-bottom:1px solid #333;font-size:14px}
 .services li:before{content:"✓ ";color:var(--lime)}
+.bank-item{padding:15px;margin:12px 0;background:#090909;border:1px solid #444;border-radius:12px}
+.bank-item small{display:block;color:#aaa;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.bank-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.bank-value{font-size:16px;font-weight:bold;overflow-wrap:anywhere}
+.copy-btn{padding:10px 12px;border:1px solid var(--lime);border-radius:9px;background:transparent;color:var(--lime);font-size:12px;font-weight:bold;flex-shrink:0}
+#copyStatus{min-height:20px;color:var(--lime);font-size:12px;margin-top:10px}
 .statement{margin:15px 20px 25px;padding:28px 23px;background:linear-gradient(140deg,#321321,#111);border:1px solid #ff087c55;border-radius:19px}
 .statement h2{font-size:27px}
 .statement p{color:#ddd;line-height:1.7;font-size:14px}
@@ -44,147 +56,312 @@ h1 span{color:var(--pink)}
 .address a{color:var(--lime)}
 .nexid-brand{position:relative;overflow:hidden;padding:53px 25px 31px;background:#03182b;text-align:center}
 .nexid-lines{position:absolute;inset:0;opacity:.14;background:linear-gradient(120deg,transparent 30%,rgba(255,179,70,.45) 30.5%,transparent 31%),linear-gradient(60deg,transparent 64%,rgba(0,164,255,.45) 64.5%,transparent 65%);background-size:90px 90px}
+.nexid-watermark{position:absolute;width:470px;max-width:none;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg);opacity:.045;pointer-events:none}
 .powered{position:relative;z-index:3;display:block;width:285px;max-width:88%;margin:0 auto;border-radius:10px;box-shadow:0 12px 35px #0006}
 .created{position:relative;z-index:3;margin-top:17px;color:#ffffff6b;font-size:9px;letter-spacing:1.8px}
+@media(max-width:360px){h1{font-size:31px}.bank-value{font-size:14px}}
 </style>
 </head>
 <body>
 <main class="page">
 
 <header class="hero">
-<img class="logo" src="logo-mexigrafikos.jpeg" alt="MEXIGRAFIKOS">
+<img class="logo" src="logo-mexigrafikos.jpeg" alt="Logotipo MEXIGRAFIKOS">
 <div class="tag">Impresión · Publicidad · Personalización</div>
 <h1>IDEAS QUE <span>DESTACAN.</span></h1>
-<p class="intro">Transformamos tus ideas en impresiones que destacan. Somos especialistas en impresión de gran formato, DTF textil y UV, corte y grabado láser, sublimación y artículos publicitarios. Ofrecemos soluciones de impresión, personalización y rotulación para impulsar la imagen de tu negocio.</p>
+<p class="intro">
+Transformamos tus ideas en impresiones que destacan.
+Somos especialistas en impresión de gran formato,
+DTF textil y UV, corte y grabado láser,
+sublimación y artículos publicitarios.
+Ofrecemos soluciones de impresión, personalización
+y rotulación para impulsar la imagen de tu negocio.
+</p>
 <div class="line"></div>
 </header>
 
 <section class="actions">
-<button class="primary" type="button" data-panel="quotePanel">✦ Solicitar cotización →</button>
+
+<button class="primary" type="button" data-panel="quotePanel">
+✦ Solicitar cotización →
+</button>
 
 <div class="grid">
-<a class="action" href="https://wa.me/524444652960" target="_blank" rel="noopener"><span class="symbol">✆</span>WhatsApp</a>
-<a class="action" href="tel:+524444652960"><span class="symbol">☎️</span>Llamar</a>
-<a class="action" href="mailto:mexigrafikos@hotmail.com"><span class="symbol">✉️</span>Correo</a>
-<a class="action" href="https://www.instagram.com/mexigrafikos?mdxt=NDI2YzlxbDVmaTM3" target="_blank" rel="noopener"><span class="symbol">◎</span>Instagram</a>
-<a class="action" href="https://www.facebook.com/share/1LpuLnF4nF/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="symbol">f</span>Facebook</a>
-<a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potos%C3%AD" target="_blank" rel="noopener"><span class="symbol">⌖</span>Ubicación</a>
-<button class="action" type="button" data-panel="servicesPanel"><span class="symbol">▤</span>Nuestros servicios</button>
-<button class="action" type="button" id="shareBtn"><span class="symbol">↗️</span>Compartir tarjeta</button>
+
+<a class="action" href="https://wa.me/524444652960" target="_blank" rel="noopener">
+<span class="symbol">✆</span>WhatsApp
+</a>
+
+<a class="action" href="tel:+524444652960">
+<span class="symbol">☎️</span>Llamar
+</a>
+
+<a class="action" href="mailto:mexigrafikos@hotmail.com">
+<span class="symbol">✉️</span>Correo
+</a>
+
+<a class="action" href="https://www.instagram.com/mexigrafikos?mdxt=NDI2YzlxbDVmaTM3" target="_blank" rel="noopener">
+<span class="symbol">◎</span>Instagram
+</a>
+
+<a class="action" href="https://www.facebook.com/share/1LpuLnF4nF/?mibextid=wwXIfr" target="_blank" rel="noopener">
+<span class="symbol">f</span>Facebook
+</a>
+
+<a class="action" href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potosi" target="_blank" rel="noopener">
+<span class="symbol">⌖</span>Ubicación
+</a>
+
+<button class="action" type="button" data-panel="servicesPanel">
+<span class="symbol">▤</span>Nuestros servicios
+</button>
+
+<button class="action bank" type="button" data-panel="bankPanel">
+<span class="symbol">▣</span>Datos bancarios
+</button>
+
+<button class="action" type="button" id="shareBtn">
+<span class="symbol">↗️</span>Compartir tarjeta
+</button>
+
 </div>
 </section>
 
 <section class="panel" id="quotePanel">
 <h2>Solicita tu cotización</h2>
-<p>Completa los datos de tu proyecto para enviar tu solicitud por WhatsApp.</p>
+<p>Completa los datos de tu proyecto para preparar tu solicitud por WhatsApp.</p>
+
 <form id="quoteForm">
 <div class="field">
-<label for="customer">Tu nombre</label>
-<input id="customer" required maxlength="100" placeholder="Nombre completo">
+<label for="customer">Nombre completo</label>
+<input id="customer" required maxlength="100" placeholder="Tu nombre">
 </div>
+
 <div class="field">
 <label for="service">Servicio de interés</label>
 <select id="service" required>
 <option value="">Selecciona un servicio</option>
 <option>Impresión de gran formato</option>
-<option>Vinil y rotulación</option>
 <option>Lonas</option>
+<option>Vinil y rotulación</option>
 <option>Microperforado</option>
 <option>DTF textil</option>
 <option>DTF UV</option>
 <option>Corte y grabado láser</option>
 <option>Impresión láser</option>
 <option>Artículos publicitarios</option>
-<option>Sublimación y transfer</option>
-<option>Otros servicios</option>
+<option>Sublimación</option>
+<option>Transfer</option>
+<option>Otro servicio</option>
 </select>
 </div>
+
+<div class="field">
+<label for="quantity">Cantidad aproximada</label>
+<input id="quantity" maxlength="100" placeholder="Ejemplo: 100 piezas">
+</div>
+
 <div class="field">
 <label for="details">Detalles del proyecto</label>
-<textarea id="details" required maxlength="1200" placeholder="Cantidad, medidas, material y fecha estimada"></textarea>
+<textarea id="details" required maxlength="1200" placeholder="Medidas, materiales, diseño y fecha estimada"></textarea>
 </div>
-<button class="btn" type="submit">Enviar solicitud por WhatsApp</button>
-<p>Se abrirá WhatsApp con el mensaje preparado para que puedas enviarlo.</p>
+
+<button class="btn" type="submit">
+Enviar cotización por WhatsApp
+</button>
 </form>
 </section>
 
 <section class="panel" id="servicesPanel">
-<h2>Servicios MEXIGRAFIKOS</h2>
+<h2>Nuestros servicios</h2>
+<p>Soluciones de impresión, publicidad y personalización.</p>
+
 <ul class="services">
 <li>Impresión de gran formato</li>
-<li>Vinil textil y de rotulación</li>
-<li>Lonas y microperforado</li>
+<li>Lonas</li>
+<li>Vinil de rotulación</li>
+<li>Vinil textil</li>
+<li>Microperforado</li>
 <li>DTF textil</li>
 <li>DTF UV</li>
 <li>Corte y grabado láser</li>
 <li>Impresión láser</li>
 <li>Artículos publicitarios</li>
 <li>Artículos para sublimación</li>
-<li>Transfer para personalización</li>
+<li>Transfer y personalización</li>
 </ul>
-<a class="btn" href="https://wa.me/524444652960?text=Hola%2C%20quiero%20solicitar%20asesor%C3%ADa%20sobre%20los%20servicios%20de%20MEXIGRAFIKOS." target="_blank" rel="noopener">Solicitar asesoría por WhatsApp</a>
+
+<a class="btn" href="https://wa.me/524444652960?text=Hola%2C%20quiero%20solicitar%20asesoria%20sobre%20sus%20servicios." target="_blank" rel="noopener">
+Solicitar asesoría por WhatsApp
+</a>
+</section>
+
+<section class="panel" id="bankPanel">
+<h2>Datos bancarios</h2>
+<p>Selecciona Copiar junto al dato que necesitas para realizar tu transferencia.</p>
+
+<div class="bank-item">
+<small>Banco</small>
+<div class="bank-value">Citibanamex</div>
+</div>
+
+<div class="bank-item">
+<small>Beneficiario</small>
+<div class="bank-row">
+<div class="bank-value">Omar Arturo Correa Rico</div>
+<button class="copy-btn" data-copy="Omar Arturo Correa Rico" data-label="Beneficiario">Copiar</button>
+</div>
+</div>
+
+<div class="bank-item">
+<small>Número de tarjeta</small>
+<div class="bank-row">
+<div class="bank-value">5204 1674 3282 8895</div>
+<button class="copy-btn" data-copy="5204167432828895" data-label="Tarjeta">Copiar</button>
+</div>
+</div>
+
+<div class="bank-item">
+<small>Número de cuenta</small>
+<div class="bank-row">
+<div class="bank-value">2759760</div>
+<button class="copy-btn" data-copy="2759760" data-label="Cuenta">Copiar</button>
+</div>
+</div>
+
+<div class="bank-item">
+<small>CLABE interbancaria</small>
+<div class="bank-row">
+<div class="bank-value">002700701527597606</div>
+<button class="copy-btn" data-copy="002700701527597606" data-label="CLABE">Copiar</button>
+</div>
+</div>
+
+<div id="copyStatus" role="status" aria-live="polite"></div>
+
+<p>Verifica los datos bancarios y el beneficiario antes de realizar cualquier transferencia.</p>
 </section>
 
 <section class="statement">
 <div class="tag">MEXIGRAFIKOS</div>
 <h2>Tu marca merece hacerse notar.</h2>
-<p>Desde una pieza personalizada hasta proyectos de impresión de gran formato, te ayudamos a dar vida a tus ideas con soluciones para tu negocio, evento o marca.</p>
+<p>
+Desde una pieza personalizada hasta proyectos de impresión
+de gran formato, te ayudamos a dar vida a tus ideas
+con soluciones de impresión, publicidad y rotulación
+para tu negocio, evento o marca.
+</p>
 </section>
 
 <section class="address">
 <h2>Visítanos</h2>
 <p>Av. Industrias 448, Esmeralda, C.P. 78399, San Luis Potosí, S.L.P.</p>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potos%C3%AD" target="_blank" rel="noopener">Abrir ubicación en Google Maps</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Av%20Industrias%20448%2C%20Esmeralda%2C%2078399%20San%20Luis%20Potosi" target="_blank" rel="noopener">
+Abrir ubicación en Google Maps
+</a>
 </section>
 
 <footer class="nexid-brand">
 <div class="nexid-lines"></div>
+<img class="nexid-watermark" src="powered-by-nexid.jpeg" alt="" aria-hidden="true">
 <img class="powered" src="powered-by-nexid.jpeg" alt="Powered by NexID">
 <p class="created">EXPERIENCIA DIGITAL CREADA CON NEXID</p>
 </footer>
 
 </main>
+
 <script>
-document.querySelectorAll('[data-panel]').forEach(button=>{
-button.addEventListener('click',()=>{
+document.querySelectorAll("[data-panel]").forEach(button=>{
+button.addEventListener("click",()=>{
 const panel=document.getElementById(button.dataset.panel);
-const open=!panel.classList.contains('open');
-document.querySelectorAll('.panel').forEach(p=>p.classList.remove('open'));
-if(open){
-panel.classList.add('open');
-panel.scrollIntoView({behavior:'smooth',block:'start'});
+const shouldOpen=!panel.classList.contains("open");
+
+document.querySelectorAll(".panel").forEach(p=>{
+p.classList.remove("open");
+});
+
+if(shouldOpen){
+panel.classList.add("open");
+panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 });
 });
 
-document.getElementById('quoteForm').addEventListener('submit',event=>{
+document.getElementById("quoteForm").addEventListener("submit",event=>{
 event.preventDefault();
-const name=document.getElementById('customer').value.trim();
-const service=document.getElementById('service').value;
-const details=document.getElementById('details').value.trim();
+
+const name=document.getElementById("customer").value.trim();
+const service=document.getElementById("service").value;
+const quantity=document.getElementById("quantity").value.trim();
+const details=document.getElementById("details").value.trim();
+
 if(!name||!service||!details)return;
-const msg='Hola, MEXIGRAFIKOS. Me gustaría solicitar una cotización.\n\nNombre: '+name+'\nServicio: '+service+'\nDetalles: '+details;
-window.open('https://wa.me/524444652960?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+
+const message=
+"Hola, MEXIGRAFIKOS. Quiero solicitar una cotización."+
+"\n\nNombre: "+name+
+"\nServicio: "+service+
+"\nCantidad: "+(quantity||"Por definir")+
+"\nDetalles: "+details;
+
+window.open(
+"https://wa.me/524444652960?text="+encodeURIComponent(message),
+"_blank",
+"noopener,noreferrer"
+);
 });
 
-document.getElementById('shareBtn').addEventListener('click',async()=>{
-const url=location.href;
+async function copyData(value,label){
+const status=document.getElementById("copyStatus");
+
+try{
+if(navigator.clipboard&&window.isSecureContext){
+await navigator.clipboard.writeText(value);
+}else{
+const field=document.createElement("textarea");
+field.value=value;
+field.style.position="fixed";
+field.style.opacity="0";
+document.body.appendChild(field);
+field.select();
+const success=document.execCommand("copy");
+document.body.removeChild(field);
+if(!success)throw new Error("No se pudo copiar");
+}
+status.textContent=label+" copiado correctamente.";
+}catch(error){
+status.textContent="Copia el dato manualmente.";
+window.prompt("Copia "+label+":",value);
+}
+}
+
+document.querySelectorAll("[data-copy]").forEach(button=>{
+button.addEventListener("click",()=>{
+copyData(button.dataset.copy,button.dataset.label);
+});
+});
+
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+const url=window.location.href;
+
 if(navigator.share){
 try{
-await navigator.share({title:'MEXIGRAFIKOS | Tarjeta digital',url});
+await navigator.share({
+title:"MEXIGRAFIKOS | NexID",
+url:url
+});
 return;
-}catch(e){
-if(e.name==='AbortError')return;
+}catch(error){
+if(error.name==="AbortError")return;
 }
 }
-if(navigator.clipboard&&location.protocol==='https:'){
+
 try{
 await navigator.clipboard.writeText(url);
-alert('Enlace copiado');
-return;
-}catch(e){}
+alert("Enlace copiado");
+}catch(error){
+window.prompt("Copia este enlace:",url);
 }
-prompt('Copia el enlace:',url);
 });
 </script>
 </body>
