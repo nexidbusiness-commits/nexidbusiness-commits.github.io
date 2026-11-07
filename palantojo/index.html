@@ -1,242 +1,684 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e8bfc0">
+<meta name="description" content="Pal Antojo: Botanera Bar y servicio de carrito para eventos.">
+<title>Pal Antojo | NexID Business</title>
 
-  <title>Pal Antojo | NEX ID</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff8f2;
-      color: #4a332e;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px 18px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 420px;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 35px 24px 25px;
-      box-shadow: 0 12px 40px rgba(80, 45, 40, 0.12);
-      text-align: center;
-    }
-
-.logo-placeholder {
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 20px;
-    display: block;
-    object-fit: contain;
-    border-radius: 50%;
+<style>
+:root {
+  --rosa:#e8bfc0;
+  --rosa-claro:#f8e8e5;
+  --dorado:#a67b36;
+  --vino:#91384f;
+  --marfil:#fff8f2;
 }
-
-    .logo-placeholder .pal {
-      font-size: 30px;
-      font-weight: bold;
-    }
-
-    .logo-placeholder .antojo {
-      color: #4a332e;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: 27px;
-      color: #4a332e;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      color: #e85b87;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .whatsapp {
-      display: block;
-      width: 100%;
-      text-decoration: none;
-      background: #25D366;
-      color: white;
-      padding: 16px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 25px;
-      transition: 0.2s;
-    }
-
-    .whatsapp:hover {
-      transform: translateY(-2px);
-    }
-
-    .section {
-      background: #fff8f2;
-      border-radius: 18px;
-      padding: 22px 18px;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      color: #e85b87;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 17px;
-      font-weight: bold;
-    }
-
-    .bank {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
-
-    .label {
-      color: #8b7770;
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-
-    .clabe {
-      font-size: 17px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      margin-bottom: 15px;
-      word-break: break-all;
-    }
-
-    .copy-button {
-      border: none;
-      width: 100%;
-      background: #e85b87;
-      color: white;
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .copy-button:active {
-      transform: scale(0.98);
-    }
-
-    .notice {
-      font-size: 11px;
-      color: #8b7770;
-      line-height: 1.5;
-      margin: 16px 5px 22px;
-    }
-
-    .powered {
-      font-size: 10px;
-      color: #aaa09c;
-      letter-spacing: 1px;
-    }
-
-    .powered strong {
-      color: #4a332e;
-    }
-
-    #copied {
-      font-size: 12px;
-      color: #e85b87;
-      font-weight: bold;
-      height: 16px;
-      margin-top: 8px;
-    }
-  </style>
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:#eee0dc;
+  color:#683447;
+  font-family:Georgia,"Times New Roman",serif;
+}
+button,input,textarea,select {font:inherit}
+button {cursor:pointer}
+.page {
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  background:var(--marfil);
+  box-shadow:0 0 35px #643a3a25;
+}
+.hero {
+  padding:38px 25px 60px;
+  text-align:center;
+  background:linear-gradient(150deg,#e8bfc0,#f8e8e5);
+  border-bottom:2px solid #c7a26d;
+}
+.ornament {
+  color:var(--dorado);
+  font-size:25px;
+  letter-spacing:7px;
+  margin:12px 0;
+}
+.tag {
+  font-family:Arial,sans-serif;
+  color:var(--vino);
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hero h1 {
+  margin:15px 0;
+  color:var(--vino);
+  font-size:43px;
+  font-weight:normal;
+}
+.hero h1 span {
+  display:block;
+  margin-top:8px;
+  color:var(--dorado);
+  font-size:19px;
+  letter-spacing:2px;
+}
+.hero p {
+  max-width:400px;
+  margin:18px auto;
+  font-size:15px;
+  line-height:1.75;
+}
+.actions {
+  position:relative;
+  padding:0 20px 25px;
+  margin-top:-24px;
+}
+.main-btn {
+  display:block;
+  width:100%;
+  padding:20px;
+  border:0;
+  border-radius:15px;
+  background:var(--vino);
+  color:white;
+  font-family:Arial,sans-serif;
+  font-size:17px;
+  font-weight:bold;
+  text-align:left;
+  box-shadow:0 10px 25px #91384f35;
+}
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+  margin-top:12px;
+}
+.action {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
+  min-height:103px;
+  padding:16px;
+  background:white;
+  border:1px solid #e5c9c1;
+  border-radius:15px;
+  color:var(--vino);
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  text-align:left;
+}
+.symbol {
+  font-size:23px;
+  color:var(--dorado);
+}
+.panel {
+  display:none;
+  margin:0 20px 24px;
+  padding:23px 19px;
+  border:1px solid #e2c9bb;
+  border-radius:18px;
+  background:#fffaf6;
+}
+.panel.open {display:block}
+.panel h2 {
+  margin:0 0 12px;
+  color:var(--vino);
+  font-size:25px;
+}
+.panel p {
+  font-size:14px;
+  line-height:1.65;
+}
+.field {margin:15px 0}
+.field label {
+  display:block;
+  margin-bottom:7px;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:bold;
+}
+.field input,
+.field textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid #d5b8ad;
+  border-radius:9px;
+  background:white;
+  color:#603848;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+}
+.field textarea {min-height:95px}
+.btn {
+  display:block;
+  width:100%;
+  padding:15px;
+  margin-top:17px;
+  border:0;
+  border-radius:10px;
+  background:var(--vino);
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:bold;
+}
+.snacks {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  padding:0;
+  list-style:none;
+}
+.snacks li {
+  padding:12px 9px;
+  background:var(--rosa-claro);
+  border-radius:10px;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  line-height:1.5;
+}
+.snacks li:before {
+  content:"✦ ";
+  color:var(--dorado);
+}
+.packages {
+  margin:0 20px 25px;
+  padding:25px 17px;
+  background:#fff9f4;
+  border:1px solid #d7b987;
+  border-radius:20px;
+  text-align:center;
+}
+.packages h2 {
+  margin:0 0 8px;
+  color:var(--vino);
+  font-size:29px;
+}
+.packages>p {
+  font-size:13px;
+  line-height:1.6;
+}
+.price-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin:20px 0;
+}
+.price {
+  padding:17px 5px;
+  background:var(--rosa-claro);
+  border:1px solid #d7b987;
+  border-radius:12px;
+}
+.price small {
+  display:block;
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  color:var(--vino);
+}
+.price strong {
+  display:block;
+  margin:9px 0;
+  color:var(--dorado);
+  font-size:30px;
+}
+.price em {
+  display:block;
+  font-size:11px;
+}
+.includes {
+  padding:15px;
+  background:white;
+  border-radius:12px;
+  font-size:13px;
+  line-height:1.7;
+}
+.statement {
+  margin:0 20px 25px;
+  padding:28px 23px;
+  border:1px solid #dfbba9;
+  border-radius:19px;
+  background:linear-gradient(145deg,#f2d4d2,#fff4ec);
+}
+.statement h2 {
+  color:var(--vino);
+  font-size:28px;
+  font-weight:normal;
+}
+.statement p {
+  font-size:14px;
+  line-height:1.7;
+}
+.nexid-brand {
+  position:relative;
+  overflow:hidden;
+  padding:53px 25px 31px;
+  background:#03182b;
+  text-align:center;
+}
+.nexid-lines {
+  position:absolute;
+  inset:0;
+  opacity:.14;
+  background:
+    linear-gradient(120deg,transparent 30%,rgba(255,179,70,.45) 30.5%,transparent 31%),
+    linear-gradient(60deg,transparent 64%,rgba(0,164,255,.45) 64.5%,transparent 65%);
+  background-size:90px 90px;
+}
+.nexid-watermark {
+  position:absolute;
+  width:470px;
+  max-width:none;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) rotate(-4deg);
+  opacity:.045;
+  pointer-events:none;
+}
+.powered {
+  position:relative;
+  z-index:3;
+  display:block;
+  width:285px;
+  max-width:88%;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 12px 35px #0006;
+}
+.created {
+  position:relative;
+  z-index:3;
+  margin-top:17px;
+  color:#ffffff6b;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:1.8px;
+}
+@media(max-width:350px) {
+  .hero h1 {font-size:36px}
+  .price strong {font-size:24px}
+}
+</style>
 </head>
 
 <body>
+<main class="page">
 
-  <div class="card">
+<!-- ENCABEZADO -->
+<header class="hero">
+  <div class="ornament">❦ ✧ ❦</div>
+  <div class="tag">Eventos & Botanera Bar</div>
+  <h1>
+    Pal Antojo
+    <span>BOTANERA BAR</span>
+  </h1>
+  <p>
+    Haz de tu celebración una experiencia deliciosa
+    con nuestro servicio de carrito y 10 tipos de
+    botanas surtidas, acompañadas de chamoy,
+    Tajín, limón y salsas de la casa.
+  </p>
+  <div class="ornament">❧</div>
+</header>
 
-  <img src="logo.jpeg" alt="Logo Pal Antojo" class="logo-placeholder">
+<!-- BOTONES -->
+<section class="actions">
 
-    <h1>Pal Antojo</h1>
-    <div class="subtitle">Barra de Snacks</div>
+  <button
+    class="main-btn"
+    type="button"
+    data-panel="quotePanel">
+    ✦ Cotiza tu evento →
+  </button>
 
-    <a
-      class="whatsapp"
-      href="https://wa.me/524448192199?text=Hola%20%F0%9F%91%8B%20Vi%20Pal%20Antojo%20desde%20su%20NEX%20ID%20y%20quisiera%20hacer%20un%20pedido."
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      💬 Hacer un pedido por WhatsApp
+  <div class="grid">
+
+    <a class="action"
+       href="https://wa.me/524448192199"
+       target="_blank" rel="noopener">
+      <span class="symbol">✆</span>
+      WhatsApp
     </a>
 
-    <div class="section">
+    <a class="action"
+       href="tel:+524448192199">
+      <span class="symbol">☎️</span>
+      Llamar
+    </a>
 
-      <div class="section-title">
-        Datos para transferencia
-      </div>
+    <a class="action"
+       href="https://www.instagram.com/palantojo_sb?vrfl=dDVoZDVuZ2Zza2dt"
+       target="_blank" rel="noopener">
+      <span class="symbol">◎</span>
+      Instagram
+    </a>
 
-      <div class="bank">
-        Banregio
-      </div>
+    <button class="action"
+            type="button"
+            data-panel="snacksPanel">
+      <span class="symbol">♧</span>
+      Ver las 10 botanas
+    </button>
 
-      <div class="label">
-        CLABE
-      </div>
+    <button class="action"
+            type="button"
+            data-panel="packagesPanel">
+      <span class="symbol">♕</span>
+      Paquetes y precios
+    </button>
 
-      <div class="clabe">
-        167700000007135506
-      </div>
+    <button class="action"
+            type="button"
+            id="shareBtn">
+      <span class="symbol">↗️</span>
+      Compartir tarjeta
+    </button>
 
-      <button
-        class="copy-button"
-        onclick="copyCLABE()"
-      >
-        Copiar CLABE
-      </button>
+  </div>
+</section>
 
-      <div id="copied"></div>
+<!-- FORMULARIO -->
+<section class="panel" id="quotePanel">
 
+  <h2>Cotiza tu evento</h2>
+  <p>
+    Completa los datos de tu celebración
+    para preparar tu solicitud por WhatsApp.
+  </p>
+
+  <form id="quoteForm">
+
+    <div class="field">
+      <label for="name">Nombre completo</label>
+      <input id="name" required maxlength="100"
+             placeholder="Tu nombre">
     </div>
 
-    <div class="notice">
-      Antes de realizar tu transferencia, verifica que los datos
-      del beneficiario sean correctos.
+    <div class="field">
+      <label for="date">Fecha del evento</label>
+      <input id="date" type="date" required>
     </div>
 
-    <div class="powered">
-      POWERED BY <strong>NEX ID</strong>
+    <div class="field">
+      <label for="guests">Número de invitados</label>
+      <input id="guests" type="number"
+             min="1" required
+             placeholder="Ejemplo: 50">
+    </div>
+
+    <div class="field">
+      <label for="place">Ubicación del evento</label>
+      <input id="place" maxlength="200"
+             required
+             placeholder="Salón, domicilio o zona">
+    </div>
+
+    <div class="field">
+      <label for="comments">Comentarios adicionales</label>
+      <textarea id="comments"
+                maxlength="1000"
+                placeholder="Horario, tipo de evento u otras indicaciones"></textarea>
+    </div>
+
+    <button class="btn" type="submit">
+      Enviar solicitud por WhatsApp
+    </button>
+
+    <p>
+      Se abrirá WhatsApp con tu solicitud preparada.
+      Confirma el envío desde la aplicación.
+    </p>
+
+  </form>
+</section>
+
+<!-- BOTANAS -->
+<section class="panel" id="snacksPanel">
+
+  <h2>Nuestras 10 botanas</h2>
+  <p>Una selección de sabores para tus invitados.</p>
+
+  <ul class="snacks">
+    <li>Pepino con limón y Tajín</li>
+    <li>Mango con chile y chamoy</li>
+    <li>Jícama con limón y sal</li>
+    <li>Cacahuates enchilados</li>
+    <li>Chicharrón de harina con salsa</li>
+    <li>Esquites con queso y limón</li>
+    <li>Papas con chamoy</li>
+    <li>Gomitas enchiladas</li>
+    <li>Tostitos con guacamole</li>
+    <li>Verduras frescas con salsa</li>
+  </ul>
+
+  <a class="btn"
+     href="https://wa.me/524448192199?text=Hola%2C%20quiero%20informacion%20sobre%20el%20servicio%20de%20Botanera%20Bar."
+     target="_blank" rel="noopener">
+    Solicitar información por WhatsApp
+  </a>
+
+</section>
+
+<!-- PANEL DE PRECIOS -->
+<section class="panel" id="packagesPanel">
+
+  <h2>Paquetes y precios</h2>
+  <p>Elige el paquete para tu celebración.</p>
+
+  <div class="price-grid">
+
+    <div class="price">
+      <small>20–50 personas</small>
+      <strong>$95</strong>
+      <em>por persona</em>
+    </div>
+
+    <div class="price">
+      <small>50–100 personas</small>
+      <strong>$85</strong>
+      <em>por persona</em>
+    </div>
+
+    <div class="price">
+      <small>100+ personas</small>
+      <strong>$75</strong>
+      <em>por persona</em>
     </div>
 
   </div>
 
-  <script>
-    function copyCLABE() {
-      const clabe = "167700000007135506";
+  <div class="includes">
+    Incluye 10 botanas surtidas, chamoy, Tajín,
+    limones frescos, salsas de la casa
+    y servicio de carrito.
+  </div>
 
-      navigator.clipboard.writeText(clabe).then(function() {
-        document.getElementById("copied").innerText =
-          "✓ CLABE copiada";
+  <a class="btn"
+     href="https://wa.me/524448192199?text=Hola%2C%20quiero%20cotizar%20un%20paquete%20de%20PAL%20ANTOJO."
+     target="_blank" rel="noopener">
+    Cotizar paquete por WhatsApp
+  </a>
 
-        setTimeout(function() {
-          document.getElementById("copied").innerText = "";
-        }, 2500);
+</section>
+
+<!-- PRECIOS VISIBLES -->
+<section class="packages">
+
+  <div class="tag">Botanera Bar</div>
+  <h2>Paquetes por persona</h2>
+  <p>Servicio para eventos desde 20 personas.</p>
+
+  <div class="price-grid">
+
+    <div class="price">
+      <small>20–50 personas</small>
+      <strong>$95</strong>
+      <em>por persona</em>
+    </div>
+
+    <div class="price">
+      <small>50–100 personas</small>
+      <strong>$85</strong>
+      <em>por persona</em>
+    </div>
+
+    <div class="price">
+      <small>100+ personas</small>
+      <strong>$75</strong>
+      <em>por persona</em>
+    </div>
+
+  </div>
+
+  <div class="includes">
+    <strong>Todos los paquetes incluyen:</strong>
+    10 botanas surtidas, chamoy, Tajín,
+    limones frescos, salsas de la casa
+    y servicio de carrito.
+  </div>
+
+  <button class="btn"
+          type="button"
+          data-panel="quotePanel">
+    Solicitar cotización
+  </button>
+
+</section>
+
+<!-- PRESENTACION -->
+<section class="statement">
+
+  <div class="tag">PAL ANTOJO</div>
+  <h2>El antojo perfecto para tu celebración.</h2>
+
+  <p>
+    Dale un toque delicioso y especial a tus eventos
+    con nuestro servicio de Botanera Bar.
+    Disfruta de una variedad de botanas y
+    acompañamientos servidos directamente
+    desde nuestro carrito.
+    Contamos con paquetes para distintas
+    cantidades de invitados y servicio
+    personalizado para cada celebración.
+  </p>
+
+</section>
+
+<!-- FIRMA NEXID -->
+<footer class="nexid-brand">
+
+  <div class="nexid-lines"></div>
+
+  <img class="nexid-watermark"
+       src="powered-by-nexid.jpeg"
+       alt=""
+       aria-hidden="true">
+
+  <img class="powered"
+       src="powered-by-nexid.jpeg"
+       alt="Powered by NexID">
+
+  <p class="created">
+    EXPERIENCIA DIGITAL CREADA CON NEXID
+  </p>
+
+</footer>
+
+</main>
+
+<script>
+/* ABRIR Y CERRAR SECCIONES */
+
+document.querySelectorAll("[data-panel]").forEach(button=>{
+  button.addEventListener("click",()=>{
+
+    const panel=document.getElementById(
+      button.dataset.panel
+    );
+
+    const open=!panel.classList.contains("open");
+
+    document.querySelectorAll(".panel").forEach(p=>{
+      p.classList.remove("open");
+    });
+
+    if(open){
+      panel.classList.add("open");
+      panel.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
       });
     }
-  </script>
+  });
+});
+
+/* FORMULARIO DE COTIZACION */
+
+document.getElementById("quoteForm")
+.addEventListener("submit",event=>{
+
+  event.preventDefault();
+
+  const name=document.getElementById("name").value.trim();
+  const date=document.getElementById("date").value;
+  const guests=document.getElementById("guests").value;
+  const place=document.getElementById("place").value.trim();
+  const comments=document.getElementById("comments").value.trim();
+
+  if(!name||!date||!guests||!place)return;
+
+  const message=
+    "Hola, PAL ANTOJO. Quiero cotizar un evento."+
+    "\n\nNombre: "+name+
+    "\nFecha: "+date+
+    "\nInvitados: "+guests+
+    "\nUbicación: "+place+
+    "\nComentarios: "+(comments||"Sin comentarios");
+
+  window.open(
+    "https://wa.me/524448192199?text="+
+    encodeURIComponent(message),
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
+
+/* COMPARTIR TARJETA */
+
+document.getElementById("shareBtn")
+.addEventListener("click",async()=>{
+
+  const url=window.location.href;
+
+  if(navigator.share){
+    try{
+      await navigator.share({
+        title:"PAL ANTOJO | NexID",
+        text:"Conoce nuestros paquetes y servicios.",
+        url:url
+      });
+      return;
+    }catch(error){
+      if(error.name==="AbortError")return;
+    }
+  }
+
+  try{
+    await navigator.clipboard.writeText(url);
+    alert("Enlace de tarjeta copiado.");
+  }catch(error){
+    window.prompt("Copia este enlace:",url);
+  }
+});
+</script>
 
 </body>
 </html>
