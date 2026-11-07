@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#e8bfc0">
-<meta name="description" content="PAL ANTOJO | Botanera Bar para eventos. 10 deliciosas botanas y servicio de carrito.">
+<meta name="description" content="PAL ANTOJO | Botanera Bar para eventos. Servicio de carrito, 10 botanas y cotizaciones.">
 <title>PAL ANTOJO | NexID Business</title>
 
 <style>
-:root{
+:root {
   --rosa:#e8bfc0;
   --rosa-claro:#f8e8e5;
   --dorado:#a67b36;
@@ -16,21 +16,21 @@
   --marfil:#fff8f2;
 }
 
-*{box-sizing:border-box}
+* { box-sizing:border-box; }
 
-html{scroll-behavior:smooth}
+html { scroll-behavior:smooth; }
 
-body{
+body {
   margin:0;
   background:#eee0dc;
   color:#683447;
   font-family:Georgia,"Times New Roman",serif;
 }
 
-button,input,textarea{font:inherit}
-button{cursor:pointer}
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
 
-.page{
+.page {
   max-width:520px;
   min-height:100vh;
   margin:auto;
@@ -39,14 +39,14 @@ button{cursor:pointer}
 }
 
 /* ENCABEZADO */
-.hero{
+.hero {
   padding:38px 25px 62px;
   text-align:center;
   background:linear-gradient(150deg,#e8bfc0,#f8e8e5);
   border-bottom:2px solid #c7a26d;
 }
 
-.client-logo{
+.client-logo {
   display:block;
   width:230px;
   max-width:85%;
@@ -56,14 +56,14 @@ button{cursor:pointer}
   border-radius:12px;
 }
 
-.ornament{
+.ornament {
   color:var(--dorado);
   font-size:25px;
   letter-spacing:7px;
   margin:12px 0;
 }
 
-.tag{
+.tag {
   font-family:Arial,sans-serif;
   color:var(--vino);
   font-size:10px;
@@ -72,14 +72,14 @@ button{cursor:pointer}
   text-transform:uppercase;
 }
 
-.hero h1{
+.hero h1 {
   margin:15px 0;
   color:var(--vino);
   font-size:42px;
   font-weight:normal;
 }
 
-.hero h1 span{
+.hero h1 span {
   display:block;
   margin-top:8px;
   color:var(--dorado);
@@ -87,7 +87,7 @@ button{cursor:pointer}
   letter-spacing:2px;
 }
 
-.hero p{
+.hero p {
   max-width:400px;
   margin:18px auto;
   font-size:15px;
@@ -95,13 +95,13 @@ button{cursor:pointer}
 }
 
 /* BOTONES */
-.actions{
+.actions {
   position:relative;
   padding:0 20px 25px;
   margin-top:-24px;
 }
 
-.main-btn{
+.main-btn {
   display:block;
   width:100%;
   padding:20px;
@@ -116,14 +116,14 @@ button{cursor:pointer}
   box-shadow:0 10px 25px #91384f35;
 }
 
-.grid{
+.grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:11px;
   margin-top:12px;
 }
 
-.action{
+.action {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -141,13 +141,28 @@ button{cursor:pointer}
   text-align:left;
 }
 
-.symbol{
+.symbol {
   font-size:23px;
   color:var(--dorado);
 }
 
-/* PANELES DESPLEGABLES */
-.panel{
+.payment-action {
+  grid-column:1/-1;
+  min-height:76px;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:15px;
+  background:#f8e8e5;
+  border-color:#cda5a3;
+}
+
+.payment-action .symbol {
+  font-size:27px;
+}
+
+/* PANELES */
+.panel {
   display:none;
   margin:0 20px 24px;
   padding:23px 19px;
@@ -156,23 +171,23 @@ button{cursor:pointer}
   background:#fffaf6;
 }
 
-.panel.open{display:block}
+.panel.open { display:block; }
 
-.panel h2{
+.panel h2 {
   margin:0 0 12px;
   color:var(--vino);
   font-size:25px;
 }
 
-.panel p{
+.panel p {
   font-size:14px;
   line-height:1.65;
 }
 
 /* FORMULARIO */
-.field{margin:15px 0}
+.field { margin:15px 0; }
 
-.field label{
+.field label {
   display:block;
   margin-bottom:7px;
   font-family:Arial,sans-serif;
@@ -181,7 +196,7 @@ button{cursor:pointer}
 }
 
 .field input,
-.field textarea{
+.field textarea {
   width:100%;
   padding:12px;
   border:1px solid #d5b8ad;
@@ -192,12 +207,12 @@ button{cursor:pointer}
   font-size:14px;
 }
 
-.field textarea{
+.field textarea {
   min-height:95px;
   resize:vertical;
 }
 
-.btn{
+.btn {
   display:block;
   width:100%;
   padding:15px;
@@ -214,7 +229,7 @@ button{cursor:pointer}
 }
 
 /* BOTANAS */
-.snacks{
+.snacks {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:9px;
@@ -222,7 +237,7 @@ button{cursor:pointer}
   list-style:none;
 }
 
-.snacks li{
+.snacks li {
   padding:12px 9px;
   background:var(--rosa-claro);
   border-radius:10px;
@@ -231,20 +246,20 @@ button{cursor:pointer}
   line-height:1.5;
 }
 
-.snacks li:before{
+.snacks li:before {
   content:"✦ ";
   color:var(--dorado);
 }
 
-/* PAQUETES */
-.price-grid{
+/* PRECIOS */
+.price-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:8px;
   margin:20px 0;
 }
 
-.price{
+.price {
   padding:17px 5px;
   background:var(--rosa-claro);
   border:1px solid #d7b987;
@@ -252,26 +267,26 @@ button{cursor:pointer}
   text-align:center;
 }
 
-.price small{
+.price small {
   display:block;
   font-family:Arial,sans-serif;
   font-size:10px;
   color:var(--vino);
 }
 
-.price strong{
+.price strong {
   display:block;
   margin:9px 0;
   color:var(--dorado);
   font-size:30px;
 }
 
-.price em{
+.price em {
   display:block;
   font-size:11px;
 }
 
-.includes{
+.includes {
   padding:15px;
   background:white;
   border-radius:12px;
@@ -279,8 +294,69 @@ button{cursor:pointer}
   line-height:1.7;
 }
 
+/* DATOS BANCARIOS */
+.bank-card {
+  margin-top:18px;
+  padding:22px 16px;
+  border:1px solid #d8b8a7;
+  border-radius:15px;
+  background:linear-gradient(145deg,#f8e8e5,#fff);
+  text-align:center;
+}
+
+.bank-name {
+  color:var(--vino);
+  font-family:Arial,sans-serif;
+  font-size:24px;
+  font-weight:800;
+}
+
+.bank-label {
+  margin:18px 0 7px;
+  color:#876a6b;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.bank-number {
+  color:var(--vino);
+  font-family:Arial,sans-serif;
+  font-size:clamp(17px,4.5vw,23px);
+  font-weight:800;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.bank-holder {
+  font-family:Arial,sans-serif;
+  font-size:15px;
+  font-weight:bold;
+  line-height:1.5;
+}
+
+.copy-status {
+  min-height:20px;
+  margin:10px 0 0;
+  color:#287445;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.bank-note {
+  margin-top:15px;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  line-height:1.6;
+  color:#7d6870;
+}
+
 /* PRESENTACION */
-.statement{
+.statement {
   margin:0 20px 25px;
   padding:28px 23px;
   border:1px solid #dfbba9;
@@ -288,19 +364,19 @@ button{cursor:pointer}
   background:linear-gradient(145deg,#f2d4d2,#fff4ec);
 }
 
-.statement h2{
+.statement h2 {
   color:var(--vino);
   font-size:28px;
   font-weight:normal;
 }
 
-.statement p{
+.statement p {
   font-size:14px;
   line-height:1.7;
 }
 
 /* FIRMA NEXID */
-.nexid-brand{
+.nexid-brand {
   position:relative;
   overflow:hidden;
   padding:53px 25px 31px;
@@ -308,7 +384,7 @@ button{cursor:pointer}
   text-align:center;
 }
 
-.nexid-lines{
+.nexid-lines {
   position:absolute;
   inset:0;
   opacity:.14;
@@ -318,7 +394,7 @@ button{cursor:pointer}
   background-size:90px 90px;
 }
 
-.nexid-watermark{
+.nexid-watermark {
   position:absolute;
   width:470px;
   max-width:none;
@@ -329,7 +405,7 @@ button{cursor:pointer}
   pointer-events:none;
 }
 
-.powered{
+.powered {
   position:relative;
   z-index:3;
   display:block;
@@ -340,7 +416,7 @@ button{cursor:pointer}
   box-shadow:0 12px 35px #0006;
 }
 
-.created{
+.created {
   position:relative;
   z-index:3;
   margin-top:17px;
@@ -350,9 +426,10 @@ button{cursor:pointer}
   letter-spacing:1.8px;
 }
 
-@media(max-width:350px){
-  .hero h1{font-size:36px}
-  .price strong{font-size:24px}
+@media(max-width:350px) {
+  .hero h1 { font-size:36px; }
+  .price strong { font-size:24px; }
+  .bank-number { font-size:16px; }
 }
 </style>
 </head>
@@ -360,17 +437,20 @@ button{cursor:pointer}
 <body>
 <main class="page">
 
-<!-- ENCABEZADO CON LOGO ORIGINAL -->
+<!-- ENCABEZADO -->
 <header class="hero">
 
   <img
     class="client-logo"
     src="logo.jpeg"
-    alt="Logotipo PAL ANTOJO"
+    alt="Logotipo original PAL ANTOJO"
   >
 
   <div class="ornament">❦ ✧ ❦</div>
-  <div class="tag">Eventos & Botanera Bar</div>
+
+  <div class="tag">
+    Eventos & Botanera Bar
+  </div>
 
   <h1>
     Pal Antojo
@@ -433,10 +513,18 @@ button{cursor:pointer}
       Compartir tarjeta
     </button>
 
+    <!-- NUEVO BOTON DE PAGO -->
+    <button class="action payment-action"
+            type="button"
+            data-panel="paymentPanel">
+      <span class="symbol">▣</span>
+      <span>Datos para transferencia</span>
+    </button>
+
   </div>
 </section>
 
-<!-- FORMULARIO DE COTIZACION -->
+<!-- COTIZACION -->
 <section class="panel" id="quotePanel">
 
   <h2>Cotiza tu evento</h2>
@@ -485,7 +573,7 @@ button{cursor:pointer}
   </form>
 </section>
 
-<!-- CATALOGO DE BOTANAS -->
+<!-- BOTANAS -->
 <section class="panel" id="snacksPanel">
 
   <h2>Nuestras 10 botanas</h2>
@@ -513,7 +601,7 @@ button{cursor:pointer}
 
 </section>
 
-<!-- PAQUETES Y PRECIOS: UNA SOLA SECCION -->
+<!-- PAQUETES Y PRECIOS -->
 <section class="panel" id="packagesPanel">
 
   <h2>Paquetes y precios</h2>
@@ -552,6 +640,58 @@ button{cursor:pointer}
      rel="noopener">
     Cotizar paquete por WhatsApp
   </a>
+
+</section>
+
+<!-- NUEVA SECCION DE DATOS BANCARIOS -->
+<section class="panel" id="paymentPanel">
+
+  <h2>Datos para transferencia</h2>
+
+  <p>
+    Consulta los datos bancarios y copia el número
+    de tarjeta para realizar tu pago.
+  </p>
+
+  <div class="bank-card">
+
+    <div class="bank-name">
+      Banamex
+    </div>
+
+    <div class="bank-label">
+      Número de tarjeta
+    </div>
+
+    <div class="bank-number">
+      5256 7881 7878 7792
+    </div>
+
+    <div class="bank-label">
+      Titular de la cuenta
+    </div>
+
+    <div class="bank-holder">
+      Paloma Michell Montantes Rivera
+    </div>
+
+    <button class="btn" type="button" id="copyCardBtn">
+      ⧉ Copiar número de tarjeta
+    </button>
+
+    <div class="copy-status"
+         id="copyStatus"
+         role="status"
+         aria-live="polite"></div>
+
+  </div>
+
+  <p class="bank-note">
+    Este número tiene 16 dígitos y corresponde a
+    una tarjeta bancaria, no a una CLABE interbancaria.
+    Verifica los datos con el negocio antes de realizar
+    cualquier transferencia.
+  </p>
 
 </section>
 
@@ -603,7 +743,7 @@ button{cursor:pointer}
 </main>
 
 <script>
-/* ABRIR Y CERRAR PANELES */
+/* PANELES DESPLEGABLES */
 document.querySelectorAll("[data-panel]").forEach(button => {
   button.addEventListener("click", () => {
     const panel = document.getElementById(button.dataset.panel);
@@ -623,7 +763,7 @@ document.querySelectorAll("[data-panel]").forEach(button => {
   });
 });
 
-/* FORMULARIO A WHATSAPP */
+/* COTIZACION POR WHATSAPP */
 document.getElementById("quoteForm").addEventListener("submit", event => {
   event.preventDefault();
 
@@ -647,10 +787,28 @@ document.getElementById("quoteForm").addEventListener("submit", event => {
     "https://wa.me/524448192199?text=" +
     encodeURIComponent(message);
 
-  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  window.location.href = whatsappUrl;
 });
 
-/* COMPARTIR TARJETA */
+/* COPIAR NUMERO DE TARJETA */
+document.getElementById("copyCardBtn").addEventListener("click", async () => {
+  const cardNumber = "5256788178787792";
+  const status = document.getElementById("copyStatus");
+
+  try {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      throw new Error("Clipboard no disponible");
+    }
+
+    await navigator.clipboard.writeText(cardNumber);
+    status.textContent = "✓ Número de tarjeta copiado correctamente.";
+  } catch (error) {
+    status.textContent = "Copia el número desde la siguiente ventana:";
+    window.prompt("Número de tarjeta Banamex:", cardNumber);
+  }
+});
+
+/* COMPARTIR TARJETA DIGITAL */
 document.getElementById("shareBtn").addEventListener("click", async () => {
   const url = "https://nexidbusiness-commits.github.io/palantojo/";
 
