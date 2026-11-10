@@ -1,1 +1,1424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061426">
+<meta name="description" content="NexID Business: tarjetas inteligentes NFC y QR, perfiles digitales, presencia digital y networking empresarial.">
+<title>NexID Business | Conecta tu negocio</title>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#061426;
+  --bg2:#091d35;
+  --panel:#102a48;
+  --blue:#287ce0;
+  --bright:#5aabff;
+  --gold:#e5b65e;
+  --white:#f5f9ff;
+  --muted:#b7c8dd;
+  --line:rgba(155,197,244,.19);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:#020915;
+  color:var(--white);
+  font-family:'DM Sans',Arial,sans-serif;
+}
+
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:2px solid #9bd0ff;
+  outline-offset:3px;
+}
+
+.site{
+  max-width:760px;
+  margin:auto;
+  background:var(--bg);
+  min-height:100vh;
+  overflow:hidden;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 22px;
+  background:#061426;
+  border-bottom:1px solid var(--line);
+}
+
+.nav-name{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.3px;
+}
+
+.nav-link{
+  font-size:11px;
+  font-weight:700;
+  padding:11px 14px;
+  border:1px solid #4c91dc;
+  border-radius:10px;
+  color:#cce5ff;
+}
+
+.hero{
+  padding:48px 24px 54px;
+  text-align:center;
+  background:
+    radial-gradient(
+      ellipse at 50% 15%,
+      rgba(37,112,204,.36),
+      transparent 65%
+    ),
+    linear-gradient(180deg,#0b2441,#061426);
+}
+
+.main-logo{
+  display:block;
+  width:min(245px,72vw);
+  height:auto;
+  margin:0 auto 28px;
+  border-radius:50%;
+  filter:drop-shadow(0 16px 35px rgba(0,0,0,.35));
+}
+
+.eyebrow{
+  color:#a9d0ff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+h1,h2,h3{
+  font-family:'Manrope',Arial,sans-serif;
+}
+
+h1{
+  font-size:clamp(32px,7vw,49px);
+  line-height:1.16;
+  letter-spacing:-1.6px;
+  margin:17px 0;
+}
+
+.gradient-text{color:#81bdff}
+
+.hero-description{
+  color:#c0d2e7;
+  font-size:14px;
+  line-height:1.9;
+  max-width:550px;
+  margin:0 auto 27px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:11px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:13px 18px;
+  border-radius:12px;
+  border:1px solid #467fb8;
+  background:#143454;
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  text-align:center;
+  transition:.2s;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#1766ca,#318bf1);
+  border-color:#5aabff;
+}
+
+.btn.full{width:100%}
+
+.btn:hover{
+  filter:brightness(1.12);
+  transform:translateY(-1px);
+}
+
+.section{
+  padding:44px 25px;
+  border-top:1px solid rgba(150,195,245,.09);
+}
+
+.section.alt{background:var(--bg2)}
+
+.section h2{
+  font-size:clamp(23px,5vw,31px);
+  line-height:1.35;
+  letter-spacing:-.7px;
+  margin:12px 0 18px;
+}
+
+.section p{
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.section-intro{
+  max-width:570px;
+  margin-bottom:25px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.card{
+  padding:20px;
+  background:linear-gradient(145deg,#123253,#0c223b);
+  border:1px solid var(--line);
+  border-radius:17px;
+}
+
+.card h3{
+  font-size:15px;
+  margin:0 0 10px;
+}
+
+.card p{
+  margin:0;
+  font-size:12px;
+}
+
+.card-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  background:#1b4975;
+  border-radius:11px;
+  font-size:18px;
+  margin-bottom:16px;
+}
+
+.steps{
+  display:grid;
+  gap:13px;
+}
+
+.step{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+  padding:18px;
+  background:#102a48;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+.step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  width:35px;
+  height:35px;
+  border-radius:10px;
+  background:#1d65b6;
+  font-size:12px;
+  font-weight:800;
+}
+
+.step h3{
+  font-size:14px;
+  margin:0 0 5px;
+}
+
+.step p{
+  margin:0;
+  font-size:12px;
+}
+
+.price-card{
+  padding:25px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#143b66,#0a2340);
+  border:1px solid #478cd7;
+}
+
+.price{
+  font-family:'Manrope',Arial,sans-serif;
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:-2px;
+  margin:10px 0;
+}
+
+.price small{
+  font-size:15px;
+  letter-spacing:0;
+  color:#b7d1ee;
+}
+
+.included{
+  padding-left:19px;
+  color:#d2e2f4;
+  font-size:13px;
+  line-height:2;
+}
+
+.price-note{
+  color:#a6c7e8;
+  font-size:11px;
+}
+
+.addon{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.addon strong{font-size:13px}
+
+.addon span{
+  color:#a9d0ff;
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.addon p{
+  margin:5px 0 0;
+  font-size:11px;
+}
+
+.founder{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  background:#102a48;
+  border:1px solid var(--line);
+  padding:18px;
+  border-radius:18px;
+}
+
+.founder img{
+  width:112px;
+  height:145px;
+  object-fit:cover;
+  object-position:center 25%;
+  border-radius:13px;
+  border:1px solid #589ce7;
+}
+
+.founder h3{
+  font-size:19px;
+  margin:7px 0;
+}
+
+.founder p{
+  margin:6px 0;
+  font-size:12px;
+}
+
+.founder a{
+  display:inline-block;
+  margin-top:10px;
+  color:#a9d2ff;
+  font-size:12px;
+  font-weight:800;
+}
+
+.configurator{
+  background:#0d2744;
+  border:1px solid #376a9f;
+  border-radius:19px;
+  padding:23px;
+}
+
+.field{margin-bottom:17px}
+
+.field label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.field input,
+.field select{
+  display:block;
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #42678d;
+  background:#071a30;
+  color:white;
+  font-size:13px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+  margin:12px 0 20px;
+}
+
+.option{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  padding:12px;
+  background:#102f50;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.option input{
+  accent-color:#4b9fff;
+  width:17px;
+  height:17px;
+  flex-shrink:0;
+}
+
+.summary{
+  padding:20px;
+  border:1px solid #477daf;
+  border-radius:13px;
+  background:#102f50;
+  margin:22px 0;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:12px;
+  padding:7px 0;
+  color:#c3d7ed;
+}
+
+.summary-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid #426b95;
+  margin-top:12px;
+  padding-top:15px;
+  font-weight:800;
+}
+
+.summary-total strong{
+  font-size:25px;
+  color:#fff;
+}
+
+.faq details{
+  padding:17px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.faq summary{
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+}
+
+.faq p{
+  font-size:12px;
+  margin:12px 0 0;
+}
+
+.nexid-brand{
+  padding:53px 25px 31px;
+  background:#030e1d;
+  text-align:center;
+}
+
+.nexid-brand .powered{
+  display:block;
+  width:285px;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:16px;
+  margin-top:23px;
+  font-size:11px;
+  color:#b8d1ed;
+}
+
+.footer-note{
+  margin-top:20px;
+  color:#829ab7;
+  font-size:10px;
+}
+
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr}
+  .section{padding:38px 20px}
+  .hero{padding:39px 20px 45px}
+  .founder{align-items:flex-start}
+  .founder img{width:95px;height:125px}
+  .configurator{padding:18px}
+}
+
+@media(max-width:350px){
+  .options{grid-template-columns:1fr}
+  .founder{flex-direction:column}
+  .founder img{width:115px;height:145px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+
+<body>
+
+<main class="site">
+
+<!-- NAVEGACIÓN -->
+
+<nav class="nav">
+  <div class="nav-name">NEXID BUSINESS</div>
+  <a class="nav-link" href="#crear">CREA TU NEXID</a>
+</nav>
+
+<!-- PORTADA -->
+
+<header class="hero" id="inicio">
+
+  <img
+    class="main-logo"
+    src="logo-nexid.jpeg"
+    alt="Logotipo oficial NexID Business"
+  >
+
+  <div class="eyebrow">
+    Identidad digital · Tecnología · Networking
+  </div>
+
+  <h1>
+    Tu negocio merece<br>
+    <span class="gradient-text">
+      una conexión inteligente.
+    </span>
+  </h1>
+
+  <p class="hero-description">
+    En NexID Business transformamos la manera en que
+    empresas, emprendedores y profesionistas comparten
+    su información, conectan con clientes y fortalecen
+    su presencia digital.
+  </p>
+
+  <div class="buttons">
+    <a class="btn primary" href="#beneficios">
+      Descubre NexID
+    </a>
+
+    <a class="btn" href="#crear">
+      Crea tu NexID
+    </a>
+  </div>
+
+</header>
+
+<!-- QUÉ ES NEXID -->
+
+<section class="section" id="que-es">
+
+  <div class="eyebrow">Conoce NexID</div>
+
+  <h2>
+    Mucho más que una tarjeta de presentación.
+  </h2>
+
+  <p class="section-intro">
+    NexID combina una tarjeta física con tecnología NFC,
+    un código QR y un perfil digital personalizado.
+    Tus clientes podrán acceder a tu información
+    profesional desde su teléfono.
+  </p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">01</div>
+      <div>
+        <h3>Acerca o escanea</h3>
+        <p>
+          Comparte tu perfil acercando tu tarjeta NFC
+          a un teléfono compatible o utilizando el código QR.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">02</div>
+      <div>
+        <h3>Presenta tu negocio</h3>
+        <p>
+          Muestra tus datos, redes sociales, enlaces
+          y herramientas de contacto en un solo lugar.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">03</div>
+      <div>
+        <h3>Genera conexiones</h3>
+        <p>
+          Facilita que tus clientes te contacten,
+          conozcan tus servicios y guarden tu información.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BENEFICIOS -->
+
+<section class="section alt" id="beneficios">
+
+  <div class="eyebrow">Ventajas</div>
+
+  <h2>Una mejor forma de conectar.</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-icon">📲</div>
+      <h3>Contacto inmediato</h3>
+      <p>
+        Comparte tu información mediante NFC o QR
+        sin entregar una tarjeta convencional.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Presencia digital</h3>
+      <p>
+        Reúne tus principales enlaces y medios
+        de contacto en un perfil profesional.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>Información actualizable</h3>
+      <p>
+        Tu perfil puede actualizarse sin necesidad
+        de cambiar el enlace grabado en tu tarjeta.
+        Las modificaciones se cotizan según su alcance.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Más oportunidades</h3>
+      <p>
+        Facilita el seguimiento comercial y
+        fortalece tu presentación ante clientes y aliados.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FUNCIONES -->
+
+<section class="section">
+
+  <div class="eyebrow">Personalización</div>
+
+  <h2>Tu perfil, tus conexiones.</h2>
+
+  <p class="section-intro">
+    Integra los accesos que realmente necesita
+    tu negocio. Tu NexID incluye hasta cinco
+    botones de contacto o enlaces.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>WhatsApp y llamadas</h3>
+      <p>Contacto directo con tus clientes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Redes sociales</h3>
+      <p>Instagram, Facebook, TikTok o LinkedIn.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ubicación</h3>
+      <p>Acceso a la ubicación de tu establecimiento.</p>
+    </div>
+
+    <div class="card">
+      <h3>Página web</h3>
+      <p>Enlace a tu sitio web o catálogo existente.</p>
+    </div>
+
+    <div class="card">
+      <h3>Correo electrónico</h3>
+      <p>Comunicación profesional con un toque.</p>
+    </div>
+
+    <div class="card">
+      <h3>Enlaces personalizados</h3>
+      <p>Reservaciones, portafolios o plataformas externas.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FORMULARIOS -->
+
+<section class="section alt">
+
+  <div class="eyebrow">Herramientas adicionales</div>
+
+  <h2>Convierte conexiones en oportunidades.</h2>
+
+  <p>
+    Además de los botones tradicionales,
+    podemos integrar formularios que faciliten
+    las solicitudes de tus clientes.
+  </p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">01</div>
+      <div>
+        <h3>Formulario de contacto</h3>
+        <p>
+          Recibe solicitudes con nombre, teléfono,
+          interés y mensaje, preparadas para enviarse
+          directamente a tu WhatsApp.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">02</div>
+      <div>
+        <h3>Formulario personalizado</h3>
+        <p>
+          Diseñamos preguntas según tu actividad:
+          citas, servicios, cotizaciones o
+          requerimientos específicos.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="font-size:11px;margin-top:18px">
+    Los formularios preparan el mensaje en WhatsApp.
+    El visitante debe confirmar su envío.
+    No incluyen una base de datos automática.
+  </p>
+
+</section>
+
+<!-- SERVICIOS DIGITALES -->
+
+<section class="section">
+
+  <div class="eyebrow">Más soluciones</div>
+
+  <h2>Impulsamos tu presencia digital.</h2>
+
+  <p>
+    NexID Business también busca apoyar a negocios
+    y emprendedores en el desarrollo de su identidad
+    y presencia digital.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Identidad visual</h3>
+      <p>
+        Desarrollo de logotipos e identidad
+        mediante servicios personalizados.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Páginas web</h3>
+      <p>
+        Soluciones digitales para presentar
+        negocios, productos y servicios.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Redes sociales</h3>
+      <p>
+        Apoyo para iniciar y organizar
+        la presencia digital de tu negocio.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Networking empresarial</h3>
+      <p>
+        Estamos desarrollando una comunidad
+        para conectar empresas y profesionistas
+        de distintos sectores.
+      </p>
+    </div>
+
+  </div>
+
+  <p style="font-size:11px;margin-top:18px">
+    Estos servicios se cotizan por separado.
+    La comunidad de networking se encuentra en desarrollo.
+  </p>
+
+</section>
+
+<!-- FUNDADOR -->
+
+<section class="section alt">
+
+  <div class="eyebrow">Nuestra historia</div>
+
+  <h2>Detrás de NexID Business.</h2>
+
+  <div class="founder">
+
+    <img
+      src="carlos-foto.jpeg"
+      alt="Carlos Torres, fundador de NexID Business"
+    >
+
+    <div>
+      <div class="eyebrow">Fundador</div>
+
+      <h3>Carlos Torres</h3>
+
+      <p>
+        Empresario enfocado en el desarrollo de negocios,
+        la innovación y las relaciones empresariales.
+      </p>
+
+      <p>
+        NexID Business nace con la visión de facilitar
+        nuevas conexiones y fortalecer la presencia
+        digital de empresas y emprendedores.
+      </p>
+
+      <a href="https://nexidbusiness-commits.github.io/carlos/">
+        Conoce mi perfil profesional ↗️
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRECIOS -->
+
+<section class="section" id="precios">
+
+  <div class="eyebrow">Inversión</div>
+
+  <h2>Comienza a conectar de forma inteligente.</h2>
+
+  <div class="price-card">
+
+    <div class="eyebrow">Paquete NexID</div>
+
+    <div class="price">
+      $750 <small>MXN</small>
+    </div>
+
+    <p>
+      Tu identidad digital, lista para compartir.
+    </p>
+
+    <ul class="included">
+      <li>1 tarjeta física con tecnología NFC</li>
+      <li>Código QR funcional</li>
+      <li>Perfil digital personalizado</li>
+      <li>Hasta 5 botones de contacto o enlaces</li>
+      <li>2 años de servicio digital incluidos</li>
+    </ul>
+
+    <div class="price-note">
+      Promoción de lanzamiento.
+      Funciones adicionales se cotizan por separado.
+    </div>
+
+  </div>
+
+  <div style="margin-top:25px">
+
+    <div class="addon">
+      <div>
+        <strong>Botón adicional</strong>
+        <p>Enlace simple después de los cinco incluidos.</p>
+      </div>
+      <span>$50 MXN</span>
+    </div>
+
+    <div class="addon">
+      <div>
+        <strong>Formulario de contacto</strong>
+        <p>Solicitud preparada para WhatsApp.</p>
+      </div>
+      <span>$150 MXN</span>
+    </div>
+
+    <div class="addon">
+      <div>
+        <strong>Formulario personalizado</strong>
+        <p>Preguntas adaptadas a tu negocio.</p>
+      </div>
+      <span>$250 MXN</span>
+    </div>
+
+    <div class="addon">
+      <div>
+        <strong>Renovación anual</strong>
+        <p>
+          Después de los primeros dos años.
+          Mantiene el perfil y sus funciones contratadas.
+        </p>
+      </div>
+      <span>$249 MXN</span>
+    </div>
+
+  </div>
+
+  <p style="font-size:11px;margin-top:18px">
+    La renovación no incluye cambios ilimitados,
+    nuevas funciones ni reposición de la tarjeta física.
+  </p>
+
+</section>
+
+<!-- CONFIGURADOR -->
+
+<section class="section alt" id="crear">
+
+  <div class="eyebrow">Crea tu NexID</div>
+
+  <h2>Personaliza tu tarjeta inteligente.</h2>
+
+  <p class="section-intro">
+    Selecciona los accesos que necesitas,
+    calcula tu inversión y envíanos tu solicitud.
+  </p>
+
+  <form class="configurator" id="nexForm">
+
+    <div class="field">
+      <label for="nombre">Nombre completo *</label>
+      <input
+        id="nombre"
+        type="text"
+        required
+        maxlength="100"
+        autocomplete="name"
+      >
+    </div>
+
+    <div class="field">
+      <label for="empresa">Empresa o negocio *</label>
+      <input
+        id="empresa"
+        type="text"
+        required
+        maxlength="100"
+      >
+    </div>
+
+    <div class="field">
+      <label for="puesto">Puesto o actividad</label>
+      <input
+        id="puesto"
+        type="text"
+        maxlength="100"
+      >
+    </div>
+
+    <div class="field">
+      <label for="contacto">Tu WhatsApp *</label>
+      <input
+        id="contacto"
+        type="tel"
+        required
+        maxlength="20"
+        autocomplete="tel"
+      >
+    </div>
+
+    <div class="field">
+      <label>Selecciona tus botones</label>
+
+      <div class="options">
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="WhatsApp">
+          WhatsApp
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Llamar">
+          Llamar
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Correo">
+          Correo
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Instagram">
+          Instagram
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Facebook">
+          Facebook
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="TikTok">
+          TikTok
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="LinkedIn">
+          LinkedIn
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Ubicación">
+          Ubicación
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Página web">
+          Página web
+        </label>
+
+        <label class="option">
+          <input type="checkbox" name="boton" value="Enlace personalizado">
+          Otro enlace
+        </label>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+      <label for="extras">
+        Otros botones de enlace adicionales
+      </label>
+
+      <input
+        id="extras"
+        type="number"
+        min="0"
+        max="30"
+        value="0"
+      >
+    </div>
+
+    <div class="field">
+      <label for="formulario">
+        ¿Deseas integrar un formulario?
+      </label>
+
+      <select id="formulario">
+        <option value="0">Sin formulario</option>
+        <option value="150">Formulario de contacto (+$150)</option>
+        <option value="250">Formulario personalizado (+$250)</option>
+      </select>
+    </div>
+
+    <div class="summary">
+
+      <div class="summary-row">
+        <span>Paquete NexID</span>
+        <strong>$750</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Botones seleccionados</span>
+        <strong id="cantidadBotones">0</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Botones adicionales</span>
+        <strong id="precioExtras">$0</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Formulario</span>
+        <strong id="precioFormulario">$0</strong>
+      </div>
+
+      <div class="summary-total">
+        <span>Total estimado</span>
+        <strong id="total">$750</strong>
+      </div>
+
+    </div>
+
+    <button class="btn primary full" type="submit">
+      Solicitar mi NexID por WhatsApp ↗️
+    </button>
+
+    <p style="font-size:11px;text-align:center;margin:15px 0 0">
+      Tu solicitud se preparará en WhatsApp.
+      Deberás confirmar el envío del mensaje.
+    </p>
+
+  </form>
+
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+
+<section class="section faq">
+
+  <div class="eyebrow">Preguntas frecuentes</div>
+
+  <h2>Todo lo que necesitas saber.</h2>
+
+  <details>
+    <summary>¿Necesito descargar una aplicación?</summary>
+    <p>
+      No. El perfil se abre desde el navegador.
+      Para utilizar NFC, el teléfono receptor
+      debe ser compatible y tener habilitada
+      la lectura correspondiente.
+    </p>
+  </details>
+
+  <details>
+    <summary>¿Qué pasa si un teléfono no tiene NFC?</summary>
+    <p>
+      Puedes utilizar el código QR para abrir
+      el mismo perfil digital.
+    </p>
+  </details>
+
+  <details>
+    <summary>¿Puedo actualizar mis datos?</summary>
+    <p>
+      Sí. Podemos modificar la información de tu perfil
+      manteniendo el mismo enlace. Los cambios se
+      cotizan de acuerdo con lo solicitado.
+    </p>
+  </details>
+
+  <details>
+    <summary>¿Qué incluyen los dos años?</summary>
+    <p>
+      La disponibilidad del perfil digital y las
+      funciones contratadas durante el periodo inicial.
+      No incluye modificaciones ilimitadas.
+    </p>
+  </details>
+
+  <details>
+    <summary>¿Qué sucede después de los dos años?</summary>
+    <p>
+      La renovación anual del servicio digital
+      tiene un costo de $249 MXN.
+      Las condiciones específicas de vencimiento
+      y reactivación se informarán al contratar.
+    </p>
+  </details>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="section alt">
+
+  <div class="eyebrow">Hablemos</div>
+
+  <h2>Tu próxima conexión comienza aquí.</h2>
+
+  <p>
+    ¿Tienes preguntas o buscas una solución
+    personalizada para tu negocio?
+  </p>
+
+  <div class="buttons">
+
+    <a
+      class="btn primary"
+      href="https://wa.me/524446669557?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20NexID%20Business."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Contactar por WhatsApp
+    </a>
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/nexid_business/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FIRMA OFICIAL -->
+
+<footer class="nexid-brand">
+
+  <img
+    class="powered"
+    src="powered-by-nexid.jpeg"
+    alt="Powered by NexID"
+  >
+
+  <div class="footer-links">
+
+    <a
+      href="https://www.instagram.com/nexid_business/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+
+    <a href="https://nexidbusiness-commits.github.io/carlos/">
+      Fundador
+    </a>
+
+    <a href="#inicio">
+      Volver al inicio ↑
+    </a>
+
+  </div>
+
+  <div class="footer-note">
+    NexID Business · Identidad digital y networking
+  </div>
+
+</footer>
+
+</main>
+
+<script>
+
+/* CONFIGURACIÓN GENERAL */
+
+const CONFIG = {
+  whatsapp: "524446669557",
+  precioBase: 750,
+  botonesIncluidos: 5,
+  precioBotonExtra: 50
+};
+
+const checks = document.querySelectorAll(
+  'input[name="boton"]'
+);
+
+const extrasInput = document.getElementById("extras");
+const formSelect = document.getElementById("formulario");
+
+function dinero(valor){
+  return "$" + valor.toLocaleString("es-MX");
+}
+
+/* CALCULADORA */
+
+function calcular(){
+
+  const seleccionados = Array.from(checks)
+    .filter(check => check.checked);
+
+  const cantidadSeleccionada = seleccionados.length;
+
+  const extras = Math.min(
+    30,
+    Math.max(
+      0,
+      parseInt(extrasInput.value,10) || 0
+    )
+  );
+
+  const totalBotones = cantidadSeleccionada + extras;
+
+  const botonesCobrables = Math.max(
+    0,
+    totalBotones - CONFIG.botonesIncluidos
+  );
+
+  const costoExtras =
+    botonesCobrables * CONFIG.precioBotonExtra;
+
+  const costoFormulario =
+    Number(formSelect.value) || 0;
+
+  const total =
+    CONFIG.precioBase +
+    costoExtras +
+    costoFormulario;
+
+  document.getElementById("cantidadBotones")
+    .textContent = totalBotones;
+
+  document.getElementById("precioExtras")
+    .textContent = dinero(costoExtras);
+
+  document.getElementById("precioFormulario")
+    .textContent = dinero(costoFormulario);
+
+  document.getElementById("total")
+    .textContent = dinero(total);
+
+  return {
+    seleccionados,
+    extras,
+    totalBotones,
+    botonesCobrables,
+    costoExtras,
+    costoFormulario,
+    total
+  };
+}
+
+checks.forEach(check => {
+  check.addEventListener("change",calcular);
+});
+
+extrasInput.addEventListener("input",calcular);
+formSelect.addEventListener("change",calcular);
+
+calcular();
+
+/* SOLICITUD POR WHATSAPP */
+
+document.getElementById("nexForm")
+  .addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    if(!this.reportValidity()) return;
+
+    const datos = calcular();
+
+    const nombre =
+      document.getElementById("nombre").value.trim();
+
+    const empresa =
+      document.getElementById("empresa").value.trim();
+
+    const puesto =
+      document.getElementById("puesto").value.trim();
+
+    const contacto =
+      document.getElementById("contacto").value.trim();
+
+    const botones =
+      datos.seleccionados.map(c => c.value);
+
+    const tipoFormulario =
+      formSelect.options[formSelect.selectedIndex].text;
+
+    const mensaje = [
+      "Hola, quiero solicitar mi NexID Business.",
+      "",
+      "DATOS DEL CLIENTE",
+      "Nombre: " + nombre,
+      "Empresa: " + empresa,
+      "Puesto: " + (puesto || "No indicado"),
+      "WhatsApp: " + contacto,
+      "",
+      "CONFIGURACIÓN",
+      "Botones: " + (
+        botones.length
+          ? botones.join(", ")
+          : "Ninguno seleccionado"
+      ),
+      "Otros botones: " + datos.extras,
+      "Total de botones: " + datos.totalBotones,
+      "Formulario: " + tipoFormulario,
+      "",
+      "COTIZACIÓN ESTIMADA",
+      "Paquete base: $750 MXN",
+      "Botones adicionales: " + dinero(datos.costoExtras),
+      "Formulario: " + dinero(datos.costoFormulario),
+      "TOTAL: " + dinero(datos.total) + " MXN",
+      "",
+      "Incluye 2 años de servicio digital.",
+      "Renovación posterior: $249 MXN anuales.",
+      "",
+      "Me gustaría conocer los siguientes pasos."
+    ].join("\n");
+
+    const url =
+      "https://wa.me/" +
+      CONFIG.whatsapp +
+      "?text=" +
+      encodeURIComponent(mensaje);
+
+    window.location.href = url;
+
+  });
+
+</script>
+
+</body>
+</html>
