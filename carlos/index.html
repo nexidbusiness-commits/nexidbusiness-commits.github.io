@@ -1,683 +1,859 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#061b35">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061426">
 
-  <title>Carlos Torres | Perfil Profesional</title>
+<title>Carlos Torres | Perfil Profesional</title>
+<meta name="description" content="Carlos Torres. Empresario y desarrollador de negocios. Subdirector General de Tu Enlace Hipotecario y fundador de NexID Business.">
 
-  <meta name="description" content="Carlos Torres. Empresario y desarrollador de negocios. Subdirector General de Tu Enlace Hipotecario y fundador de NexID Business.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-  <style>
-    :root {
-      --navy: #061b35;
-      --dark: #030e1d;
-      --blue: #0960d4;
-      --lightblue: #9dcaff;
-      --text: #c1d1e5;
-      --border: #2a4b70;
-    }
+:root{
+  --bg:#061426;
+  --bg2:#0a1e36;
+  --panel:#102945;
+  --line:rgba(151,195,244,.18);
+  --blue:#3289ef;
+  --ice:#a8d0ff;
+  --white:#f6f9ff;
+  --muted:#aebfd5;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+*{box-sizing:border-box}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{scroll-behavior:smooth}
 
-    body {
-      margin: 0;
-      background: #020914;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+body{
+  margin:0;
+  background:#020915;
+  color:var(--white);
+  font-family:'DM Sans',Arial,sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
 
-    button {
-      font: inherit;
-      cursor: pointer;
-    }
+button:focus-visible,
+a:focus-visible{
+  outline:2px solid #9bd0ff;
+  outline-offset:3px;
+}
 
-    .container {
-      max-width: 540px;
-      margin: auto;
-      min-height: 100vh;
-      background: var(--navy);
-      box-shadow: 0 10px 50px #0008;
-    }
+.shell{
+  width:100%;
+  max-width:560px;
+  margin:auto;
+  min-height:100vh;
+  background:var(--bg);
+  overflow:hidden;
+  box-shadow:0 20px 65px rgba(0,0,0,.3);
+}
 
-    .hero {
-      padding: 40px 24px 30px;
-      text-align: center;
-      background: radial-gradient(
-        circle at top,
-        #174c83 0%,
-        #071c36 55%,
-        #061b35 100%
-      );
-    }
+/* ENCABEZADO */
 
-    .foto {
-      width: 175px;
-      height: 175px;
-      object-fit: cover;
-      object-position: center 28%;
-      border-radius: 50%;
-      border: 4px solid var(--lightblue);
-      box-shadow: 0 8px 30px #0008;
-      margin-bottom: 20px;
-    }
+.hero{
+  position:relative;
+  padding:34px 24px 32px;
+  text-align:center;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 8%,
+      rgba(34,114,204,.34),
+      transparent 60%
+    ),
+    linear-gradient(180deg,#0b2442,#061426);
+}
 
-    .etiqueta {
-      color: var(--lightblue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      font-weight: bold;
-    }
+.hero:before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid rgba(94,169,255,.12);
+  border-radius:50%;
+  top:-210px;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
 
-    h1 {
-      font-size: 38px;
-      margin: 12px 0 8px;
-    }
+.topline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:34px;
+}
 
-    .profesion {
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-    }
+.brand-mini{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#c4d9f3;
+  font-size:10px;
+  letter-spacing:1.8px;
+  font-weight:700;
+}
 
-    .especialidad {
-      color: #a9c8e8;
-      font-size: 12px;
-      margin-top: 12px;
-      line-height: 1.7;
-    }
+.brand-mini img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+}
 
-    .introduccion {
-      color: #d4e2f2;
-      font-size: 14px;
-      line-height: 1.8;
-      margin: 22px auto;
-    }
+.top-tag{
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:8px 11px;
+  font-size:10px;
+  color:var(--ice);
+  letter-spacing:1px;
+}
 
-    .botones {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 25px;
-    }
+/* MARCO PREMIUM */
 
-    .boton {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px;
-      border: 1px solid #4a719a;
-      border-radius: 12px;
-      background: #153757;
-      color: white;
-      font-size: 13px;
-      font-weight: bold;
-      text-align: center;
-    }
+.portrait-stage{
+  position:relative;
+  width:238px;
+  height:286px;
+  margin:0 auto 28px;
+}
 
-    .boton.principal {
-      background: var(--blue);
-      border-color: #368cf0;
-    }
+.portrait-glow{
+  position:absolute;
+  inset:14px -12px -9px;
+  background:#1475d5;
+  filter:blur(45px);
+  opacity:.25;
+  border-radius:35px;
+}
 
-    .boton.completo {
-      grid-column: 1 / -1;
-    }
+.portrait-frame{
+  position:absolute;
+  inset:0;
+  padding:5px;
+  border-radius:25px;
+  background:linear-gradient(
+    145deg,
+    #b6dbff 0%,
+    #368ff4 26%,
+    #173b66 58%,
+    #7bbaff 100%
+  );
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.35),
+    0 0 0 1px rgba(155,207,255,.12);
+}
 
-    .boton[hidden] {
-      display: none;
-    }
+.portrait-inner{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:20px;
+  background:#102b4c;
+}
 
-    .seccion {
-      padding: 30px 24px;
-    }
+.portrait-inner img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 25%;
+}
 
-    .seccion.alternativa {
-      background: #091f38;
-    }
+.corner{
+  position:absolute;
+  width:28px;
+  height:28px;
+  border-color:#9bd0ff;
+  border-style:solid;
+  z-index:2;
+  pointer-events:none;
+}
 
-    .linea {
-      width: 40px;
-      height: 3px;
-      background: #4da2ff;
-      border-radius: 5px;
-      margin-bottom: 16px;
-    }
+.corner.tl{
+  top:-9px;
+  left:-9px;
+  border-width:2px 0 0 2px;
+  border-radius:8px 0 0 0;
+}
 
-    h2 {
-      font-size: 23px;
-      margin: 10px 0 18px;
-    }
+.corner.br{
+  bottom:-9px;
+  right:-9px;
+  border-width:0 2px 2px 0;
+  border-radius:0 0 8px 0;
+}
 
-    .seccion p {
-      font-size: 14px;
-      line-height: 1.85;
-      color: var(--text);
-    }
+.portrait-label{
+  position:absolute;
+  bottom:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  white-space:nowrap;
+  padding:9px 16px;
+  border-radius:30px;
+  background:#0a2545;
+  border:1px solid #3b80c6;
+  color:#d9ecff;
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:700;
+  box-shadow:0 7px 18px #0006;
+}
 
-    .empresa {
-      background: #102842;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 20px;
-      margin-top: 14px;
-    }
+/* IDENTIDAD */
 
-    .empresa h3 {
-      font-size: 17px;
-      margin: 0 0 8px;
-    }
+.eyebrow{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2.4px;
+  color:var(--ice);
+  text-transform:uppercase;
+}
 
-    .cargo {
-      color: var(--lightblue);
-      font-size: 13px;
-      font-weight: bold;
-    }
+h1,h2,h3{
+  font-family:'Manrope',Arial,sans-serif;
+}
 
-    .empresa p {
-      font-size: 13px;
-      margin-bottom: 0;
-    }
+h1{
+  font-size:clamp(34px,8vw,43px);
+  line-height:1.15;
+  letter-spacing:-1.6px;
+  margin:23px 0 10px;
+  font-weight:800;
+}
 
-    .ampi {
-      background: #0d2b4c;
-      border-left: 3px solid #63a9ff;
-      border-radius: 8px;
-      padding: 18px;
-    }
+.profession{
+  font-size:14px;
+  font-weight:700;
+  color:#cfe5ff;
+  letter-spacing:.2px;
+}
 
-    .ampi p {
-      margin: 0;
-    }
+.specialties{
+  color:#8eb4de;
+  font-size:11px;
+  line-height:1.8;
+  margin-top:13px;
+}
 
-    .estado {
-      color: #9ee8bf;
-      font-size: 12px;
-      margin-top: 12px;
-      min-height: 16px;
-    }
+.intro{
+  max-width:410px;
+  margin:22px auto 0;
+  font-size:13px;
+  line-height:1.85;
+  color:#b9cbe0;
+}
 
-    footer {
-      text-align: center;
-      background: var(--dark);
-      padding: 35px 20px;
-      color: #b0c6de;
-      font-size: 12px;
-      line-height: 1.8;
-    }
+/* BOTONES */
 
-    .firma {
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: white;
-      margin-bottom: 10px;
-    }
+.actions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:27px;
+}
 
-    @media (max-width: 360px) {
-      h1 {
-        font-size: 32px;
-      }
+.action{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:52px;
+  padding:12px 10px;
+  border-radius:13px;
+  border:1px solid rgba(146,194,247,.23);
+  background:rgba(22,55,91,.75);
+  color:#f5f9ff;
+  font-size:12px;
+  font-weight:700;
+  transition:transform .2s,background .2s;
+}
 
-      .seccion {
-        padding: 25px 18px;
-      }
-    }
-  </style>
+.action svg{
+  width:17px;
+  height:17px;
+  flex-shrink:0;
+}
+
+.action.primary{
+  background:linear-gradient(135deg,#1766ca,#328cf0);
+  border-color:#579fff;
+  box-shadow:0 8px 22px rgba(24,102,204,.22);
+}
+
+.action.wide{grid-column:1/-1}
+
+.action[hidden]{display:none}
+
+.action:active{transform:scale(.98)}
+
+@media(hover:hover){
+  .action:hover{
+    transform:translateY(-2px);
+    background:#1c4977;
+  }
+  .action.primary:hover{
+    background:#267ce4;
+  }
+}
+
+.feedback{
+  min-height:18px;
+  margin-top:12px;
+  color:#a5e4c0;
+  font-size:12px;
+}
+
+/* SECCIONES */
+
+.section{
+  padding:38px 25px;
+  border-top:1px solid rgba(134,181,231,.09);
+}
+
+.section.alt{background:#091b30}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.section-line{
+  width:26px;
+  height:2px;
+  background:#61a9ff;
+  border-radius:3px;
+}
+
+.section h2{
+  margin:11px 0 17px;
+  font-size:clamp(22px,5vw,26px);
+  line-height:1.35;
+  letter-spacing:-.6px;
+}
+
+.section p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+  margin:0 0 14px;
+}
+
+/* EXPERIENCIA */
+
+.experience-grid{
+  display:grid;
+  gap:13px;
+}
+
+.experience{
+  position:relative;
+  padding:22px 20px;
+  background:linear-gradient(
+    145deg,
+    #123253,
+    #0c233c
+  );
+  border:1px solid var(--line);
+  border-radius:17px;
+  overflow:hidden;
+}
+
+.experience:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:65px;
+  height:2px;
+  background:linear-gradient(90deg,#56a9ff,transparent);
+}
+
+.experience-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.experience h3{
+  margin:0 0 7px;
+  font-size:17px;
+  letter-spacing:-.3px;
+}
+
+.role{
+  color:#a9d1ff;
+  font-size:12px;
+  font-weight:700;
+}
+
+.experience p{
+  margin:14px 0 0;
+  font-size:12px;
+  line-height:1.8;
+}
+
+.number{
+  color:rgba(164,207,255,.2);
+  font-size:26px;
+  font-weight:800;
+  font-family:'Manrope',Arial,sans-serif;
+}
+
+.small-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#9dcbff;
+  font-size:12px;
+  font-weight:700;
+  margin-top:17px;
+}
+
+/* AMPI */
+
+.affiliation{
+  border-left:2px solid #66adff;
+  padding:4px 0 4px 18px;
+  margin-top:18px;
+}
+
+.affiliation p{
+  margin:0;
+  font-size:13px;
+}
+
+.affiliation strong{
+  color:#e7f2ff;
+}
+
+/* BANNER */
+
+.cta-panel{
+  background:linear-gradient(135deg,#123a66,#0b2847);
+  border:1px solid rgba(118,177,244,.26);
+  border-radius:19px;
+  padding:24px 20px;
+  text-align:center;
+}
+
+.cta-panel h2{
+  margin:0 0 10px;
+  font-size:21px;
+}
+
+.cta-panel p{
+  font-size:12px;
+  margin:0 0 18px;
+}
+
+/* FIRMA OFICIAL */
+
+.nexid-brand{
+  padding:53px 25px 31px;
+  background:#030e1d;
+  text-align:center;
+}
+
+.nexid-brand .powered{
+  display:block;
+  width:285px;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+  border:0;
+}
+
+.footer-note{
+  color:#829bb8;
+  font-size:10px;
+  margin-top:18px;
+  letter-spacing:.4px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:380px){
+  .hero{padding:28px 18px}
+  .section{padding:32px 19px}
+  .portrait-stage{
+    width:218px;
+    height:266px;
+  }
+  .action{font-size:11px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  ,:before,*:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<main class="container">
+<main class="shell">
 
-  <!-- PERFIL PRINCIPAL -->
+<!-- HERO -->
 
-  <header class="hero" id="inicio">
+<header class="hero" id="inicio">
 
-    <img
-      class="foto"
-      src="carlos-foto.jpeg"
-      alt="Carlos Torres"
+  <div class="topline">
+    <div class="brand-mini">
+      <img src="nex-symbol.png" alt="NexID">
+      NEXID
+    </div>
+    <div class="top-tag">PERFIL DIGITAL</div>
+  </div>
+
+  <!-- FOTOGRAFÍA ORIGINAL -->
+  <div class="portrait-stage">
+    <div class="portrait-glow"></div>
+
+    <div class="portrait-frame">
+      <div class="portrait-inner">
+        <img
+          src="carlos-foto.jpeg"
+          alt="Fotografía profesional de Carlos Torres"
+        >
+      </div>
+    </div>
+
+    <span class="corner tl"></span>
+    <span class="corner br"></span>
+    <div class="portrait-label">CARLOS TORRES</div>
+  </div>
+
+  <h1>Carlos Torres</h1>
+
+  <div class="profession">
+    Empresario | Desarrollo de Negocios
+  </div>
+
+  <div class="specialties">
+    Sector financiero · Innovación digital<br>
+    Relaciones empresariales
+  </div>
+
+  <p class="intro">
+    Conecto personas, desarrollo proyectos y construyo
+    oportunidades a través de relaciones empresariales,
+    soluciones financieras e innovación.
+  </p>
+
+  <!-- CONTACTOS -->
+
+  <div class="actions">
+
+    <a
+      class="action primary"
+      href="https://wa.me/524446669557"
+      target="_blank"
+      rel="noopener noreferrer"
     >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5a9 9 0 0 1-.9-4A8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/>
+        <path d="M9 9c.4 2.6 2.3 4.5 5 5l1.5-1"/>
+      </svg>
+      WhatsApp
+    </a>
 
-    <div class="etiqueta">
-      Perfil profesional
-    </div>
+    <a
+      class="action"
+      href="tel:+524446669557"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L8.2 11a16 16 0 0 0 4.8 4.8l1.5-1.8a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2Z"/>
+      </svg>
+      Llamar
+    </a>
 
-    <h1>Carlos Torres</h1>
+    <button class="action" id="saveContact" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/>
+        <path d="M7 3v6h9V3M7 21v-8h10v8"/>
+      </svg>
+      Guardar contacto
+    </button>
 
-    <div class="profesion">
-      Empresario | Desarrollo de Negocios
-    </div>
+    <button class="action" id="shareProfile" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"/>
+      </svg>
+      Compartir perfil
+    </button>
 
-    <div class="especialidad">
-      Sector financiero · Innovación digital · Relaciones empresariales
-    </div>
+    <a
+      class="action primary wide"
+      href="https://nexidbusiness-commits.github.io/nexid/"
+    >
+      Conoce NexID Business
+      <span aria-hidden="true">↗️</span>
+    </a>
 
-    <p class="introduccion">
-      Conecto personas, desarrollo proyectos y construyo
-      oportunidades a través de relaciones empresariales,
-      soluciones financieras e innovación.
-    </p>
+  </div>
 
-    <!-- BOTONES DE CONTACTO -->
+  <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
 
-    <div class="botones">
+</header>
+
+<!-- SOBRE MÍ -->
+
+<section class="section">
+
+  <div class="section-head">
+    <div class="section-line"></div>
+    <div class="eyebrow">Sobre mí</div>
+  </div>
+
+  <h2>Conexiones que generan oportunidades.</h2>
+
+  <p>
+    Soy empresario con experiencia en los sectores
+    inmobiliario y financiero, enfocado en el desarrollo
+    de negocios, las alianzas estratégicas y la creación
+    de nuevas oportunidades comerciales.
+  </p>
+
+  <p>
+    Mi interés por la innovación y el emprendimiento
+    me impulsa a desarrollar proyectos que conecten
+    personas, tecnología y soluciones de valor.
+  </p>
+
+</section>
+
+<!-- EXPERIENCIA -->
+
+<section class="section alt">
+
+  <div class="section-head">
+    <div class="section-line"></div>
+    <div class="eyebrow">Trayectoria</div>
+  </div>
+
+  <h2>Mi actividad profesional</h2>
+
+  <div class="experience-grid">
+
+    <article class="experience">
+
+      <div class="experience-top">
+        <div>
+          <h3>Tu Enlace Hipotecario</h3>
+          <div class="role">Subdirector General</div>
+        </div>
+        <div class="number">01</div>
+      </div>
+
+      <p>
+        Dirección operativa, desarrollo comercial,
+        alianzas estratégicas y coordinación de
+        soluciones de financiamiento hipotecario.
+      </p>
+
+    </article>
+
+    <article class="experience">
+
+      <div class="experience-top">
+        <div>
+          <h3>NexID Business</h3>
+          <div class="role">Fundador</div>
+        </div>
+        <div class="number">02</div>
+      </div>
+
+      <p>
+        Desarrollo de herramientas de identidad digital,
+        tarjetas inteligentes NFC y QR, y soluciones
+        de networking para negocios y profesionistas.
+      </p>
 
       <a
-        id="whatsapp"
-        class="boton principal"
-        target="_blank"
-        rel="noopener"
-        hidden
-      >
-        WhatsApp
-      </a>
-
-      <a id="telefono" class="boton" hidden>
-        Llamar
-      </a>
-
-      <a id="correo" class="boton" hidden>
-        Correo
-      </a>
-
-      <a
-        id="instagram"
-        class="boton"
-        target="_blank"
-        rel="noopener"
-        hidden
-      >
-        Instagram
-      </a>
-
-      <button
-        class="boton"
-        id="guardar"
-        type="button"
-      >
-        Guardar contacto
-      </button>
-
-      <button
-        class="boton"
-        id="compartir"
-        type="button"
-      >
-        Compartir perfil
-      </button>
-
-      <a
-        class="boton principal completo"
+        class="small-link"
         href="https://nexidbusiness-commits.github.io/nexid/"
       >
-        Conoce NexID Business ↗️
+        Explorar NexID Business ↗️
       </a>
 
-    </div>
-
-    <div class="estado" id="estado"></div>
-
-  </header>
-
-  <!-- SOBRE MI -->
-
-  <section class="seccion">
-
-    <div class="linea"></div>
-
-    <div class="etiqueta">
-      Sobre mí
-    </div>
-
-    <h2>
-      Una trayectoria enfocada en crear conexiones.
-    </h2>
-
-    <p>
-      Soy empresario con experiencia en los sectores
-      inmobiliario y financiero, enfocado en el desarrollo
-      de negocios, las alianzas estratégicas y la generación
-      de nuevas oportunidades comerciales.
-    </p>
-
-    <p>
-      Me interesa impulsar proyectos que aporten valor
-      a las personas y empresas, combinando experiencia
-      comercial, tecnología y relaciones profesionales sólidas.
-    </p>
-
-  </section>
-
-  <!-- EXPERIENCIA PROFESIONAL -->
-
-  <section class="seccion alternativa">
-
-    <div class="linea"></div>
-
-    <div class="etiqueta">
-      Experiencia
-    </div>
-
-    <h2>Mi actividad profesional</h2>
-
-    <article class="empresa">
-
-      <h3>Tu Enlace Hipotecario</h3>
-
-      <div class="cargo">
-        Subdirector General
-      </div>
-
-      <p>
-        Participo en la dirección operativa, el desarrollo
-        comercial, las alianzas estratégicas y la coordinación
-        de soluciones de financiamiento hipotecario.
-      </p>
-
     </article>
 
-    <article class="empresa">
+  </div>
 
-      <h3>NexID Business</h3>
+</section>
 
-      <div class="cargo">
-        Fundador
-      </div>
+<!-- AMPI -->
 
-      <p>
-        Impulso herramientas de identidad digital,
-        tarjetas inteligentes NFC y QR, y nuevas
-        oportunidades de networking para negocios
-        y profesionistas.
-      </p>
+<section class="section">
 
-      <div style="margin-top:16px">
+  <div class="section-head">
+    <div class="section-line"></div>
+    <div class="eyebrow">Vinculación profesional</div>
+  </div>
 
-        <a
-          class="boton principal"
-          href="https://nexidbusiness-commits.github.io/nexid/"
-        >
-          Descubre NexID Business ↗️
-        </a>
+  <h2>Participación en el sector</h2>
 
-      </div>
+  <div class="affiliation">
+    <p>
+      Soy socio de <strong>AMPI San Luis Potosí</strong>,
+      donde asumí la presidencia de
+      <strong>AMPI Jóvenes durante 2026</strong>,
+      participando en iniciativas de vinculación,
+      colaboración y desarrollo profesional.
+    </p>
+  </div>
 
-    </article>
+</section>
 
-  </section>
+<!-- CONTACTO FINAL -->
 
-  <!-- AMPI -->
+<section class="section alt">
 
-  <section class="seccion">
+  <div class="cta-panel">
 
-    <div class="linea"></div>
-
-    <div class="etiqueta">
-      Vinculación profesional
-    </div>
-
-    <h2>Participación en el sector</h2>
-
-    <div class="ampi">
-
-      <p>
-        Soy socio de <strong>AMPI San Luis Potosí</strong>,
-        donde asumí la
-        <strong>presidencia de AMPI Jóvenes durante 2026</strong>,
-        participando en iniciativas de vinculación
-        y desarrollo profesional dentro del sector inmobiliario.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACTO -->
-
-  <section class="seccion alternativa">
-
-    <div class="linea"></div>
-
-    <div class="etiqueta">
+    <div class="eyebrow" style="margin-bottom:12px">
       Conectemos
     </div>
 
-    <h2>
-      Las buenas oportunidades comienzan con una conversación.
-    </h2>
+    <h2>Construyamos nuevas oportunidades.</h2>
 
     <p>
-      Si deseas explorar una colaboración, conocer mis proyectos
-      o establecer una conexión profesional, puedes contactarme
-      mediante los accesos de esta tarjeta.
+      Siempre abierto a nuevas conexiones,
+      colaboraciones y proyectos empresariales.
     </p>
 
-    <a class="boton principal" href="#inicio">
-      Volver a mis contactos ↑
+    <a
+      class="action primary"
+      href="https://wa.me/524446669557?text=Hola%20Carlos%2C%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Iniciar conversación por WhatsApp ↗️
     </a>
 
-  </section>
+  </div>
 
-  <!-- FIRMA -->
+</section>
 
-  <footer>
+<!-- FIRMA GRÁFICA ORIGINAL -->
 
-    <div class="firma">
-      NEXID BUSINESS
-    </div>
+<footer class="nexid-brand">
 
-    <p>
-      Perfil profesional de Carlos Torres
-    </p>
+  <img
+    class="powered"
+    src="powered-by-nexid.jpeg"
+    alt="Powered by NexID"
+  >
 
-    <p>
-      Powered by NexID
-    </p>
+  <div class="footer-note">
+    Identidad digital · NexID Business
+  </div>
 
-  </footer>
+</footer>
 
 </main>
 
 <script>
+const PROFILE_URL =
+  "https://nexidbusiness-commits.github.io/carlos/";
 
-  /*
-    CONFIGURACIÓN PERSONAL
-    WHATSAPP Y TELÉFONO YA CONFIGURADOS.
-  */
+const PHONE = "+524446669557";
 
-  const CONFIG = {
+const feedback = document.getElementById("feedback");
 
-    nombre: "Carlos Torres",
+function escapeVCard(value){
+  return String(value)
+    .replace(/\\/g,"\\\\")
+    .replace(/\n/g,"\\n")
+    .replace(/;/g,"\\;")
+    .replace(/,/g,"\\,");
+}
 
-    empresa: "Tu Enlace Hipotecario / NexID Business",
+/* GUARDAR CONTACTO */
 
-    cargo: "Subdirector General / Fundador",
+document.getElementById("saveContact")
+  .addEventListener("click",function(){
 
-    whatsapp: "524446669557",
-
-    telefono: "+524446669557",
-
-    correo: "",
-
-    instagram: "",
-
-    url: "https://nexidbusiness-commits.github.io/carlos/"
-
-  };
-
-  // ACTIVAR BOTONES CONFIGURADOS
-
-  function activarBoton(id, enlace) {
-
-    if (!enlace) return;
-
-    const boton = document.getElementById(id);
-
-    boton.href = enlace;
-    boton.hidden = false;
-
-  }
-
-  const numeroWhatsApp =
-    CONFIG.whatsapp.replace(/\D/g, "");
-
-  if (numeroWhatsApp) {
-
-    activarBoton(
-      "whatsapp",
-      "https://wa.me/" + numeroWhatsApp
-    );
-
-  }
-
-  if (CONFIG.telefono) {
-
-    activarBoton(
-      "telefono",
-      "tel:" + CONFIG.telefono.replace(/[^\d+]/g, "")
-    );
-
-  }
-
-  if (CONFIG.correo) {
-
-    activarBoton(
-      "correo",
-      "mailto:" + CONFIG.correo
-    );
-
-  }
-
-  if (
-    /^https:\/\/(www\.)?instagram\.com\//i.test(
-      CONFIG.instagram
-    )
-  ) {
-
-    activarBoton(
-      "instagram",
-      CONFIG.instagram
-    );
-
-  }
-
-  // GUARDAR CONTACTO
-
-  document.getElementById("guardar").onclick = function() {
-
-    function escapar(valor) {
-      return String(valor || "")
-        .replace(/\\/g, "\\\\")
-        .replace(/\n/g, "\\n")
-        .replace(/,/g, "\\,")
-        .replace(/;/g, "\\;");
-    }
-
-    const tarjeta = [
+    const lines = [
       "BEGIN:VCARD",
       "VERSION:3.0",
-      "FN:" + escapar(CONFIG.nombre),
-      "ORG:" + escapar(CONFIG.empresa),
-      "TITLE:" + escapar(CONFIG.cargo)
+      "N:Torres;Carlos;;;",
+      "FN:Carlos Torres",
+      "ORG:"+escapeVCard("Tu Enlace Hipotecario / NexID Business"),
+      "TITLE:"+escapeVCard("Subdirector General / Fundador"),
+      "TEL;TYPE=CELL:"+PHONE,
+      "URL:"+PROFILE_URL,
+      "END:VCARD"
     ];
 
-    const telefono =
-      CONFIG.telefono ||
-      (numeroWhatsApp ? "+" + numeroWhatsApp : "");
-
-    if (telefono) {
-      tarjeta.push("TEL;TYPE=CELL:" + telefono);
-    }
-
-    if (CONFIG.correo) {
-      tarjeta.push("EMAIL:" + escapar(CONFIG.correo));
-    }
-
-    tarjeta.push(
-      "URL:" + CONFIG.url,
-      "END:VCARD"
+    const blob = new Blob(
+      [lines.join("\r\n")+"\r\n"],
+      {type:"text/vcard;charset=utf-8"}
     );
 
-    const archivo = new Blob(
-      [tarjeta.join("\r\n") + "\r\n"],
-      { type: "text/vcard;charset=utf-8" }
-    );
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
 
-    const enlace = URL.createObjectURL(archivo);
+    a.href = url;
+    a.download = "Carlos-Torres.vcf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-    const descargar = document.createElement("a");
+    setTimeout(function(){
+      URL.revokeObjectURL(url);
+    },1500);
+});
 
-    descargar.href = enlace;
-    descargar.download = "Carlos-Torres.vcf";
+/* COMPARTIR PERFIL */
 
-    document.body.appendChild(descargar);
+document.getElementById("shareProfile")
+  .addEventListener("click",async function(){
 
-    descargar.click();
-    descargar.remove();
-
-    setTimeout(function() {
-      URL.revokeObjectURL(enlace);
-    }, 1000);
-
-  };
-
-  // COMPARTIR PERFIL
-
-  document.getElementById("compartir").onclick =
-    async function() {
-
-      if (navigator.share) {
-
-        try {
-
-          await navigator.share({
-            title: "Carlos Torres | Perfil Profesional",
-            url: CONFIG.url
-          });
-
-          return;
-
-        } catch (error) {
-
-          if (error.name === "AbortError") return;
-
-        }
-
+    if(navigator.share){
+      try{
+        await navigator.share({
+          title:"Carlos Torres | Perfil Profesional",
+          text:"Conoce mi perfil profesional.",
+          url:PROFILE_URL
+        });
+        return;
+      }catch(error){
+        if(error.name==="AbortError") return;
       }
+    }
 
-      try {
-
-        await navigator.clipboard.writeText(CONFIG.url);
-
-        document.getElementById("estado").textContent =
-          "Enlace copiado correctamente.";
-
-      } catch (error) {
-
-        window.prompt(
-          "Copia el enlace:",
-          CONFIG.url
-        );
-
-      }
-
-    };
-
+    try{
+      await navigator.clipboard.writeText(PROFILE_URL);
+      feedback.textContent="Enlace copiado correctamente.";
+    }catch(error){
+      window.prompt("Copia este enlace:",PROFILE_URL);
+    }
+});
 </script>
 
 </body>
