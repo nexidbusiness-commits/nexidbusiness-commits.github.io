@@ -1,1 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
 
+<title>Tortas El Rey Potosino | NexID</title>
+
+<meta name="description"
+content="Tortas El Rey Potosino. Conoce nuestra ubicación, reseñas, redes sociales y contáctanos por WhatsApp.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --black:#080808;
+  --black2:#151515;
+  --red:#bd1c22;
+  --red2:#e0342e;
+  --gold:#f2b51e;
+  --gold2:#ffd76a;
+  --white:#ffffff;
+  --muted:#c6c1b9;
+  --line:rgba(242,181,30,.25);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:'DM Sans',Arial,sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.site{
+  max-width:660px;
+  min-height:100vh;
+  margin:auto;
+  overflow:hidden;
+  background:var(--black);
+}
+
+.hero{
+  position:relative;
+  text-align:center;
+  padding:35px 23px 36px;
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(183,28,34,.27),
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,#13100e,#080808
+    );
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(
+    90deg,
+    var(--red),
+    var(--gold),
+    var(--red)
+  );
+}
+
+.logo{
+  display:block;
+  width:min(275px,78vw);
+  height:auto;
+  margin:0 auto 25px;
+  border-radius:50%;
+  filter:drop-shadow(
+    0 12px 25px rgba(0,0,0,.65)
+  );
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+h1,h2,h3{
+  font-family:'Montserrat',Arial,sans-serif;
+}
+
+h1{
+  font-size:clamp(26px,6vw,38px);
+  line-height:1.22;
+  margin:14px 0;
+  font-weight:900;
+  letter-spacing:-.7px;
+}
+
+.gold{
+  color:var(--gold);
+}
+
+.subtitle{
+  color:#dfd8cd;
+  font-size:13px;
+  line-height:1.8;
+  max-width:440px;
+  margin:0 auto 22px;
+}
+
+.person{
+  display:inline-block;
+  padding:13px 19px;
+  background:#181512;
+  border:1px solid var(--line);
+  border-radius:13px;
+  margin-bottom:26px;
+}
+
+.person strong{
+  display:block;
+  font-size:13px;
+}
+
+.person span{
+  display:block;
+  color:var(--gold);
+  font-size:11px;
+  margin-top:5px;
+}
+
+.section{
+  padding:31px 22px;
+}
+
+.section-title{
+  font-size:20px;
+  font-weight:900;
+  text-align:center;
+  margin:0 0 20px;
+}
+
+.button-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+.action{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:58px;
+  padding:14px 12px;
+  background:#1a1a1a;
+  border:1px solid #37302a;
+  border-radius:14px;
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  text-align:center;
+  transition:.2s;
+}
+
+.action:hover{
+  filter:brightness(1.13);
+  transform:translateY(-1px);
+}
+
+.action svg{
+  flex-shrink:0;
+}
+
+.action.whatsapp{
+  background:#126b42;
+  border-color:#2bb36d;
+}
+
+.action.red{
+  background:linear-gradient(
+    135deg,#a7151e,#d9272c
+  );
+  border-color:#f04a4e;
+}
+
+.action.gold-button{
+  background:linear-gradient(
+    135deg,#e8a918,#ffd15a
+  );
+  color:#161008;
+  border-color:#ffe08b;
+}
+
+.action.full{
+  grid-column:1/-1;
+}
+
+.location-feature{
+  position:relative;
+  margin-top:15px;
+  padding:5px;
+  border-radius:20px;
+  background:linear-gradient(
+    125deg,
+    #ffda6a,
+    #b71920,
+    #ffbd32
+  );
+  box-shadow:0 10px 35px rgba(189,28,34,.25);
+}
+
+.location-button{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:116px;
+  padding:22px 16px;
+  background:linear-gradient(
+    135deg,#c41b22,#9f111b
+  );
+  border-radius:16px;
+  text-align:center;
+}
+
+.location-button .big{
+  font-family:'Montserrat',Arial,sans-serif;
+  font-size:clamp(18px,5vw,25px);
+  font-weight:900;
+  color:white;
+}
+
+.location-button .small{
+  font-size:12px;
+  color:#ffe8bb;
+}
+
+.location-icon{
+  font-size:29px;
+}
+
+.location-note{
+  text-align:center;
+  color:#bdb4a7;
+  font-size:11px;
+  line-height:1.7;
+  margin:14px 8px 0;
+}
+
+.quote{
+  padding:35px 25px;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(180,35,25,.17),
+      transparent 70%
+    ),
+    #11100f;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  text-align:center;
+}
+
+.quote .crown{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.quote h2{
+  color:var(--gold);
+  font-size:clamp(23px,6vw,32px);
+  font-weight:900;
+  line-height:1.35;
+  margin:8px 0 14px;
+}
+
+.quote p{
+  color:#d4cbbf;
+  font-size:13px;
+  line-height:1.85;
+  max-width:420px;
+  margin:auto;
+}
+
+.contact{
+  text-align:center;
+  padding:36px 22px;
+}
+
+.contact h2{
+  font-size:22px;
+  margin:0 0 12px;
+}
+
+.contact p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+
+.contact .action{
+  max-width:390px;
+  margin:22px auto 0;
+}
+
+.nexid-brand{
+  padding:53px 25px 31px;
+  background:#030e1d;
+  text-align:center;
+}
+
+.nexid-brand .powered{
+  display:block;
+  width:285px;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+}
+
+.nexid-brand p{
+  color:#9eafc6;
+  font-size:10px;
+  margin:19px 0 0;
+}
+
+.nexid-brand a{
+  color:#a9d0ff;
+  font-size:11px;
+  font-weight:700;
+}
+
+.footer-bottom{
+  margin-top:18px;
+}
+
+@media(max-width:370px){
+  .button-grid{
+    grid-template-columns:1fr;
+  }
+
+  .action.full{
+    grid-column:auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .action{
+    transition:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="site">
+
+<!-- PORTADA -->
+
+<header class="hero">
+
+  <img
+    class="logo"
+    src="logo-rey.jpeg"
+    alt="Logotipo Tortas El Rey Potosino"
+  >
+
+  <div class="eyebrow">
+    Sabor · Tradición · San Luis Potosí
+  </div>
+
+  <h1>
+    ¡El sabor que se<br>
+    <span class="gold">
+      corona en San Luis Potosí!
+    </span>
+  </h1>
+
+  <p class="subtitle">
+    Bienvenido a Tortas El Rey Potosino.
+    Conoce nuestros canales oficiales,
+    encuentra nuestra ubicación
+    y mantente conectado con nosotros.
+  </p>
+
+  <div class="person">
+    <strong>
+      Miguel Ángel Quiroz Rodríguez
+    </strong>
+    <span>
+      Director
+    </span>
+  </div>
+
+  <!-- BOTÓN PRINCIPAL -->
+
+  <div class="button-grid">
+
+    <a
+      class="action whatsapp full"
+      href="https://wa.me/524401102030?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20Tortas%20El%20Rey%20Potosino."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>💬</span>
+      Pide tus tortas por WhatsApp
+    </a>
+
+  </div>
+
+</header>
+
+<!-- UBICACIÓN Y RESEÑAS DESTACADO -->
+
+<section class="section" id="ubicacion">
+
+  <div class="eyebrow"
+       style="text-align:center">
+    Encuéntranos
+  </div>
+
+  <h2 class="section-title">
+    ¡Visítanos y comparte tu experiencia!
+  </h2>
+
+  <div class="location-feature">
+
+    <a
+      class="location-button"
+      href="https://maps.app.goo.gl/tqZUtjN8T9njfG438?g_st=ac"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir ubicación y reseñas en Google Maps"
+    >
+
+      <span class="location-icon">📍</span>
+
+      <span class="big">
+        UBICACIÓN Y RESEÑAS
+      </span>
+
+      <span class="small">
+        Encuéntranos en Google Maps
+      </span>
+
+      <span class="small">
+        Ver ubicación y opiniones ↗️
+      </span>
+
+    </a>
+
+  </div>
+
+  <p class="location-note">
+    Consulta cómo llegar, conoce las opiniones
+    de nuestros clientes y comparte tu experiencia
+    desde Google Maps.
+  </p>
+
+</section>
+
+<!-- REDES SOCIALES -->
+
+<section class="section"
+style="background:#11100f">
+
+  <div class="eyebrow"
+       style="text-align:center">
+    Síguenos
+  </div>
+
+  <h2 class="section-title">
+    Conecta con El Rey Potosino
+  </h2>
+
+  <div class="button-grid">
+
+    <a
+      class="action"
+      href="https://www.instagram.com/tortas_el_rey_potosino?vrfl=MWZ4YnYyeXZtemc5bg=="
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      📸 Instagram
+    </a>
+
+    <a
+      class="action"
+      href="https://www.facebook.com/share/1CGehK23yg/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      📘 Facebook
+    </a>
+
+    <a
+      class="action"
+      href="https://www.tiktok.com/@tortas.el.rey.pot?_r=1&amp;_t=ZS-9BIlmqJXB6v"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🎵 TikTok
+    </a>
+
+    <a
+      class="action gold-button"
+      href="https://tortaselreypotosino.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 Página web
+    </a>
+
+  </div>
+
+</section>
+
+<!-- MENSAJE DE MARCA -->
+
+<section class="quote">
+
+  <div class="crown">👑</div>
+
+  <div class="eyebrow">
+    Tortas El Rey Potosino
+  </div>
+
+  <h2>
+    ¡Aquí manda<br>
+    el buen sabor!
+  </h2>
+
+  <p>
+    Una marca con personalidad,
+    tradición y orgullo potosino.
+    Síguenos en nuestras redes,
+    conoce nuestras novedades
+    y forma parte de nuestra comunidad.
+  </p>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact">
+
+  <div class="eyebrow">
+    Contacto directo
+  </div>
+
+  <h2>
+    ¿Se te antojó una torta?
+  </h2>
+
+  <p>
+    Escríbenos por WhatsApp
+    y ponte en contacto con nuestro equipo.
+  </p>
+
+  <a
+    class="action red"
+    href="https://wa.me/524401102030?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Tortas%20El%20Rey%20Potosino."
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💬 Contactar por WhatsApp
+  </a>
+
+  <a
+    class="action"
+    style="max-width:390px;margin:12px auto 0"
+    href="tel:+524401102030"
+  >
+    📞 Llamar al negocio
+  </a>
+
+</section>
+
+<!-- FIRMA NEXID -->
+
+<footer class="nexid-brand">
+
+  <img
+    class="powered"
+    src="../carlos/powered-by-nexid.jpeg"
+    alt="Powered by NexID"
+  >
+
+  <p>
+    Conectando negocios, personas y oportunidades.
+  </p>
+
+  <div class="footer-bottom">
+
+    <a
+      href="https://nexidbusiness-commits.github.io/nexid/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Crea tu NexID Business ↗️
+    </a>
+
+  </div>
+
+</footer>
+
+</main>
+
+</body>
+</html>
