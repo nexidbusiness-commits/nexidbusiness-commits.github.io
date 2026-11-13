@@ -8,7 +8,7 @@
 <title>Tortas El Rey Potosino | NexID</title>
 
 <meta name="description"
-content="Tortas El Rey Potosino. Conoce nuestra ubicación, reseñas, redes sociales y contáctanos por WhatsApp.">
+content="Tortas El Rey Potosino. Déjanos tu reseña en Google, consulta nuestra ubicación, redes sociales y contáctanos.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
@@ -68,9 +68,7 @@ button{
       rgba(183,28,34,.27),
       transparent 65%
     ),
-    linear-gradient(
-      180deg,#13100e,#080808
-    );
+    linear-gradient(180deg,#13100e,#080808);
 }
 
 .hero:before{
@@ -191,10 +189,6 @@ h1{
   transform:translateY(-1px);
 }
 
-.action svg{
-  flex-shrink:0;
-}
-
 .action.whatsapp{
   background:#126b42;
   border-color:#2bb36d;
@@ -219,7 +213,9 @@ h1{
   grid-column:1/-1;
 }
 
-.location-feature{
+/* RESEÑAS DE GOOGLE */
+
+.review-feature{
   position:relative;
   margin-top:15px;
   padding:5px;
@@ -233,14 +229,14 @@ h1{
   box-shadow:0 10px 35px rgba(189,28,34,.25);
 }
 
-.location-button{
+.review-button{
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  min-height:116px;
-  padding:22px 16px;
+  gap:10px;
+  min-height:155px;
+  padding:25px 16px;
   background:linear-gradient(
     135deg,#c41b22,#9f111b
   );
@@ -248,28 +244,61 @@ h1{
   text-align:center;
 }
 
-.location-button .big{
+.review-stars{
+  display:flex;
+  justify-content:center;
+  gap:5px;
+  color:#ffd15a;
+  font-size:27px;
+  letter-spacing:2px;
+}
+
+.review-button .big{
   font-family:'Montserrat',Arial,sans-serif;
-  font-size:clamp(18px,5vw,25px);
+  font-size:clamp(19px,5vw,27px);
   font-weight:900;
   color:white;
 }
 
-.location-button .small{
+.review-button .small{
   font-size:12px;
   color:#ffe8bb;
 }
 
-.location-icon{
-  font-size:29px;
-}
-
-.location-note{
+.review-note{
   text-align:center;
   color:#bdb4a7;
   font-size:11px;
   line-height:1.7;
   margin:14px 8px 0;
+}
+
+/* UBICACIÓN INDEPENDIENTE */
+
+.location-feature{
+  margin-top:15px;
+}
+
+.location-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:67px;
+  padding:17px;
+  background:linear-gradient(
+    135deg,#24211d,#161514
+  );
+  border:1px solid var(--gold);
+  border-radius:14px;
+  text-align:center;
+  font-size:14px;
+  font-weight:800;
+  color:var(--gold2);
+}
+
+.location-button:hover{
+  background:#302820;
 }
 
 .quote{
@@ -421,8 +450,6 @@ h1{
     </span>
   </div>
 
-  <!-- BOTÓN PRINCIPAL -->
-
   <div class="button-grid">
 
     <a
@@ -431,26 +458,63 @@ h1{
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span>💬</span>
-      Pide tus tortas por WhatsApp
+      💬 Pide tus tortas por WhatsApp
     </a>
 
   </div>
 
 </header>
 
-<!-- UBICACIÓN Y RESEÑAS DESTACADO -->
+<!-- RESEÑAS PRINCIPALES -->
 
-<section class="section" id="ubicacion">
+<section class="section" id="resenas">
 
   <div class="eyebrow"
        style="text-align:center">
-    Encuéntranos
+    Tu opinión es importante
   </div>
 
   <h2 class="section-title">
-    ¡Visítanos y comparte tu experiencia!
+    ¿Ya probaste nuestras tortas?
   </h2>
+
+  <div class="review-feature">
+
+    <a
+      class="review-button"
+      href="https://g.page/r/CYwI3FpnxQPSEAE/review"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Dejar una reseña en Google"
+    >
+
+      <span class="review-stars"
+            aria-hidden="true">
+        ★ ★ ★ ★ ★
+      </span>
+
+      <span class="big">
+        ¡DÉJANOS TU RESEÑA!
+      </span>
+
+      <span class="small">
+        Tu opinión nos ayuda a seguir creciendo
+      </span>
+
+      <span class="small">
+        Califica tu experiencia en Google ↗️
+      </span>
+
+    </a>
+
+  </div>
+
+  <p class="review-note">
+    Cuéntanos cómo fue tu experiencia.
+    Todas las opiniones son bienvenidas.
+  </p>
+
+  <!-- UBICACIÓN SEPARADA -->
 
   <div class="location-feature">
 
@@ -459,32 +523,12 @@ h1{
       href="https://maps.app.goo.gl/tqZUtjN8T9njfG438?g_st=ac"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Abrir ubicación y reseñas en Google Maps"
+      aria-label="Ver ubicación en Google Maps"
     >
-
-      <span class="location-icon">📍</span>
-
-      <span class="big">
-        UBICACIÓN Y RESEÑAS
-      </span>
-
-      <span class="small">
-        Encuéntranos en Google Maps
-      </span>
-
-      <span class="small">
-        Ver ubicación y opiniones ↗️
-      </span>
-
+      📍 Ver ubicación en Google Maps ↗️
     </a>
 
   </div>
-
-  <p class="location-note">
-    Consulta cómo llegar, conoce las opiniones
-    de nuestros clientes y comparte tu experiencia
-    desde Google Maps.
-  </p>
 
 </section>
 
@@ -605,7 +649,7 @@ style="background:#11100f">
 
 </section>
 
-<!-- FIRMA NEXID -->
+<!-- FIRMA OFICIAL NEXID -->
 
 <footer class="nexid-brand">
 
