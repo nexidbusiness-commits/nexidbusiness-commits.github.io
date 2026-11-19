@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#e8bfc0">
-<meta name="description" content="PAL ANTOJO | Botanera Bar para eventos. Servicio de carrito, 10 botanas y cotizaciones.">
+<meta name="description" content="PAL ANTOJO | Botanera Bar para eventos. Barras de snacks, charcutería, paquetes personalizados y cotizaciones.">
 <title>PAL ANTOJO | NexID Business</title>
 
 <style>
@@ -251,47 +251,62 @@ button { cursor:pointer; }
   color:var(--dorado);
 }
 
-/* PRECIOS */
+/* PAQUETES */
 .price-grid {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:8px;
+  grid-template-columns:1fr;
+  gap:10px;
   margin:20px 0;
 }
 
 .price {
-  padding:17px 5px;
+  padding:17px 15px;
   background:var(--rosa-claro);
   border:1px solid #d7b987;
   border-radius:12px;
-  text-align:center;
+  text-align:left;
 }
 
 .price small {
   display:block;
   font-family:Arial,sans-serif;
-  font-size:10px;
+  font-size:11px;
   color:var(--vino);
+  font-weight:bold;
+  letter-spacing:.5px;
 }
 
 .price strong {
   display:block;
-  margin:9px 0;
+  margin:7px 0 0;
   color:var(--dorado);
-  font-size:30px;
-}
-
-.price em {
-  display:block;
-  font-size:11px;
+  font-size:20px;
+  line-height:1.4;
 }
 
 .includes {
-  padding:15px;
+  padding:17px;
   background:white;
   border-radius:12px;
   font-size:13px;
-  line-height:1.7;
+  line-height:1.8;
+}
+
+.includes strong {
+  display:block;
+  margin-bottom:8px;
+  color:var(--vino);
+  font-family:Arial,sans-serif;
+  font-size:14px;
+}
+
+.includes ul {
+  margin:0;
+  padding-left:20px;
+}
+
+.includes li {
+  margin:7px 0;
 }
 
 /* DATOS BANCARIOS */
@@ -428,7 +443,6 @@ button { cursor:pointer; }
 
 @media(max-width:350px) {
   .hero h1 { font-size:36px; }
-  .price strong { font-size:24px; }
   .bank-number { font-size:16px; }
 }
 </style>
@@ -459,8 +473,8 @@ button { cursor:pointer; }
 
   <p>
     Haz de tu celebración una experiencia deliciosa
-    con nuestro servicio de carrito y 10 tipos de
-    botanas surtidas, acompañadas de chamoy,
+    con nuestro servicio de carrito y una variedad
+    de botanas y toppings, acompañados de chamoy,
     Tajín, limón y salsas de la casa.
   </p>
 
@@ -513,7 +527,6 @@ button { cursor:pointer; }
       Compartir tarjeta
     </button>
 
-    <!-- NUEVO BOTON DE PAGO -->
     <button class="action payment-action"
             type="button"
             data-panel="paymentPanel">
@@ -573,23 +586,23 @@ button { cursor:pointer; }
   </form>
 </section>
 
-<!-- BOTANAS -->
+<!-- BOTANAS ACTUALIZADAS -->
 <section class="panel" id="snacksPanel">
 
   <h2>Nuestras 10 botanas</h2>
   <p>Una selección de sabores para tus invitados.</p>
 
   <ul class="snacks">
-    <li>Pepino con limón y Tajín</li>
-    <li>Mango con chile y chamoy</li>
-    <li>Jícama con limón y sal</li>
-    <li>Cacahuates enchilados</li>
-    <li>Chicharrón de harina con salsa</li>
-    <li>Esquites con queso y limón</li>
-    <li>Papas con chamoy</li>
-    <li>Gomitas enchiladas</li>
-    <li>Tostitos con guacamole</li>
-    <li>Verduras frescas con salsa</li>
+    <li>Panditas</li>
+    <li>Gusanito</li>
+    <li>Gusanito azucarado</li>
+    <li>Fruta azucarada</li>
+    <li>Durazno azucarados</li>
+    <li>Manguito enchilado</li>
+    <li>Gomitas con chamoy</li>
+    <li>Cacahuate japonés</li>
+    <li>Cacahuate enchilado</li>
+    <li>Cacahuate garapiñado</li>
   </ul>
 
   <a class="btn"
@@ -601,37 +614,41 @@ button { cursor:pointer; }
 
 </section>
 
-<!-- PAQUETES Y PRECIOS -->
+<!-- PAQUETES ACTUALIZADOS -->
 <section class="panel" id="packagesPanel">
 
   <h2>Paquetes y precios</h2>
-  <p>Elige el paquete para tu celebración.</p>
+  <p>
+    Elige la barra ideal para tu celebración.
+    Solicita una cotización personalizada.
+  </p>
 
   <div class="price-grid">
 
     <div class="price">
-      <small>20–50 personas</small>
-      <strong>$95</strong>
-      <em>por persona</em>
+      <small>PAQUETE 1</small>
+      <strong>Barra botanera</strong>
     </div>
 
     <div class="price">
-      <small>50–100 personas</small>
-      <strong>$85</strong>
-      <em>por persona</em>
+      <small>PAQUETE 2</small>
+      <strong>Barra de charcutería</strong>
     </div>
 
     <div class="price">
-      <small>100+ personas</small>
-      <strong>$75</strong>
-      <em>por persona</em>
+      <small>PAQUETE 3</small>
+      <strong>Barra personalizada</strong>
     </div>
 
   </div>
 
   <div class="includes">
-    Incluye 10 botanas surtidas, chamoy, Tajín,
-    limones frescos, salsas de la casa y servicio de carrito.
+    <strong>Incluye:</strong>
+    <ul>
+      <li>Barra de snacks equipada</li>
+      <li>Variedad de snacks y toppings</li>
+      <li>2 horas de servicio con personalizados</li>
+    </ul>
   </div>
 
   <a class="btn"
@@ -643,20 +660,20 @@ button { cursor:pointer; }
 
 </section>
 
-<!-- NUEVA SECCION DE DATOS BANCARIOS -->
+<!-- DATOS BANCARIOS ACTUALIZADOS -->
 <section class="panel" id="paymentPanel">
 
   <h2>Datos para transferencia</h2>
 
   <p>
     Consulta los datos bancarios y copia el número
-    de tarjeta para realizar tu pago.
+    proporcionado para realizar tu pago.
   </p>
 
   <div class="bank-card">
 
     <div class="bank-name">
-      Banamex
+      Banregio
     </div>
 
     <div class="bank-label">
@@ -664,7 +681,7 @@ button { cursor:pointer; }
     </div>
 
     <div class="bank-number">
-      5256 7881 7878 7792
+      4741 7429 1419 9248
     </div>
 
     <div class="bank-label">
@@ -687,10 +704,10 @@ button { cursor:pointer; }
   </div>
 
   <p class="bank-note">
-    Este número tiene 16 dígitos y corresponde a
-    una tarjeta bancaria, no a una CLABE interbancaria.
-    Verifica los datos con el negocio antes de realizar
-    cualquier transferencia.
+    Este número tiene 16 dígitos y no es una CLABE
+    interbancaria de 18 dígitos.
+    Verifica el banco, el titular y los datos de pago
+    antes de realizar cualquier transferencia.
   </p>
 
 </section>
@@ -710,8 +727,9 @@ button { cursor:pointer; }
   </p>
 
   <p>
-    Contamos con paquetes para distintas cantidades
-    de invitados y servicio personalizado para cada celebración.
+    Contamos con opciones de barra botanera,
+    charcutería y barras personalizadas para
+    hacer de cada celebración una experiencia especial.
   </p>
 
 </section>
@@ -792,7 +810,7 @@ document.getElementById("quoteForm").addEventListener("submit", event => {
 
 /* COPIAR NUMERO DE TARJETA */
 document.getElementById("copyCardBtn").addEventListener("click", async () => {
-  const cardNumber = "5256788178787792";
+  const cardNumber = "4741742914199248";
   const status = document.getElementById("copyStatus");
 
   try {
@@ -801,10 +819,10 @@ document.getElementById("copyCardBtn").addEventListener("click", async () => {
     }
 
     await navigator.clipboard.writeText(cardNumber);
-    status.textContent = "✓ Número de tarjeta copiado correctamente.";
+    status.textContent = "✓ Número copiado correctamente.";
   } catch (error) {
     status.textContent = "Copia el número desde la siguiente ventana:";
-    window.prompt("Número de tarjeta Banamex:", cardNumber);
+    window.prompt("Número de Banregio:", cardNumber);
   }
 });
 
