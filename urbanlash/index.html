@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#161414">
+<meta name="theme-color" content="#F3C5D9">
 <meta name="description" content="Urban Lash Studio | Extensiones de pestañas, lash lifting, diseño de cejas y uñas en San Luis Potosí. Reserva tu cita.">
 <title>Urban Lash Studio | NexID Business</title>
 
@@ -12,13 +12,16 @@
 <style>
 
 :root {
-  --black:#161414;
-  --dark:#252020;
-  --cream:#faf7f3;
-  --beige:#e7d9cd;
-  --accent:#a88b75;
-  --text:#302827;
-  --white:#ffffff;
+  --pink:#F3C5D9;
+  --pink-intense:#D98BB4;
+  --pink-light:#FCE6F0;
+  --blue:#B9D3EE;
+  --blue-light:#E4EFFB;
+  --cream:#FFF8FC;
+  --accent:#A45B83;
+  --text:#75405E;
+  --dark:#824567;
+  --white:#FFFFFF;
 }
 
 * {
@@ -31,7 +34,7 @@ html {
 
 body {
   margin:0;
-  background:#eae4de;
+  background:#F0E5ED;
   color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
 }
@@ -51,7 +54,7 @@ button {
   margin:auto;
   background:var(--cream);
   overflow:hidden;
-  box-shadow:0 0 40px #00000018;
+  box-shadow:0 0 40px #75405E18;
 }
 
 /* ENCABEZADO */
@@ -63,10 +66,12 @@ button {
   text-align:center;
   background:linear-gradient(
     145deg,
-    #ffffff,
-    #eee4db
+    #FFF8FC 0%,
+    #F3C5D9 48%,
+    #F3C5D9 70%,
+    #B9D3EE 100%
   );
-  border-bottom:1px solid var(--accent);
+  border-bottom:1px solid #D98BB4;
 }
 
 .hero:before {
@@ -74,7 +79,7 @@ button {
   position:absolute;
   width:320px;
   height:320px;
-  border:1px solid #a88b7525;
+  border:1px solid #FFFFFF90;
   border-radius:50%;
   top:-180px;
   right:-120px;
@@ -85,7 +90,7 @@ button {
   position:absolute;
   width:280px;
   height:280px;
-  border:1px solid #a88b7525;
+  border:1px solid #FFFFFF90;
   border-radius:50%;
   bottom:-180px;
   left:-100px;
@@ -108,7 +113,7 @@ button {
 }
 
 .eyebrow {
-  color:#826955;
+  color:var(--dark);
   font-size:10px;
   font-weight:bold;
   letter-spacing:3px;
@@ -117,7 +122,7 @@ button {
 
 .hero h1 {
   margin:17px 0 9px;
-  color:var(--black);
+  color:var(--text);
   font-family:Georgia,"Times New Roman",serif;
   font-size:41px;
   font-weight:normal;
@@ -126,6 +131,7 @@ button {
 
 .hero h2 {
   margin:0;
+  color:var(--text);
   font-size:12px;
   letter-spacing:5px;
   font-weight:normal;
@@ -133,10 +139,14 @@ button {
 }
 
 .hero-divider {
-  height:1px;
+  height:2px;
   width:55px;
   margin:22px auto;
-  background:var(--accent);
+  background:linear-gradient(
+    90deg,
+    #D98BB4,
+    #B9D3EE
+  );
 }
 
 .hero p {
@@ -144,7 +154,7 @@ button {
   margin:0 auto;
   font-size:14px;
   line-height:1.85;
-  color:#685951;
+  color:var(--text);
 }
 
 /* BOTONES PRINCIPALES */
@@ -156,6 +166,8 @@ button {
   z-index:5;
 }
 
+/* BOTON GRANDE DE RESERVACION */
+
 .reserve-btn {
   display:flex;
   align-items:center;
@@ -165,14 +177,19 @@ button {
   padding:20px;
   background:linear-gradient(
     135deg,
-    #161414,
-    #39302d
+    #F3C5D9,
+    #D98BB4
   );
-  color:white;
-  border:1px solid #66564b;
+  color:#65334F;
+  border:1px solid #CB7BA5;
   border-radius:16px;
   text-decoration:none;
-  box-shadow:0 10px 25px #00000025;
+  box-shadow:0 10px 25px #A45B8330;
+  transition:transform .2s;
+}
+
+.reserve-btn:hover {
+  transform:translateY(-2px);
 }
 
 .reserve-icon {
@@ -191,13 +208,15 @@ button {
 
 .reserve-text small {
   display:block;
-  color:#e1cfc2;
+  color:#65334F;
   font-size:11px;
 }
 
 .reserve-arrow {
   font-size:17px;
 }
+
+/* CUADRICULA DE BOTONES */
 
 .grid {
   display:grid;
@@ -213,26 +232,47 @@ button {
   justify-content:space-between;
   min-height:105px;
   padding:17px;
-  border:1px solid #dfd1c6;
+  border:1px solid #EAC5D8;
   border-radius:15px;
-  background:white;
+  background:linear-gradient(
+    145deg,
+    #FFFFFF,
+    #FCE6F0
+  );
   color:var(--text);
   text-decoration:none;
   font-size:14px;
   font-weight:bold;
   text-align:left;
-  box-shadow:0 4px 12px #00000005;
+  box-shadow:0 4px 12px #75405E08;
   transition:transform .2s,background .2s;
 }
 
+.action.blue {
+  background:linear-gradient(
+    145deg,
+    #FFFFFF,
+    #E4EFFB
+  );
+  border-color:#B9D3EE;
+}
+
 .action:hover {
-  background:#f4ede6;
+  background:#F3C5D9;
   transform:translateY(-2px);
 }
 
+.action.blue:hover {
+  background:#B9D3EE;
+}
+
 .action i {
-  color:#8c705c;
+  color:var(--accent);
   font-size:24px;
+}
+
+.action.blue i {
+  color:#52799F;
 }
 
 .action small {
@@ -240,7 +280,7 @@ button {
   margin-top:5px;
   font-size:10px;
   font-weight:normal;
-  color:#81736a;
+  color:#79566D;
 }
 
 /* PANEL DE SERVICIOS */
@@ -249,8 +289,8 @@ button {
   display:none;
   margin:0 20px 25px;
   padding:25px 19px;
-  background:white;
-  border:1px solid #dfd1c6;
+  background:#FFFFFF;
+  border:1px solid #EAC5D8;
   border-radius:18px;
 }
 
@@ -271,36 +311,52 @@ button {
 }
 
 .panel h2 {
-  margin:0 0 12px;
+  margin:12px 0;
   font-family:Georgia,"Times New Roman",serif;
   font-weight:normal;
   font-size:29px;
+  color:var(--text);
 }
 
 .panel-description {
-  color:#77675d;
+  color:#79566D;
   font-size:13px;
   line-height:1.8;
   margin-bottom:23px;
 }
 
+/* TARJETAS DE SERVICIOS */
+
 .service {
   padding:20px 16px;
   margin:12px 0;
-  border:1px solid #e0d2c6;
+  border:1px solid #EAC5D8;
   border-radius:13px;
   background:linear-gradient(
     145deg,
-    #f8f4ef,
-    #ffffff
+    #FCE6F0,
+    #FFF8FC
   );
+}
+
+.service.blue {
+  background:linear-gradient(
+    145deg,
+    #E4EFFB,
+    #FFF8FC
+  );
+  border-color:#B9D3EE;
 }
 
 .service-label {
   font-size:10px;
   letter-spacing:2px;
-  color:#8c705c;
+  color:var(--dark);
   font-weight:bold;
+}
+
+.service.blue .service-label {
+  color:#52799F;
 }
 
 .service h3 {
@@ -308,12 +364,13 @@ button {
   font-weight:normal;
   font-size:23px;
   margin:9px 0 12px;
+  color:var(--text);
 }
 
 .service p {
   font-size:13px;
   line-height:1.7;
-  color:#76665e;
+  color:#79566D;
 }
 
 .service-btn {
@@ -331,14 +388,22 @@ button {
   font-weight:bold;
 }
 
+.service.blue .service-btn {
+  background:#52799F;
+}
+
 .instagram-btn {
   display:block;
   margin-top:20px;
   padding:15px;
-  border:1px solid #c9b29e;
+  border:1px solid #D98BB4;
   border-radius:11px;
-  color:#604b3d;
-  background:#eee4db;
+  color:var(--text);
+  background:linear-gradient(
+    135deg,
+    #F3C5D9,
+    #E4EFFB
+  );
   text-decoration:none;
   text-align:center;
   font-weight:bold;
@@ -350,12 +415,13 @@ button {
 .statement {
   margin:0 20px 25px;
   padding:30px 24px;
-  border:1px solid #d8c6b7;
+  border:1px solid #E1B1CC;
   border-radius:18px;
   background:linear-gradient(
     145deg,
-    #eee2d7,
-    #faf7f3
+    #F3C5D9 0%,
+    #FCE6F0 65%,
+    #E4EFFB 100%
   );
 }
 
@@ -364,14 +430,14 @@ button {
   font-size:29px;
   line-height:1.3;
   font-weight:normal;
-  color:var(--black);
+  color:var(--text);
   margin:15px 0;
 }
 
 .statement p {
   font-size:14px;
   line-height:1.85;
-  color:#69594f;
+  color:var(--text);
 }
 
 .statement .signature {
@@ -379,7 +445,7 @@ button {
   font-size:12px;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#8c705c;
+  color:var(--dark);
 }
 
 /* UBICACION */
@@ -387,8 +453,12 @@ button {
 .location {
   margin:0 20px 30px;
   padding:25px 20px;
-  background:white;
-  border:1px solid #e0d2c6;
+  background:linear-gradient(
+    145deg,
+    #FFFFFF,
+    #FFF8FC
+  );
+  border:1px solid #EAC5D8;
   border-radius:18px;
 }
 
@@ -397,12 +467,17 @@ button {
   font-size:25px;
   font-family:Georgia,"Times New Roman",serif;
   font-weight:normal;
+  color:var(--text);
 }
 
 .location p {
   font-size:13px;
   line-height:1.8;
-  color:#79695f;
+  color:#79566D;
+}
+
+.location p i {
+  color:var(--accent);
 }
 
 .location iframe {
@@ -419,8 +494,13 @@ button {
   width:100%;
   margin-top:15px;
   padding:15px;
-  background:var(--black);
-  color:white;
+  background:linear-gradient(
+    135deg,
+    #E4EFFB,
+    #B9D3EE
+  );
+  border:1px solid #A6C5E4;
+  color:#345777;
   text-decoration:none;
   border-radius:10px;
   font-size:13px;
@@ -429,6 +509,7 @@ button {
 }
 
 /* FIRMA OFICIAL NEXID */
+/* CONSERVAR SIN MODIFICACIONES */
 
 .nexid-brand {
   position:relative;
@@ -496,6 +577,8 @@ button {
   font-size:9px;
   letter-spacing:1.8px;
 }
+
+/* ADAPTACION A PANTALLAS PEQUEÑAS */
 
 @media(max-width:350px) {
   .hero h1 {
@@ -605,7 +688,7 @@ button {
     <!-- INSTAGRAM -->
 
     <a
-      class="action"
+      class="action blue"
       href="https://www.instagram.com/urbanlash.studio?dmpr=bWV5ZmFmbWN4dGJj"
       target="_blank"
       rel="noopener"
@@ -623,7 +706,7 @@ button {
     <!-- FACEBOOK -->
 
     <a
-      class="action"
+      class="action blue"
       href="https://www.facebook.com/share/1EFJFExd1Y/?mibextid=wwXIfr"
       target="_blank"
       rel="noopener"
@@ -675,7 +758,7 @@ button {
     <!-- COMPARTIR -->
 
     <button
-      class="action"
+      class="action blue"
       type="button"
       id="shareBtn"
     >
@@ -745,7 +828,7 @@ button {
 
   <!-- LASH LIFTING -->
 
-  <article class="service">
+  <article class="service blue">
 
     <div class="service-label">
       02 — LASH LIFTING
@@ -807,7 +890,7 @@ button {
 
   <!-- UÑAS -->
 
-  <article class="service">
+  <article class="service blue">
 
     <div class="service-label">
       04 — NAILS
