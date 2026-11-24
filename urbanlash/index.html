@@ -1,1 +1,1053 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#161414">
+<meta name="description" content="Urban Lash Studio | Extensiones de pestañas, lash lifting, diseño de cejas y uñas en San Luis Potosí. Reserva tu cita.">
+<title>Urban Lash Studio | NexID Business</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+:root {
+  --black:#161414;
+  --dark:#252020;
+  --cream:#faf7f3;
+  --beige:#e7d9cd;
+  --accent:#a88b75;
+  --text:#302827;
+  --white:#ffffff;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:#eae4de;
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+button,a,input,select,textarea {
+  -webkit-tap-highlight-color:transparent;
+}
+
+button {
+  cursor:pointer;
+  font:inherit;
+}
+
+.page {
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  background:var(--cream);
+  overflow:hidden;
+  box-shadow:0 0 40px #00000018;
+}
+
+/* ENCABEZADO */
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  padding:42px 25px 65px;
+  text-align:center;
+  background:linear-gradient(
+    145deg,
+    #ffffff,
+    #eee4db
+  );
+  border-bottom:1px solid var(--accent);
+}
+
+.hero:before {
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:1px solid #a88b7525;
+  border-radius:50%;
+  top:-180px;
+  right:-120px;
+}
+
+.hero:after {
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid #a88b7525;
+  border-radius:50%;
+  bottom:-180px;
+  left:-100px;
+}
+
+.client-logo {
+  position:relative;
+  display:block;
+  width:245px;
+  max-width:85%;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto 25px;
+  border-radius:9px;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow {
+  color:#826955;
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.hero h1 {
+  margin:17px 0 9px;
+  color:var(--black);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:41px;
+  font-weight:normal;
+  letter-spacing:1px;
+}
+
+.hero h2 {
+  margin:0;
+  font-size:12px;
+  letter-spacing:5px;
+  font-weight:normal;
+  text-transform:uppercase;
+}
+
+.hero-divider {
+  height:1px;
+  width:55px;
+  margin:22px auto;
+  background:var(--accent);
+}
+
+.hero p {
+  max-width:380px;
+  margin:0 auto;
+  font-size:14px;
+  line-height:1.85;
+  color:#685951;
+}
+
+/* BOTONES PRINCIPALES */
+
+.actions {
+  position:relative;
+  margin-top:-27px;
+  padding:0 20px 24px;
+  z-index:5;
+}
+
+.reserve-btn {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  width:100%;
+  min-height:85px;
+  padding:20px;
+  background:linear-gradient(
+    135deg,
+    #161414,
+    #39302d
+  );
+  color:white;
+  border:1px solid #66564b;
+  border-radius:16px;
+  text-decoration:none;
+  box-shadow:0 10px 25px #00000025;
+}
+
+.reserve-icon {
+  font-size:32px;
+}
+
+.reserve-text {
+  flex:1;
+}
+
+.reserve-text strong {
+  display:block;
+  font-size:19px;
+  margin-bottom:6px;
+}
+
+.reserve-text small {
+  display:block;
+  color:#e1cfc2;
+  font-size:11px;
+}
+
+.reserve-arrow {
+  font-size:17px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+  margin-top:13px;
+}
+
+.action {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  min-height:105px;
+  padding:17px;
+  border:1px solid #dfd1c6;
+  border-radius:15px;
+  background:white;
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
+  text-align:left;
+  box-shadow:0 4px 12px #00000005;
+  transition:transform .2s,background .2s;
+}
+
+.action:hover {
+  background:#f4ede6;
+  transform:translateY(-2px);
+}
+
+.action i {
+  color:#8c705c;
+  font-size:24px;
+}
+
+.action small {
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  font-weight:normal;
+  color:#81736a;
+}
+
+/* PANEL DE SERVICIOS */
+
+.panel {
+  display:none;
+  margin:0 20px 25px;
+  padding:25px 19px;
+  background:white;
+  border:1px solid #dfd1c6;
+  border-radius:18px;
+}
+
+.panel.open {
+  display:block;
+  animation:appear .3s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.panel h2 {
+  margin:0 0 12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:normal;
+  font-size:29px;
+}
+
+.panel-description {
+  color:#77675d;
+  font-size:13px;
+  line-height:1.8;
+  margin-bottom:23px;
+}
+
+.service {
+  padding:20px 16px;
+  margin:12px 0;
+  border:1px solid #e0d2c6;
+  border-radius:13px;
+  background:linear-gradient(
+    145deg,
+    #f8f4ef,
+    #ffffff
+  );
+}
+
+.service-label {
+  font-size:10px;
+  letter-spacing:2px;
+  color:#8c705c;
+  font-weight:bold;
+}
+
+.service h3 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:normal;
+  font-size:23px;
+  margin:9px 0 12px;
+}
+
+.service p {
+  font-size:13px;
+  line-height:1.7;
+  color:#76665e;
+}
+
+.service-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-top:15px;
+  padding:13px 10px;
+  border-radius:9px;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.instagram-btn {
+  display:block;
+  margin-top:20px;
+  padding:15px;
+  border:1px solid #c9b29e;
+  border-radius:11px;
+  color:#604b3d;
+  background:#eee4db;
+  text-decoration:none;
+  text-align:center;
+  font-weight:bold;
+  font-size:13px;
+}
+
+/* MENSAJE CORPORATIVO */
+
+.statement {
+  margin:0 20px 25px;
+  padding:30px 24px;
+  border:1px solid #d8c6b7;
+  border-radius:18px;
+  background:linear-gradient(
+    145deg,
+    #eee2d7,
+    #faf7f3
+  );
+}
+
+.statement h2 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:29px;
+  line-height:1.3;
+  font-weight:normal;
+  color:var(--black);
+  margin:15px 0;
+}
+
+.statement p {
+  font-size:14px;
+  line-height:1.85;
+  color:#69594f;
+}
+
+.statement .signature {
+  margin-top:20px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#8c705c;
+}
+
+/* UBICACION */
+
+.location {
+  margin:0 20px 30px;
+  padding:25px 20px;
+  background:white;
+  border:1px solid #e0d2c6;
+  border-radius:18px;
+}
+
+.location h2 {
+  margin:13px 0;
+  font-size:25px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:normal;
+}
+
+.location p {
+  font-size:13px;
+  line-height:1.8;
+  color:#79695f;
+}
+
+.location iframe {
+  display:block;
+  width:100%;
+  height:220px;
+  margin-top:17px;
+  border:0;
+  border-radius:12px;
+}
+
+.map-btn {
+  display:block;
+  width:100%;
+  margin-top:15px;
+  padding:15px;
+  background:var(--black);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+}
+
+/* FIRMA OFICIAL NEXID */
+
+.nexid-brand {
+  position:relative;
+  overflow:hidden;
+  padding:53px 25px 31px;
+  background:#03182b;
+  text-align:center;
+}
+
+.nexid-lines {
+  position:absolute;
+  inset:0;
+  opacity:.14;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255,179,70,.45) 30.5%,
+      transparent 31%
+    ),
+    linear-gradient(
+      60deg,
+      transparent 64%,
+      rgba(0,164,255,.45) 64.5%,
+      transparent 65%
+    );
+  background-size:90px 90px;
+}
+
+.nexid-watermark {
+  position:absolute;
+  width:470px;
+  max-width:none;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) rotate(-4deg);
+  opacity:.045;
+  pointer-events:none;
+}
+
+.nexid-link {
+  position:relative;
+  display:block;
+  z-index:3;
+  text-decoration:none;
+}
+
+.powered {
+  position:relative;
+  z-index:3;
+  display:block;
+  width:285px;
+  max-width:88%;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 12px 35px #0006;
+}
+
+.created {
+  position:relative;
+  z-index:3;
+  margin-top:17px;
+  color:#ffffff6b;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:1.8px;
+}
+
+@media(max-width:350px) {
+  .hero h1 {
+    font-size:34px;
+  }
+
+  .reserve-text strong {
+    font-size:16px;
+  }
+
+  .action {
+    padding:14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<!-- ENCABEZADO -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <img
+      class="client-logo"
+      src="logo-urbanlash.jpeg"
+      alt="Logotipo original Urban Lash"
+    >
+
+    <div class="eyebrow">
+      Beauty &amp; Personal Care
+    </div>
+
+    <h1>Urban Lash</h1>
+
+    <h2>Beauty Studio</h2>
+
+    <div class="hero-divider"></div>
+
+    <p>
+      Realza tu belleza, transforma tu mirada
+      y disfruta de un espacio dedicado al
+      cuidado personal.
+      Pestañas, cejas y uñas que complementan
+      tu estilo.
+    </p>
+
+  </div>
+
+</header>
+
+<!-- BOTONES PRINCIPALES -->
+
+<section class="actions">
+
+  <!-- RESERVAR CITA -->
+
+  <a
+    class="reserve-btn"
+    href="https://wa.me/524446669559?text=Hola%2C%20Urban%20Lash.%20Me%20gustar%C3%ADa%20reservar%20una%20cita."
+    target="_blank"
+    rel="noopener"
+  >
+
+    <i class="fa-brands fa-whatsapp reserve-icon"></i>
+
+    <span class="reserve-text">
+
+      <strong>Reservar mi cita</strong>
+
+      <small>
+        Agenda directamente por WhatsApp
+      </small>
+
+    </span>
+
+    <i class="fa-solid fa-arrow-right reserve-arrow"></i>
+
+  </a>
+
+  <div class="grid">
+
+    <!-- SERVICIOS -->
+
+    <button
+      class="action"
+      id="servicesBtn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="servicesPanel"
+    >
+
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+      <span>
+        Nuestros servicios
+        <small>Descubre todas las opciones</small>
+      </span>
+
+    </button>
+
+    <!-- INSTAGRAM -->
+
+    <a
+      class="action"
+      href="https://www.instagram.com/urbanlash.studio?dmpr=bWV5ZmFmbWN4dGJj"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-instagram"></i>
+
+      <span>
+        Instagram
+        <small>Diseños e inspiración</small>
+      </span>
+
+    </a>
+
+    <!-- FACEBOOK -->
+
+    <a
+      class="action"
+      href="https://www.facebook.com/share/1EFJFExd1Y/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-facebook"></i>
+
+      <span>
+        Facebook
+        <small>Conoce nuestra comunidad</small>
+      </span>
+
+    </a>
+
+    <!-- LLAMAR -->
+
+    <a
+      class="action"
+      href="tel:+524446669559"
+    >
+
+      <i class="fa-solid fa-phone"></i>
+
+      <span>
+        Llamar
+        <small>Atención directa</small>
+      </span>
+
+    </a>
+
+    <!-- UBICACION -->
+
+    <a
+      class="action"
+      href="https://www.google.com/maps/search/?api=1&amp;query=Urban+Lash+Montes+Apalaches+155+San+Luis+Potosi"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-solid fa-location-dot"></i>
+
+      <span>
+        Ubicación
+        <small>Cómo llegar a nuestro estudio</small>
+      </span>
+
+    </a>
+
+    <!-- COMPARTIR -->
+
+    <button
+      class="action"
+      type="button"
+      id="shareBtn"
+    >
+
+      <i class="fa-solid fa-share-nodes"></i>
+
+      <span>
+        Compartir tarjeta
+        <small>Comparte nuestra experiencia</small>
+      </span>
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- CATALOGO DE SERVICIOS -->
+
+<section
+  class="panel"
+  id="servicesPanel"
+>
+
+  <div class="eyebrow">
+    Urban Lash Beauty Studio
+  </div>
+
+  <h2>Nuestros servicios</h2>
+
+  <p class="panel-description">
+    Descubre nuestras opciones de belleza
+    y encuentra el servicio ideal para ti.
+  </p>
+
+  <!-- EXTENSIONES DE PESTAÑAS -->
+
+  <article class="service">
+
+    <div class="service-label">
+      01 — LASHES
+    </div>
+
+    <h3>Extensiones de pestañas</h3>
+
+    <p>
+      Realza tu mirada con extensiones de pestañas.
+      Conoce los estilos disponibles y encuentra
+      el diseño que mejor complemente tus ojos
+      y tu personalidad.
+    </p>
+
+    <a
+      class="service-btn"
+      href="https://wa.me/524446669559?text=Hola%2C%20Urban%20Lash.%20Me%20gustar%C3%ADa%20conocer%20los%20estilos%20y%20precios%20de%20extensiones%20de%20pesta%C3%B1as."
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      Consultar estilos y precios
+
+    </a>
+
+  </article>
+
+  <!-- LASH LIFTING -->
+
+  <article class="service">
+
+    <div class="service-label">
+      02 — LASH LIFTING
+    </div>
+
+    <h3>Lifting de pestañas</h3>
+
+    <p>
+      Realza la curvatura de tus pestañas
+      naturales para conseguir una mirada
+      más abierta y definida.
+    </p>
+
+    <a
+      class="service-btn"
+      href="https://wa.me/524446669559?text=Hola%2C%20Urban%20Lash.%20Me%20gustar%C3%ADa%20reservar%20una%20cita%20para%20lash%20lifting."
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      Reservar lash lifting
+
+    </a>
+
+  </article>
+
+  <!-- DISEÑO DE CEJAS -->
+
+  <article class="service">
+
+    <div class="service-label">
+      03 — BROWS
+    </div>
+
+    <h3>Diseñamos tu ceja</h3>
+
+    <p>
+      Resalta tus facciones con un diseño
+      de cejas que armonice con tu rostro
+      y complemente tu mirada.
+    </p>
+
+    <a
+      class="service-btn"
+      href="https://wa.me/524446669559?text=Hola%2C%20Urban%20Lash.%20Me%20gustar%C3%ADa%20reservar%20una%20cita%20para%20dise%C3%B1o%20de%20cejas."
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      Reservar diseño de cejas
+
+    </a>
+
+  </article>
+
+  <!-- UÑAS -->
+
+  <article class="service">
+
+    <div class="service-label">
+      04 — NAILS
+    </div>
+
+    <h3>Uñas</h3>
+
+    <p>
+      Complementa tu estilo con uñas
+      que reflejen tu personalidad.
+      Consulta nuestras opciones,
+      diseños y servicios disponibles.
+    </p>
+
+    <a
+      class="service-btn"
+      href="https://wa.me/524446669559?text=Hola%2C%20Urban%20Lash.%20Me%20gustar%C3%ADa%20conocer%20sus%20servicios%20y%20precios%20de%20u%C3%B1as."
+      target="_blank"
+      rel="noopener"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      Consultar servicios de uñas
+
+    </a>
+
+  </article>
+
+  <a
+    class="instagram-btn"
+    href="https://www.instagram.com/urbanlash.studio/"
+    target="_blank"
+    rel="noopener"
+  >
+
+    <i class="fa-brands fa-instagram"></i>
+
+    Ver diseños y resultados en Instagram
+
+  </a>
+
+</section>
+
+<!-- MENSAJE CORPORATIVO -->
+
+<section class="statement">
+
+  <div class="eyebrow">
+    La experiencia Urban Lash
+  </div>
+
+  <h2>
+    Tu belleza, tu esencia, tu estilo.
+  </h2>
+
+  <p>
+    En Urban Lash Studio creemos que cada
+    detalle cuenta. Nuestro espacio está
+    dedicado a realzar tu belleza y ayudarte
+    a expresar tu estilo a través del
+    cuidado de tus pestañas, cejas y uñas.
+  </p>
+
+  <p>
+    Descubre nuestros servicios, encuentra
+    inspiración y reserva tu próximo momento
+    de cuidado personal.
+  </p>
+
+  <div class="signature">
+    Urban Lash Studio
+  </div>
+
+</section>
+
+<!-- UBICACION DEL ESTUDIO -->
+
+<section class="location">
+
+  <div class="eyebrow">
+    Visítanos
+  </div>
+
+  <h2>Nuestro estudio</h2>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    Calle Montes Apalaches 155,<br>
+    Lomas de San Luis 2da Sección,<br>
+    C.P. 78216, San Luis Potosí,<br>
+    S.L.P., México.
+  </p>
+
+  <iframe
+    title="Ubicación de Urban Lash Studio"
+    src="https://maps.google.com/maps?q=Montes%20Apalaches%20155%20San%20Luis%20Potosi%20Mexico&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+
+  <a
+    class="map-btn"
+    href="https://www.google.com/maps/search/?api=1&amp;query=Urban+Lash+Montes+Apalaches+155+San+Luis+Potosi"
+    target="_blank"
+    rel="noopener"
+  >
+
+    <i class="fa-solid fa-location-arrow"></i>
+
+    Cómo llegar con Google Maps
+
+  </a>
+
+</section>
+
+<!-- FIRMA OFICIAL NEXID -->
+
+<footer class="nexid-brand">
+
+  <div class="nexid-lines"></div>
+
+  <img
+    class="nexid-watermark"
+    src="powered-by-nexid.jpeg"
+    alt=""
+    aria-hidden="true"
+  >
+
+  <a
+    class="nexid-link"
+    href="https://nexidbusiness-commits.github.io/nexid/"
+    target="_blank"
+    rel="noopener"
+  >
+
+    <img
+      class="powered"
+      src="powered-by-nexid.jpeg"
+      alt="Powered by NexID"
+    >
+
+  </a>
+
+  <p class="created">
+    EXPERIENCIA DIGITAL CREADA CON NEXID
+  </p>
+
+</footer>
+
+</main>
+
+<script>
+
+/* CATALOGO DESPLEGABLE */
+
+const servicesBtn =
+  document.getElementById("servicesBtn");
+
+const servicesPanel =
+  document.getElementById("servicesPanel");
+
+servicesBtn.addEventListener("click", () => {
+
+  const isOpen =
+    servicesPanel.classList.toggle("open");
+
+  servicesBtn.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  if (isOpen) {
+
+    servicesPanel.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
+
+});
+
+/* COMPARTIR TARJETA DIGITAL */
+
+document
+  .getElementById("shareBtn")
+  .addEventListener("click", async () => {
+
+    const url =
+      "https://nexidbusiness-commits.github.io/urbanlash/";
+
+    if (navigator.share) {
+
+      try {
+
+        await navigator.share({
+
+          title:"Urban Lash Studio | NexID",
+
+          text:
+            "Descubre nuestros servicios de belleza y reserva tu cita en Urban Lash Studio.",
+
+          url:url
+
+        });
+
+        return;
+
+      } catch(error) {
+
+        if (error.name === "AbortError") {
+          return;
+        }
+
+      }
+
+    }
+
+    try {
+
+      await navigator.clipboard.writeText(url);
+
+      alert(
+        "Enlace de Urban Lash copiado correctamente."
+      );
+
+    } catch(error) {
+
+      window.prompt(
+        "Copia el enlace de Urban Lash:",
+        url
+      );
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
